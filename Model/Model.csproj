@@ -14,7 +14,7 @@
     <None Update="Entities\README.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Enums\README.txt">
+    <None Update="DataTypes\README.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Exceptions\README.txt">

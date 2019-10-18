@@ -9,7 +9,7 @@ using Persistence;
 
 namespace Presentation.Controllers
 {
-    internal abstract class BaseController : ControllerBase
+    public abstract class BaseController : ControllerBase
     {
 
         // used for accessing database
