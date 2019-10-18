@@ -11,4 +11,10 @@
     <Folder Include="Models\Validators\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="README.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

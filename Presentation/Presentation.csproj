@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Mappers\" />
+    <Folder Include="ViewData\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
