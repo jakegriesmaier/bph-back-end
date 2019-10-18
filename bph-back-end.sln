@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{0AB0E5AE-10A0-42EB-80E7-0B1F86C1610E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation", "Presentation\Presentation.csproj", "{0AB0E5AE-10A0-42EB-80E7-0B1F86C1610E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{0E560EA9-6BD2-4393-B2F6-22FE5A6AC966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Model", "Model\Model.csproj", "{0E560EA9-6BD2-4393-B2F6-22FE5A6AC966}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{A138E02F-6DC4-49F2-9915-8F1807FC20EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Persistence", "Persistence\Persistence.csproj", "{A138E02F-6DC4-49F2-9915-8F1807FC20EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model.UnitTests", "Model.UnitTests\Model.UnitTests.csproj", "{A5266F80-CE61-4958-84A8-38C6CA0E1BDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A138E02F-6DC4-49F2-9915-8F1807FC20EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A138E02F-6DC4-49F2-9915-8F1807FC20EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A138E02F-6DC4-49F2-9915-8F1807FC20EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5266F80-CE61-4958-84A8-38C6CA0E1BDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5266F80-CE61-4958-84A8-38C6CA0E1BDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5266F80-CE61-4958-84A8-38C6CA0E1BDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5266F80-CE61-4958-84A8-38C6CA0E1BDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
