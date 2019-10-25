@@ -11,5 +11,6 @@ namespace Model.Models
         // Required Constructor in order to implement ModelBase
         public UserModel(DataAccessLocatorBase dataAccessLocator) : base(dataAccessLocator) { }
 
+
     }
 }
