@@ -11,13 +11,6 @@ namespace Persistence
 {
     public class DataAccessLocator : DataAccessLocatorBase
     {
-
-        private DbContextOptions<BphContext> _options;
-        public DataAccessLocator(DbContextOptions<BphContext> options)
-        {
-            _options = options;
-        }
-
         public override UserDataAccessorBase GetUserDataAccessorCore()
         {
             throw new NotImplementedException();
