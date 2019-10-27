@@ -17,6 +17,7 @@ namespace Persistence
         private ICurrentUserService _currentUserService;
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
+        private BphContext _context;
 
         //TODO fix references, and move ICurrentUserService to Model
         public DataAccessLocator(ICurrentUserService currentUserService, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
@@ -24,11 +25,12 @@ namespace Persistence
             _currentUserService = currentUserService;
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = new DbContextBuilder().BuildContext();
         }
 
         public override UserDataAccessorBase GetUserDataAccessorCore()
         {
-            throw new NotImplementedException();
+            return new UserDataAccessor(_currentUserService, _userManager, _signInManager, _context);
         }
     }
 }

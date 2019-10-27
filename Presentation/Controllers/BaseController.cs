@@ -12,6 +12,7 @@ using Persistence.EntityFramework;
 using Presentation.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Model.Interfaces;
+using Model.Models;
 
 namespace Presentation.Controllers
 {
@@ -32,6 +33,9 @@ namespace Presentation.Controllers
 
         // used for accessing database
         private DataAccessLocatorBase _dataAccessLocator;
-        protected internal DataAccessLocatorBase DataAccessLocator => _dataAccessLocator ?? (new DataAccessLocator(CurrentUserService, UserManager, SignInManager));
+        private DataAccessLocatorBase DataAccessLocator => _dataAccessLocator ?? (new DataAccessLocator(CurrentUserService, UserManager, SignInManager));
+
+        private UserModel _userModel;
+        protected internal UserModel UserModel => _userModel ?? (new UserModel(DataAccessLocator));
     }
 }
