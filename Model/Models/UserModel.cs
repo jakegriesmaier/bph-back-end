@@ -18,6 +18,16 @@ namespace Model.Models
             //#2 - if valid, create by calling dao
             await UserDataAccessor.CreateUser(email, password);
         }
+
+        public async Task LoginUser(string email, string password)
+        {
+            await UserDataAccessor.LoginUser(email, password);
+        }
+
+        public async Task LogoutUser()
+        {
+            await UserDataAccessor.LogoutUser();
+        }
         
     }
 }

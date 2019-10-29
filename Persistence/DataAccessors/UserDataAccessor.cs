@@ -43,5 +43,21 @@ namespace Persistence.DataAccessors
             //TODO: Jake S make custom
             throw new Exception("Failed to create user.");
         }
+
+        protected override async Task LoginUserCore(string email, string password)
+        {
+            var result = await _signInManager.PasswordSignInAsync(email, password, false, false);//change if want cookie to persist
+            if (result.Succeeded)
+            {
+                return;
+            }
+
+            throw new Exception("Failed to log in user.");
+        }
+
+        protected override async Task LogoutUserCore()
+        {
+            await _signInManager.SignOutAsync();
+        }
     }
 }
