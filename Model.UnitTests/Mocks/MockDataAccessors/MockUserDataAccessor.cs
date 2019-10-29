@@ -13,5 +13,15 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
         {
             throw new NotImplementedException();
         }
+
+        protected override Task LoginUserCore(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override Task LogoutUserCore()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,9 +12,21 @@ namespace Model.DataAccess.BaseAccessors
             await CreateUserCore(email, password);
         }
 
+        public async Task LoginUser(string email, string password)
+        {
+            await LoginUserCore(email, password);
+        }
+
+        public async Task LogoutUser()
+        {
+            await LogoutUserCore();
+        }
+
 
         #region necessary implementations
         protected abstract Task CreateUserCore(string email, string password);
+        protected abstract Task LoginUserCore(string email, string password);
+        protected abstract Task LogoutUserCore();
         #endregion
 
     }
