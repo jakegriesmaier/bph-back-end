@@ -1,4 +1,5 @@
 ﻿using Model.DataAccess;
+using Model.Models.Validators;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,13 +15,20 @@ namespace Model.Models
 
         public async Task CreateUser(string email, string password)
         {
-            //TODO: jake s create email + password validator
-            //#2 - if valid, create by calling dao
+            if (!CredentialsValidator.ValidateCredentials(email, password))
+            {
+                throw new Exception("Invalid Credentials");
+            }
+        
             await UserDataAccessor.CreateUser(email, password);
         }
 
         public async Task LoginUser(string email, string password)
         {
+            if (!CredentialsValidator.ValidateCredentials(email, password))
+            {
+                throw new Exception("Invalid Credentials");
+            }
             await UserDataAccessor.LoginUser(email, password);
         }
 
