@@ -15,10 +15,9 @@ namespace Model.Models
 
         public async Task CreateUser(string email, string password)
         {
-            //TODO: jake s create email + password validator
-            if (CredentialsValidator.ValidateCredentials(email, password))
+            if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                //do something 
+                throw new Exception("Invalid Credentials");
             }
         
             await UserDataAccessor.CreateUser(email, password);
@@ -26,9 +25,9 @@ namespace Model.Models
 
         public async Task LoginUser(string email, string password)
         {
-            if (CredentialsValidator.ValidateCredentials(email, password))
+            if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                //do something 
+                throw new Exception("Invalid Credentials");
             }
             await UserDataAccessor.LoginUser(email, password);
         }
