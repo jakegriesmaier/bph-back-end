@@ -2,8 +2,9 @@
 using Model.Models.Validators;
 using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Web;
 using System.Threading.Tasks;
+using System.Net.Http;
 
 namespace Model.Models
 {
@@ -17,7 +18,7 @@ namespace Model.Models
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                throw new Exception("Invalid Credentials");
+                throw new HttpRequestException("Invalid Credentials");
             }
         
             await UserDataAccessor.CreateUser(email, password);
@@ -27,7 +28,7 @@ namespace Model.Models
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                throw new Exception("Invalid Credentials");
+                throw new HttpRequestException("Invalid Credentials");
             }
             await UserDataAccessor.LoginUser(email, password);
         }
