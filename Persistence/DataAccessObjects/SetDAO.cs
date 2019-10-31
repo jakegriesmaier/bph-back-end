@@ -4,13 +4,16 @@ using System.Text;
 
 namespace Persistence.DataAccessObjects
 {
-    internal class SetDAO
+    public class SetDAO : CommentOwner
     {
-        public string SetId { get; set; }
         public int Order { get; set; }
         public double? TargetRPE { get; set; }
         public double? ActualRPE { get; set; }
         public int? TargetReps { get; set; }
         public int? ActualReps { get; set; }
+
+        //foreign key
+        public string ExerciseId { get; set; }
+        public ExerciseDAO Exercise { get; set; }
     }
 }

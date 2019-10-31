@@ -11,7 +11,15 @@ namespace Persistence.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<WorkoutDAO> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(e => e.Title).IsRequired(true);
+
+            builder.Property(e => e.Status).IsRequired(true);
+
+            builder.Property(e => e.Date).IsRequired(true);
+
+            builder.HasMany(e => e.Exercises).WithOne(e => e.Workout).HasForeignKey(e => e.WorkoutId);
+
+
         }
     }
 }

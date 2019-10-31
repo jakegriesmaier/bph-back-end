@@ -11,7 +11,11 @@ namespace Persistence.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<PlanDAO> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(e => e.PlanId).ValueGeneratedOnAdd();
+
+            builder.Property(e => e.Status);
+
+            builder.HasMany(e => e.Workouts).WithOne(e => e.Plan).HasForeignKey(e => e.PlanId);
         }
     }
 }

@@ -5,20 +5,17 @@ using System.Text;
 
 namespace Persistence.DataAccessObjects
 {
-    internal class ExerciseDAO
+    public class ExerciseDAO : CommentOwner
     {
-        public ExerciseDAO()
-        {
-            Sets = new List<SetDAO>();
-            Comments = new List<CommentDAO>();
-        }
-
-        public string ExerciseId { get; set; }
+        //public string ExerciseId { get; set; }
         public string Name { get; set; }
         public int Order { get; set; }
         public Status Status { get; set; }
 
-        public ICollection<SetDAO> Sets { get; set; }
-        public ICollection<CommentDAO> Comments { get; set; }
+        // foreign key
+        public WorkoutDAO Workout { get; set; }
+        public string WorkoutId { get; set; }
+
+        public virtual ICollection<SetDAO> Sets { get; set; }
     }
 }

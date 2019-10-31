@@ -6,21 +6,19 @@ using System.Text;
 
 namespace Persistence.DataAccessObjects
 {
-    internal class PlanDAO
+    public class PlanDAO
     {
-
-        public PlanDAO()
-        {
-            Workouts = new List<WorkoutDAO>();
-        }
-
         public string PlanId { get; set; }
         public Status Status { get; set; }
 
+        //foreign key
+        public string TraineeId { get; set; }
         public ApplicationUser Trainee { get; set; }
+
+        //foreign key
+        public string CoachId { get; set; }
         public ApplicationUser Coach { get; set; }
 
-        public ICollection<WorkoutDAO> Workouts { get; set; }
+        public virtual ICollection<WorkoutDAO> Workouts { get; set; }
     }
-}
 }

@@ -11,7 +11,11 @@ namespace Persistence.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<CommentDAO> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(e => e.CommentId).ValueGeneratedOnAdd();
+
+            builder.Property(e => e.CreatedDate).IsRequired(true);
+
+            builder.Property(e => e.Description).IsRequired(true);
         }
     }
 }
