@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Model.DataAccess.BaseAccessors;
+using Model.Entities;
 using Model.Interfaces;
 using Persistence.EntityFramework;
+using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -58,6 +60,22 @@ namespace Persistence.DataAccessors
         protected override async Task LogoutUserCore()
         {
             await _signInManager.SignOutAsync();
+        }
+
+        protected override async Task<User> GetCurrentUserCore()
+        {
+            try
+            {
+                var userId = _currentUserService.UserId;
+                var applicationUser = await _userManager.FindByIdAsync(userId);
+                return Mapper.map(applicationUser);
+        
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error at getCurrentUserCore", e);
+            }                    
+
         }
     }
 }

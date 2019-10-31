@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Model.Entities;
 using Presentation.Controllers.UserPresenter.InputData;
 
 namespace Presentation.Controllers.UserPresenter
@@ -48,6 +49,12 @@ namespace Presentation.Controllers.UserPresenter
                 return true;
             }
             return false;
+        }
+
+        [AllowAnonymous]
+        [HttpGet("[action]")]
+        public async Task<User> GetCurrentUser() {
+            return await UserModel.GetCurrentUser();
         }
     }
 }
