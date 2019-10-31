@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Model.DataAccess.BaseAccessors;
+using Model.Entities;
 using Model.Interfaces;
 using Persistence.EntityFramework;
 using System;
@@ -58,6 +59,11 @@ namespace Persistence.DataAccessors
         protected override async Task LogoutUserCore()
         {
             await _signInManager.SignOutAsync();
+        }
+
+        protected override async Task<User> GetUserCore(string UUID)
+        {
+            return await _userManager.getUser();
         }
     }
 }

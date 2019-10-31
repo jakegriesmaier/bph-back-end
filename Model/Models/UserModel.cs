@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Web;
 using System.Threading.Tasks;
 using System.Net.Http;
+using Model.Entities;
 
 namespace Model.Models
 {
@@ -37,6 +38,10 @@ namespace Model.Models
         {
             await UserDataAccessor.LogoutUser();
         }
-        
+
+        public async Task<User> GetUser(string UUID)
+        {
+            return await UserDataAccessor.GetUser(UUID);
+        }
     }
 }
