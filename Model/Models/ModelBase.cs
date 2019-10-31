@@ -13,9 +13,10 @@ namespace Model.Models
 
         #region Data Accessors
         protected internal UserDataAccessorBase UserDataAccessor => _dataAccessLocator.GetUserDataAccessor();
-        //TODO: Additional Entity Accessors
-    
+        protected internal PlanDataAccessorBase PlanDataAccessor => _dataAccessLocator.GetPlanDataAccessor();
+        protected internal WorkoutDataAccessorBase WorkoutDataAccessor => _dataAccessLocator.GetWorkoutDataAccessor();     
         #endregion
+
         internal ModelBase(DataAccessLocatorBase dataAccessLocator)
         {
             _dataAccessLocator = dataAccessLocator;

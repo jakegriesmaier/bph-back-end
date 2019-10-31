@@ -35,7 +35,12 @@ namespace Presentation.Controllers
         private DataAccessLocatorBase _dataAccessLocator;
         private DataAccessLocatorBase DataAccessLocator => _dataAccessLocator ?? (new DataAccessLocator(CurrentUserService, UserManager, SignInManager));
 
+        #region models
         private UserModel _userModel;
         protected internal UserModel UserModel => _userModel ?? (new UserModel(DataAccessLocator));
+
+        private CoachModel _coachModel;
+        protected internal CoachModel CoachModel => _coachModel ?? (new CoachModel(DataAccessLocator));
+        #endregion
     }
 }
