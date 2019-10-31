@@ -8,7 +8,17 @@ namespace Model.UnitTests.Mocks
 {
     public class MockDataAccessLocator : DataAccessLocatorBase
     {
-        public override UserDataAccessorBase GetUserDataAccessorCore()
+        protected override UserDataAccessorBase GetUserDataAccessorCore()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override PlanDataAccessorBase GetPlanDataAccessorCore()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override WorkoutDataAccessorBase GetWorkoutDataAccessorCore()
         {
             throw new NotImplementedException();
         }

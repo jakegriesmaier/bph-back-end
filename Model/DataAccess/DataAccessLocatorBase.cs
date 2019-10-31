@@ -12,10 +12,21 @@ namespace Model.DataAccess
             return GetUserDataAccessorCore();
         }
 
+        public PlanDataAccessorBase GetPlanDataAccessor()
+        {
+            return GetPlanDataAccessorCore();
+        }
+
+        public WorkoutDataAccessorBase GetWorkoutDataAccessor()
+        {
+            return GetWorkoutDataAccessorCore();
+        }
 
 
         #region Required Implementations
-        public abstract UserDataAccessorBase GetUserDataAccessorCore();
+        protected abstract UserDataAccessorBase GetUserDataAccessorCore();
+        protected abstract PlanDataAccessorBase GetPlanDataAccessorCore();
+        protected abstract WorkoutDataAccessorBase GetWorkoutDataAccessorCore();
         #endregion
     }
 }
