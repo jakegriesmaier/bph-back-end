@@ -11,6 +11,8 @@ namespace Persistence.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<PlanDAO> builder)
         {
+            builder.HasKey(e => e.PlanId);
+
             builder.Property(e => e.PlanId).ValueGeneratedOnAdd();
 
             builder.Property(e => e.Status);

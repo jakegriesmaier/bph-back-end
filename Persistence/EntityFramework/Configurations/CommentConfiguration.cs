@@ -11,6 +11,8 @@ namespace Persistence.EntityFramework.Configurations
     {
         public void Configure(EntityTypeBuilder<CommentDAO> builder)
         {
+            builder.HasKey(e => e.CommentId);
+
             builder.Property(e => e.CommentId).ValueGeneratedOnAdd();
 
             builder.Property(e => e.CreatedDate).IsRequired(true);
