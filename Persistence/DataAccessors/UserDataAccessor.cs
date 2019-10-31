@@ -71,9 +71,9 @@ namespace Persistence.DataAccessors
                 return Mapper.map(applicationUser);
         
             }
-            catch 
+            catch (Exception e)
             {
-                throw;
+                throw new Exception("Error at getCurrentUserCore", e);
             }                    
 
         }
