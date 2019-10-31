@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Model.Entities
+namespace Persistence.DataAccessObjects
 {
-    public class Set
+    public class SetDAO : CommentOwner
     {
-
-        public Set()
-        {
-            Comments = new List<Comment>();
-        }
-
-        public string SetId { get; set; }
         public int Order { get; set; }
         public double? TargetRPE { get; set; }
         public double? ActualRPE { get; set; }
         public int? TargetReps { get; set; }
         public int? ActualReps { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        //foreign key
+        public string ExerciseId { get; set; }
+        public ExerciseDAO Exercise { get; set; }
     }
 }
