@@ -4,6 +4,7 @@ using Persistence.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 
 namespace Persistence.Mappers
@@ -55,6 +56,10 @@ namespace Persistence.Mappers
         //does not include owner, ownerId
         public static CommentDAO map(Comment entity)
         {
+            if(entity.CreatedBy == null)
+            {
+                throw new HttpRequestException("CreatedBy must be specified");
+            }
             var createdBy = map(entity.CreatedBy);
             return new CommentDAO
             {
@@ -67,6 +72,10 @@ namespace Persistence.Mappers
 
         public static Plan map(PlanDAO dao)
         {
+            if(dao.Coach == null || dao.Trainee == null)
+            {
+                throw new HttpRequestException("Coach and Trainee must be specified");
+            }
             var coach = map(dao.Coach);
             var trainee = map(dao.Trainee);
             var workouts = dao.Workouts.Select(w => map(w)).ToList();
@@ -83,6 +92,10 @@ namespace Persistence.Mappers
 
         public static PlanDAO map(Plan entity)
         {
+            if(entity.Coach == null || entity.Trainee == null)
+            {
+                throw new HttpRequestException("Coach and Trainee must be specified");
+            }
             var coach = map(entity.Coach);
             var trainee = map(entity.Trainee);
             var workouts = entity.Workouts.Select(w => map(w)).ToList();

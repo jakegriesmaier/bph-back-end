@@ -15,6 +15,7 @@ namespace Model.Models
 
         public async Task CreatePlan(Plan plan)
         {
+            //TODO ADD COACH TO PLAN BEFORE VALIDATION (CURRENT USER)
             //VALIDATE
             await PlanDataAccessor.CreatePlan(plan);
         }

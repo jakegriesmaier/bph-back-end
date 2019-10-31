@@ -1,8 +1,10 @@
 ﻿using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Persistence.EntityFramework;
+using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,14 +20,32 @@ namespace Persistence.DataAccessors
             _context = context;
         }
 
-        protected override Task CreatePlanCore(Plan plan)
+        protected override async Task CreatePlanCore(Plan plan)
         {
-            throw new NotImplementedException();
+            var planDao = Mapper.map(plan);
+            try
+            {
+                _context.Plans.Add(planDao);
+                var result = await _context.SaveChangesAsync();
+                return;
+            }
+            catch
+            {
+                throw;
+            }
         }
 
-        protected override Task<Plan> GetPlanCore(string planId)
+        protected override async Task<Plan> GetPlanCore(string planId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var plan = await _context.Plans.FindAsync(planId);
+                return Mapper.map(plan);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }

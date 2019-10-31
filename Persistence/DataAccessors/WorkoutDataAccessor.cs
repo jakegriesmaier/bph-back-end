@@ -1,8 +1,11 @@
-﻿using Model.DataAccess.BaseAccessors;
+﻿using Microsoft.EntityFrameworkCore;
+using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Persistence.EntityFramework;
+using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -18,14 +21,38 @@ namespace Persistence.DataAccessors
             _context = context;
         }
 
-        protected override Task CreateWorkoutCore(Workout workout, string planId)
+        protected override async Task CreateWorkoutCore(Workout workout, string planId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var plan = await _context.Plans.FindAsync(planId);
+                if (plan == null)
+                {
+                    throw new HttpRequestException("The plan does not exist");
+                }
+                var workoutDao = Mapper.map(workout);
+                plan.Workouts.Add(workoutDao);
+                _context.Entry(plan).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return;
+            }
+            catch
+            {
+                throw;
+            }
         }
 
-        protected override Task<Workout> GetWorkoutCore(string workoutId)
+        protected override async Task<Workout> GetWorkoutCore(string workoutId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var workout = await _context.Workouts.FindAsync(workoutId);
+                return Mapper.map(workout);
+            }
+            catch
+            {
+                throw;
+            }
         }
     }
 }
