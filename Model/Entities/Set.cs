@@ -8,9 +8,9 @@ namespace Model.Entities
     {
         public string SetId { get; set; }
         public int Order { get; set; }
-        public double TargetRPE { get; set; }
-        public double ActualRPE { get; set; }
-        public int TargetReps { get; set; }
-        public int ActualReps { get; set; }
+        public double? TargetRPE { get; set; }
+        public double? ActualRPE { get; set; }
+        public int? TargetReps { get; set; }
+        public int? ActualReps { get; set; }
     }
 }
