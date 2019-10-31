@@ -43,5 +43,10 @@ namespace Model.Models
         {
             return await UserDataAccessor.GetCurrentUser();
         }
+
+        public async Task<User> UpdateUser(User user)
+        {
+            return await UserDataAccessor.UpdateUser(user);
+        }
     }
 }

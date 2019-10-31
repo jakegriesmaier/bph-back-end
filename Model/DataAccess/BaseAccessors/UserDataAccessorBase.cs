@@ -27,11 +27,17 @@ namespace Model.DataAccess.BaseAccessors
         {
             return await GetCurrentUserCore();
         }
+        public async Task<User> UpdateUser(User user)
+        {
+            return await UpdateUserCore(user);
+        }
+
         #region necessary implementations
         protected abstract Task CreateUserCore(string email, string password);
         protected abstract Task LoginUserCore(string email, string password);
         protected abstract Task LogoutUserCore();
         protected abstract Task<User> GetCurrentUserCore();
+        protected abstract Task<User> UpdateUserCore(User user);
         #endregion
 
     }
