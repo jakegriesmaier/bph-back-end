@@ -39,9 +39,9 @@ namespace Model.Models
             await UserDataAccessor.LogoutUser();
         }
 
-        public async Task<User> GetUser(string UUID)
+        public async Task<User> GetCurrentUser()
         {
-            return await UserDataAccessor.GetUser(UUID);
+            return await UserDataAccessor.GetCurrentUser();
         }
     }
 }

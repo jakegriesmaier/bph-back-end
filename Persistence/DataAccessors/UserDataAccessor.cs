@@ -3,6 +3,7 @@ using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Model.Interfaces;
 using Persistence.EntityFramework;
+using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -61,9 +62,20 @@ namespace Persistence.DataAccessors
             await _signInManager.SignOutAsync();
         }
 
-        protected override async Task<User> GetUserCore(string UUID)
+        protected override async Task<User> GetCurrentUserCore()
         {
-            return await _userManager.getUser();
+            try
+            {
+                var userId = _currentUserService.UserId;
+                var applicationUser = await _userManager.FindByIdAsync(userId);
+                return Mapper.map(applicationUser);
+        
+            }
+            catch 
+            {
+                throw;
+            }                    
+
         }
     }
 }

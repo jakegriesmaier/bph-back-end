@@ -23,15 +23,15 @@ namespace Model.DataAccess.BaseAccessors
             await LogoutUserCore();
         }
 
-        public async Task<User> GetUser(string UUID)
+        public async Task<User> GetCurrentUser()
         {
-            return await GetUserCore(UUID);
+            return await GetCurrentUserCore();
         }
         #region necessary implementations
         protected abstract Task CreateUserCore(string email, string password);
         protected abstract Task LoginUserCore(string email, string password);
         protected abstract Task LogoutUserCore();
-        protected abstract Task<User> GetUserCore(string UUID);
+        protected abstract Task<User> GetCurrentUserCore();
         #endregion
 
     }

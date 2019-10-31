@@ -53,8 +53,8 @@ namespace Presentation.Controllers.UserPresenter
 
         [AllowAnonymous]
         [HttpGet("action")]
-        public async Task<User> GetUser([FromBody] String UUID) {
-            return await UserModel.GetUser(UUID);
+        public async Task<User> GetCurrentUser() {
+            return await UserModel.GetCurrentUser();
         }
     }
 }
