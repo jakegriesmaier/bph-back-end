@@ -52,7 +52,7 @@ namespace Presentation.Controllers.UserPresenter
         }
 
         [AllowAnonymous]
-        [HttpGet("action")]
+        [HttpGet("[action]")]
         public async Task<User> GetCurrentUser() {
             return await UserModel.GetCurrentUser();
         }
