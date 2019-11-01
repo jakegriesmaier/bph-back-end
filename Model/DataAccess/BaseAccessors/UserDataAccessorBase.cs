@@ -27,6 +27,7 @@ namespace Model.DataAccess.BaseAccessors
         {
             return await GetCurrentUserCore();
         }
+
         public async Task<User> UpdateUser(User user)
         {
             return await UpdateUserCore(user);
