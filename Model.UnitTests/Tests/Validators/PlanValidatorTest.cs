@@ -8,9 +8,9 @@ namespace Model.UnitTests.Tests.Validators
 {
     public class PlanValidatorTest
     {
-        Plan mockPlan = MockPlans.Plan1();
-        Plan noCoach = MockPlans.NoCoach();
-        Plan noId = MockPlans.NoId();
+        Plan mockPlan = MockPlans.creationGood();
+        Plan withoutCoach = MockPlans.creationWithoutCoach();
+        Plan withId = MockPlans.creationWithId();
 
         [SetUp]
         public void Setup()
@@ -23,14 +23,14 @@ namespace Model.UnitTests.Tests.Validators
             Assert.AreEqual(true, PlanValidator.ValidateCreatePlan(mockPlan), "Marked a good plan as bad");
         }
         [Test]
-        public void ValidateCreatePlan_NullPlanId()
+        public void ValidateCreatePlan_NonNullPlanId()
         {
-            Assert.AreEqual(false, PlanValidator.ValidateCreatePlan(noId), "Marked a bad Plan (Null Id) as good");
+            Assert.AreEqual(false, PlanValidator.ValidateCreatePlan(withId), "Marked a bad Plan (Null Id) as good");
         }
         [Test]
-        public void ValidateCreatePlan_NoCoach()
+        public void ValidateCreatePlan_NullCoach()
         {
-            Assert.AreEqual(false, PlanValidator.ValidateCreatePlan(noCoach), "Marked a bad Plan (Null Coach) as good");
+            Assert.AreEqual(false, PlanValidator.ValidateCreatePlan(withoutCoach), "Marked a bad Plan (Null Coach) as good");
         }
 
         [Test]

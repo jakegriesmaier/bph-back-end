@@ -28,7 +28,7 @@ namespace Model.UnitTests.Mocks
                 Workouts = new List<Workout> { MockWorkouts.Workout1() },
             };
         }
-        public static Plan NoId()
+        public static Plan creationGood()
         {
             return new Plan
             {
@@ -39,7 +39,18 @@ namespace Model.UnitTests.Mocks
                 Workouts = new List<Workout> { MockWorkouts.Workout1() },
             };
         }
-        public static Plan NoCoach()
+        public static Plan creationWithId()
+        {
+            return new Plan
+            {
+                PlanId = "Spaghetti",
+                Status = DataTypes.Status.Created,
+                Coach = MockUsers.Coach(),
+                Trainee = MockUsers.Trainee(),
+                Workouts = new List<Workout> { MockWorkouts.Workout1() },
+            };
+        }
+        public static Plan creationWithoutCoach()
         {
             return new Plan
             {
