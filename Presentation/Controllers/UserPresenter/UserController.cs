@@ -56,5 +56,11 @@ namespace Presentation.Controllers.UserPresenter
         public async Task<User> GetCurrentUser() {
             return await UserModel.GetCurrentUser();
         }
+
+        [HttpPut("[action]")]
+        public async Task<User> UpdateUser(User user)
+        {
+            return await UserModel.UpdateUser(user);
+        }
     }
 }

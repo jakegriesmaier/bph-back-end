@@ -77,5 +77,27 @@ namespace Persistence.DataAccessors
             }                    
 
         }
+
+        protected override async Task<User> UpdateUserCore(User user)
+        {
+            try
+            {
+                var applicationUser = await _userManager.FindByIdAsync(_currentUserService.UserId);
+                applicationUser.Email = user.Email;
+                applicationUser.FirstName = user.FirstName;
+                applicationUser.LastName = user.LastName;
+                applicationUser.Id = user.UserId;
+                applicationUser.Height = user.Height;
+                applicationUser.Weight = user.Weight;
+                applicationUser.AccountType = user.AccountType;
+
+                await _userManager.UpdateAsync(applicationUser);
+                return Mapper.map(applicationUser);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error at UpdateUserCore", e);
+            }
+        }
     }
 }
