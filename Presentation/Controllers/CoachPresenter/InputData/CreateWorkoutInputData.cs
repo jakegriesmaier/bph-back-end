@@ -8,7 +8,7 @@ namespace Presentation.Controllers.CoachPresenter.InputData
 {
     public class CreateWorkoutInputData
     {
-        public string planId { get; set; }
-        public Workout workout { get; set; }
+        public string PlanId { get; set; }
+        public Workout Workout { get; set; }
     }
 }

@@ -33,7 +33,7 @@ namespace Presentation.Controllers.CoachPresenter
         [HttpPost("[action]")]
         public async Task CreateWorkout([FromBody] CreateWorkoutInputData input)
         {
-            await CoachModel.CreateWorkout(input.workout, input.planId);
+            await CoachModel.CreateWorkout(input.Workout, input.PlanId);
         }
 
         // GET api/Coach/GetWorkout

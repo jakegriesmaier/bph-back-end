@@ -1,6 +1,7 @@
 ﻿using Model.Entities;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 
 namespace Model.UnitTests.Mocks
@@ -11,7 +12,7 @@ namespace Model.UnitTests.Mocks
         {
             if(id == Plan1().PlanId)
             {
-                Plan1();
+                return Plan1();
             }
             return new Plan();
         }
