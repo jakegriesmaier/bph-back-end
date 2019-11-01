@@ -35,7 +35,7 @@ namespace Model.UnitTests.Mocks
             };
         }
 
-        public static User BadEmail()
+        public static User NullEmail()
         {
             return new User
             {
@@ -57,6 +57,20 @@ namespace Model.UnitTests.Mocks
                 FirstName = "Dog",
                 LastName = "Cat",
                 Email = "peepee@peepee.com",
+                AccountType = DataTypes.AccountType.Trainee,
+                Height = 20,
+                Weight = 183
+            };
+        }
+
+        public static User BadEmail()
+        {
+            return new User
+            {
+                UserId = "good",
+                FirstName = "Dog",
+                LastName = "Cat",
+                Email = "Test@Testmail@TestOhCrap",
                 AccountType = DataTypes.AccountType.Trainee,
                 Height = 20,
                 Weight = 183
