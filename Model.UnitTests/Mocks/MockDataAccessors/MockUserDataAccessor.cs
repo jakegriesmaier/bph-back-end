@@ -9,30 +9,30 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockUserDataAccessor : UserDataAccessorBase
     {
-        // return fake calls to the database here for testing
-        protected override Task CreateUserCore(string email, string password)
+        protected override async Task CreateUserCore(string email, string password)
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
-        protected override Task<User> GetCurrentUserCore()
+        protected override async Task<User> GetCurrentUserCore()
         {
-            throw new NotImplementedException();
+            var user = MockUsers.Coach(); 
+            return await Task.FromResult(user);
         }
 
-        protected override Task LoginUserCore(string email, string password)
+        protected override async Task LoginUserCore(string email, string password)
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
-        protected override Task LogoutUserCore()
+        protected override async Task LogoutUserCore()
         {
-            throw new NotImplementedException();
+            await Task.CompletedTask;
         }
 
-        protected override Task<User> UpdateUserCore(User user)
+        protected override async Task<User> UpdateUserCore(User user)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(user);
         }
     }
 }

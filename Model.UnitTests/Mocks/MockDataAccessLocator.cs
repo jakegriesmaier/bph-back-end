@@ -1,5 +1,6 @@
 ﻿using Model.DataAccess;
 using Model.DataAccess.BaseAccessors;
+using Model.UnitTests.Mocks.MockDataAccessors;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,17 +11,17 @@ namespace Model.UnitTests.Mocks
     {
         protected override UserDataAccessorBase GetUserDataAccessorCore()
         {
-            throw new NotImplementedException();
+            return new MockUserDataAccessor();
         }
 
         protected override PlanDataAccessorBase GetPlanDataAccessorCore()
         {
-            throw new NotImplementedException();
+            return new MockPlanDataAccessor();
         }
 
         protected override WorkoutDataAccessorBase GetWorkoutDataAccessorCore()
         {
-            throw new NotImplementedException();
+            return new MockWorkoutDataAccessor();
         }
     }
 }
