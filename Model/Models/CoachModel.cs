@@ -18,6 +18,7 @@ namespace Model.Models
         public async Task CreatePlan(Plan plan)
         {
             plan.Coach = await UserDataAccessor.GetCurrentUser();
+            plan.Status = DataTypes.Status.Created;
             if (!PlanValidator.ValidateCreatePlan(plan))
             {
                 throw new HttpRequestException("Failed to create plan");
@@ -36,6 +37,7 @@ namespace Model.Models
 
         public async Task CreateWorkout(Workout workout, string planId)
         {
+            workout.Status = DataTypes.Status.Created;
             //VALIDATE 
             await WorkoutDataAccessor.CreateWorkout(workout, planId);
         }
