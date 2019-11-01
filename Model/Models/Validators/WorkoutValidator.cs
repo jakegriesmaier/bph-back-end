@@ -16,7 +16,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateGetWorkout(string workoutId)
         {
-            if(workoutId == null)
+            if (workoutId == null)
             {
                 return false;
             }

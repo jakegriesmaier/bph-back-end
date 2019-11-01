@@ -10,7 +10,7 @@ namespace Tests
     public class UserChangeValidatorTest
     {
         User goodUser = MockUsers.Coach();
-        User noEmailUser = MockUsers.BadEmail();
+        User noEmailUser = MockUsers.NullEmail();
         User noUserIdUser = MockUsers.BadUserId();
 
         [SetUp]

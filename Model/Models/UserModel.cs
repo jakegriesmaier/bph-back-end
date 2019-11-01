@@ -46,7 +46,12 @@ namespace Model.Models
 
         public async Task<User> UpdateUser(User user)
         {
+            if (!UserChangeValidator.ValidateUpdateUser(user))
+            {
+                throw new HttpRequestException("Updated User without Email or Password");
+            }
             return await UserDataAccessor.UpdateUser(user);
+
         }
     }
 }
