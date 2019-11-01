@@ -15,13 +15,11 @@ namespace Model.Models.Validators
             {
                 return false;
             }
-            //Current user is added to plan
-            //So validate Curr User is a coach here. 
             return true;
         }
-        public static bool ValidateGetPlan(Plan plan)
+        public static bool ValidateGetPlan(string planId)
         {
-            if (plan.PlanId == null)
+            if (planId == null)
             {
                 return false;
             }

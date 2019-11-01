@@ -1,7 +1,9 @@
 ﻿using Model.DataAccess;
 using Model.Entities;
+using Model.Models.Validators;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,14 +17,20 @@ namespace Model.Models
 
         public async Task CreatePlan(Plan plan)
         {
-            //TODO ADD COACH TO PLAN BEFORE VALIDATION (CURRENT USER)
-            //VALIDATE
+            plan.Coach = await UserDataAccessor.GetCurrentUser();
+            if (!PlanValidator.ValidateCreatePlan(plan))
+            {
+                throw new HttpRequestException("Failed to create plan");
+            }
             await PlanDataAccessor.CreatePlan(plan);
         }
 
         public async Task<Plan> GetPlan(string planId)
         {
-            //VALIDATE
+            if (!PlanValidator.ValidateGetPlan(planId))
+            {
+                throw new HttpRequestException("Failed to get plan");
+            }
             return await PlanDataAccessor.GetPlan(planId);
         }
 
