@@ -51,7 +51,6 @@ namespace Presentation.Controllers.UserPresenter
             return false;
         }
 
-        [AllowAnonymous]
         [HttpGet("[action]")]
         public async Task<User> GetCurrentUser() {
             return await UserModel.GetCurrentUser();
