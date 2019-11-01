@@ -29,5 +29,10 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
         {
             throw new NotImplementedException();
         }
+
+        protected override Task<User> UpdateUserCore(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
