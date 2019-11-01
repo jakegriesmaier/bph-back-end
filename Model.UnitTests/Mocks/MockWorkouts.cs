@@ -10,7 +10,7 @@ namespace Model.UnitTests.Mocks
 
         public static Workout GetWorkout(string id)
         {
-            if(id == Workout1().WorkoutId)
+            if (id == Workout1().WorkoutId)
             {
                 return Workout1(); 
             }

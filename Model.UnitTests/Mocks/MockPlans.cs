@@ -28,5 +28,27 @@ namespace Model.UnitTests.Mocks
                 Workouts = new List<Workout> { MockWorkouts.Workout1() },
             };
         }
+        public static Plan NoId()
+        {
+            return new Plan
+            {
+                PlanId = null,
+                Status = DataTypes.Status.Created,
+                Coach = MockUsers.Coach(),
+                Trainee = MockUsers.Trainee(),
+                Workouts = new List<Workout> { MockWorkouts.Workout1() },
+            };
+        }
+        public static Plan NoCoach()
+        {
+            return new Plan
+            {
+                PlanId = "plan-1",
+                Status = DataTypes.Status.Created,
+                Coach = null,
+                Trainee = MockUsers.Trainee(),
+                Workouts = new List<Workout> { MockWorkouts.Workout1() },
+            };
+        }
     }
 }
