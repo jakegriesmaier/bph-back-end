@@ -18,7 +18,7 @@ namespace Model.Models
         public async Task CreatePlan(Plan plan)
         {
             plan.Coach = await UserDataAccessor.GetCurrentUser();
-            plan.Status = DataTypes.Status.Created;
+            plan.Status = plan.Trainee == null ? DataTypes.Status.Draft : DataTypes.Status.Created;
             if (!PlanValidator.ValidateCreatePlan(plan))
             {
                 throw new HttpRequestException("Failed to create plan");
