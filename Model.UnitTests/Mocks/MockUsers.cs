@@ -34,5 +34,33 @@ namespace Model.UnitTests.Mocks
                 Weight = 200
             };
         }
+
+        public static User BadEmail()
+        {
+            return new User
+            {
+                UserId = "good",
+                FirstName = "Dog",
+                LastName = "Cat",
+                Email = null,
+                AccountType = DataTypes.AccountType.Trainee,
+                Height = 20,
+                Weight = 183
+            };
+        }
+
+        public static User BadUserId()
+        {
+            return new User
+            {
+                UserId = null,
+                FirstName = "Dog",
+                LastName = "Cat",
+                Email = "peepee@peepee.com",
+                AccountType = DataTypes.AccountType.Trainee,
+                Height = 20,
+                Weight = 183
+            };
+        }
     }
 }
