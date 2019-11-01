@@ -14,6 +14,14 @@ namespace Model.Models.Validators
             return true;
         }
 
+        public static bool ValidateGetWorkout(string workoutId)
+        {
+            if(workoutId == null)
+            {
+                return false;
+            }
+            return true;
+        }
 
     }
 }

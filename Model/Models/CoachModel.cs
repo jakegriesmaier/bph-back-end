@@ -38,13 +38,20 @@ namespace Model.Models
         public async Task CreateWorkout(Workout workout, string planId)
         {
             workout.Status = DataTypes.Status.Created;
-            //VALIDATE 
+            if (!WorkoutValidator.ValidateCreateWorkout(workout, planId))
+            {
+                throw new HttpRequestException("Failed to create workout");
+            }
             await WorkoutDataAccessor.CreateWorkout(workout, planId);
         }
 
         public async Task<Workout> GetWorkout(string workoutId)
         {
             //VALIDATE
+            if (!WorkoutValidator.ValidateGetWorkout(workoutId))
+            {
+                throw new HttpRequestException("Failed to get workout");
+            }
             return await WorkoutDataAccessor.GetWorkout(workoutId);
         }
 
