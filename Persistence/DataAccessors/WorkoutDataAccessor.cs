@@ -31,8 +31,9 @@ namespace Persistence.DataAccessors
                     throw new HttpRequestException("The plan does not exist");
                 }
                 var workoutDao = Mapper.map(workout);
-                plan.Workouts.Add(workoutDao);
-                _context.Entry(plan).State = EntityState.Modified;
+                workoutDao.PlanId = plan.PlanId;
+
+                _context.Workouts.Add(workoutDao);
                 await _context.SaveChangesAsync();
                 return;
             }

@@ -9,6 +9,11 @@ using System.Text;
 
 namespace Persistence.Mappers
 {
+    /// <summary>
+    /// Maps DAO -> Entity and Entity -> DAO
+    /// NOTE: When mapping Entity -> DAO only specify Ids, not the actual object or
+    /// you will get duplicate key error in the database
+    /// </summary>
     internal class Mapper
     {
 
@@ -65,17 +70,13 @@ namespace Persistence.Mappers
             {
                 CommentId = entity.CommentId,
                 CreatedDate = entity.CreatedDate,
-                CreatedBy = createdBy,
+                CreatedById = createdBy.Id,
                 Description = entity.Description
             };
         }
 
         public static Plan map(PlanDAO dao)
         {
-            if(dao.Coach == null || dao.Trainee == null)
-            {
-                throw new HttpRequestException("Coach and Trainee must be specified");
-            }
             var coach = map(dao.Coach);
             var trainee = map(dao.Trainee);
             var workouts = dao.Workouts.Select(w => map(w)).ToList();
@@ -92,23 +93,24 @@ namespace Persistence.Mappers
 
         public static PlanDAO map(Plan entity)
         {
-            if(entity.Coach == null || entity.Trainee == null)
+            if(entity.Coach == null)
             {
-                throw new HttpRequestException("Coach and Trainee must be specified");
+                throw new HttpRequestException("Coach must be specified");
             }
             var coach = map(entity.Coach);
-            var trainee = map(entity.Trainee);
-            var workouts = entity.Workouts.Select(w => map(w)).ToList();
-            return new PlanDAO
+            var dao = new PlanDAO
             {
                 PlanId = entity.PlanId,
                 Status = entity.Status,
-                Coach = coach,
                 CoachId = coach.Id,
-                Trainee = trainee,
-                TraineeId = trainee.Id,
-                Workouts = workouts
             };
+
+            if (entity.Trainee != null)
+            {
+                dao.TraineeId = entity.Trainee.UserId;
+            }
+            dao.Workouts = entity.Workouts.Select(w => map(w)).ToList();
+            return dao;
         }
 
         public static Workout map(WorkoutDAO dao)
