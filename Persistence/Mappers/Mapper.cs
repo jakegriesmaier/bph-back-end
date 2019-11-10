@@ -77,9 +77,9 @@ namespace Persistence.Mappers
 
         public static Plan map(PlanDAO dao)
         {
-            var coach = map(dao.Coach);
-            var trainee = map(dao.Trainee);
-            var workouts = dao.Workouts.Select(w => map(w)).ToList();
+            var coach = dao.Coach != null ? map(dao.Coach) : null;
+            var trainee = dao.Trainee != null ? map(dao.Trainee) : null;
+            var workouts = dao.Workouts != null ? dao.Workouts.Select(w => map(w)).ToList() : new List<Workout>();
 
             return new Plan
             {

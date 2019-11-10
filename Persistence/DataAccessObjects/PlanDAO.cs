@@ -13,11 +13,11 @@ namespace Persistence.DataAccessObjects
 
         //foreign key
         public string TraineeId { get; set; }
-        public ApplicationUser Trainee { get; set; }
+        public virtual ApplicationUser Trainee { get; set; }
 
         //foreign key
         public string CoachId { get; set; }
-        public ApplicationUser Coach { get; set; }
+        public virtual ApplicationUser Coach { get; set; }
 
         public virtual ICollection<WorkoutDAO> Workouts { get; set; }
     }

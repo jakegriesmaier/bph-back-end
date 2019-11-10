@@ -1,4 +1,5 @@
-﻿using Model.DataAccess.BaseAccessors;
+﻿using Microsoft.AspNetCore.Identity;
+using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
@@ -14,10 +15,12 @@ namespace Persistence.DataAccessors
     {
 
         private BphContext _context;
+        private UserManager<ApplicationUser> _userManager;
 
-        public PlanDataAccessor(BphContext context)
+        public PlanDataAccessor(BphContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         protected override async Task CreatePlanCore(Plan plan)
@@ -40,6 +43,14 @@ namespace Persistence.DataAccessors
             try
             {
                 var plan = await _context.Plans.FindAsync(planId);
+                if(plan.CoachId != null)
+                {
+                    plan.Coach = await _userManager.FindByIdAsync(plan.CoachId);
+                }
+                if(plan.TraineeId != null)
+                {
+                    plan.Trainee = await _userManager.FindByIdAsync(plan.TraineeId);
+                }
                 return Mapper.map(plan);
             }
             catch

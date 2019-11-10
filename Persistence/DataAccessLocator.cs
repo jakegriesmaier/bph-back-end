@@ -34,7 +34,7 @@ namespace Persistence
 
         protected override PlanDataAccessorBase GetPlanDataAccessorCore()
         {
-            return new PlanDataAccessor(_context);
+            return new PlanDataAccessor(_context, _userManager);
         }
 
         protected override WorkoutDataAccessorBase GetWorkoutDataAccessorCore()
