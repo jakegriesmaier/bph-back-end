@@ -23,10 +23,10 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         // GET api/Coach/GetPlan
-        [HttpGet("[action]/{planId}")]
-        public async Task<Plan> GetPlan(string planId)
+        [HttpGet("[action]")]
+        public async Task<Plan> GetPlan([FromBody] GetPlanInputData input)
         {
-            return await CoachModel.GetPlan(planId);
+            return await CoachModel.GetPlan(input.PlanId);
         }
 
         // POST api/Coach/CreateWorkout
@@ -37,10 +37,10 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         // GET api/Coach/GetWorkout
-        [HttpGet("[action]/{workoutId}")]
-        public async Task<Workout> GetWorkout(string workoutId)
+        [HttpGet("[action]")]
+        public async Task<Workout> GetWorkout([FromBody] GetWorkoutInputData input)
         {
-            return await CoachModel.GetWorkout(workoutId);
+            return await CoachModel.GetWorkout(input.WorkoutId);
         }
 
     }

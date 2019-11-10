@@ -57,7 +57,7 @@ namespace Presentation.Controllers.UserPresenter
         }
 
         [HttpPut("[action]")]
-        public async Task<User> UpdateUser(User user)
+        public async Task<User> UpdateUser([FromBody] User user)
         {
             return await UserModel.UpdateUser(user);
         }
