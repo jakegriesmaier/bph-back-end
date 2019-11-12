@@ -19,9 +19,9 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
             var plan = MockPlans.GetPlan(planId);
             return await Task.FromResult(plan);
         }
-        protected override async Task UpdatePlanCore(Plan plan)
+        protected override async Task<Plan> UpdatePlanCore(Plan plan)
         {
-            await Task.CompletedTask;
+            return await Task.FromResult(plan);
         }
     }
 }

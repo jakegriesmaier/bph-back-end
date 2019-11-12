@@ -35,13 +35,13 @@ namespace Model.Models
             return await PlanDataAccessor.GetPlan(planId);
         }
 
-        public async Task UpdatePlan(Plan plan)
+        public async Task<Plan> UpdatePlan(Plan plan)
         {
             if (!PlanValidator.ValidateUpdatePlan(plan))
             {
                 throw new HttpRequestException("Failed to update plan (improper plan)");
             }
-            await PlanDataAccessor.UpdatePlan(plan);
+            return await PlanDataAccessor.UpdatePlan(plan);
         }
 
         public async Task CreateWorkout(Workout workout, string planId)

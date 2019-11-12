@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Persistence.EntityFramework;
@@ -54,14 +55,14 @@ namespace Persistence.DataAccessors
                 throw;
             }
         }
-        protected override async Task UpdatePlanCore(Plan plan)
+        protected override async Task<Plan> UpdatePlanCore(Plan plan)
         {
             try
             {
                 var planDao = Mapper.map(plan);
-                _context.Plans.Update(planDao);
-                var result = await _context.SaveChangesAsync();
-                return;
+                _context.Entry(planDao).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return Mapper.map(planDao);
             }
             catch
             {

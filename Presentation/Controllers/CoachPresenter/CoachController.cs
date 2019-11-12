@@ -31,9 +31,9 @@ namespace Presentation.Controllers.CoachPresenter
 
 
         [HttpPut("[action]")]
-        public async Task UpdatePlan([FromBody] Plan plan)
+        public async Task<Plan> UpdatePlan([FromBody] Plan plan)
         {
-            await CoachModel.UpdatePlan(plan);
+            return await CoachModel.UpdatePlan(plan);
         }
 
         // POST api/Coach/CreateWorkout
