@@ -39,7 +39,7 @@ namespace Model.Models
         {
             if (!PlanValidator.ValidateUpdatePlan(plan))
             {
-                throw new HttpRequestException("Failed to get plan");
+                throw new HttpRequestException("Failed to update plan (improper plan)");
             }
             await PlanDataAccessor.UpdatePlan(plan);
         }
@@ -55,8 +55,7 @@ namespace Model.Models
         }
 
         public async Task<Workout> GetWorkout(string workoutId)
-        {
-            //VALIDATE
+        { 
             if (!WorkoutValidator.ValidateGetWorkout(workoutId))
             {
                 throw new HttpRequestException("Failed to get workout");
