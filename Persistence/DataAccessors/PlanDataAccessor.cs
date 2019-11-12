@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Persistence.DataAccessors
@@ -43,15 +40,29 @@ namespace Persistence.DataAccessors
             try
             {
                 var plan = await _context.Plans.FindAsync(planId);
-                if(plan.CoachId != null)
+                if (plan.CoachId != null)
                 {
                     plan.Coach = await _userManager.FindByIdAsync(plan.CoachId);
                 }
-                if(plan.TraineeId != null)
+                if (plan.TraineeId != null)
                 {
                     plan.Trainee = await _userManager.FindByIdAsync(plan.TraineeId);
                 }
                 return Mapper.map(plan);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        protected override async Task<Plan> UpdatePlanCore(Plan plan)
+        {
+            try
+            {
+                var planDao = Mapper.map(plan);
+                _context.Entry(planDao).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                return Mapper.map(planDao);
             }
             catch
             {

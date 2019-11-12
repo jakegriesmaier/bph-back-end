@@ -10,7 +10,7 @@ namespace Model.UnitTests.Mocks
     {
         public static Plan GetPlan(string id)
         {
-            if(id == Plan1().PlanId)
+            if (id == Plan1().PlanId)
             {
                 return Plan1();
             }
@@ -28,7 +28,7 @@ namespace Model.UnitTests.Mocks
                 Workouts = new List<Workout> { MockWorkouts.Workout1() },
             };
         }
-        public static Plan creationGood()
+        public static Plan creationNullPlanId()
         {
             return new Plan
             {

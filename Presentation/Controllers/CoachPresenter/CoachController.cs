@@ -29,6 +29,13 @@ namespace Presentation.Controllers.CoachPresenter
             return await CoachModel.GetPlan(input.PlanId);
         }
 
+
+        [HttpPut("[action]")]
+        public async Task<Plan> UpdatePlan([FromBody] Plan plan)
+        {
+            return await CoachModel.UpdatePlan(plan);
+        }
+
         // POST api/Coach/CreateWorkout
         [HttpPost("[action]")]
         public async Task CreateWorkout([FromBody] CreateWorkoutInputData input)
