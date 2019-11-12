@@ -35,6 +35,15 @@ namespace Model.Models
             return await PlanDataAccessor.GetPlan(planId);
         }
 
+        public async Task UpdatePlan(Plan plan)
+        {
+            if (!PlanValidator.ValidateUpdatePlan(plan))
+            {
+                throw new HttpRequestException("Failed to get plan");
+            }
+            await PlanDataAccessor.UpdatePlan(plan);
+        }
+
         public async Task CreateWorkout(Workout workout, string planId)
         {
             workout.Status = DataTypes.Status.Created;

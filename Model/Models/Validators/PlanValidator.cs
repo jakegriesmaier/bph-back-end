@@ -25,5 +25,17 @@ namespace Model.Models.Validators
             }
             return true;
         }
+        public static bool ValidateUpdatePlan(Plan plan)
+        {
+            if (plan.PlanId == null)
+            {
+                return false;
+            }
+            if (plan.Coach == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

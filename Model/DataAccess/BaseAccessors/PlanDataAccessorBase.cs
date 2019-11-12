@@ -18,9 +18,15 @@ namespace Model.DataAccess.BaseAccessors
             return await GetPlanCore(planId);
         }
 
+        public async Task UpdatePlan(Plan plan)
+        {
+            await UpdatePlanCore(plan);
+        }
+
         #region necessary implementations
         protected abstract Task CreatePlanCore(Plan plan);
         protected abstract Task<Plan> GetPlanCore(string planId);
+        protected abstract Task UpdatePlanCore(Plan plan);
         #endregion
     }
 }
