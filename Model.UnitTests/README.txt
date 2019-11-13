@@ -7,3 +7,4 @@ Running Code Coverage:
 4. Enter command:  dotnet test /p:CollectCoverage=true
 5. The output in the command prompt has a code coverage chart.
    A coverage.json file is created under Model.UnitTests/
+  6. test commit
