@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
@@ -30,7 +31,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_LoginUser_BadPassword()
         {
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () =>
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParameterFormatException>(), async () =>
             {
                 await _userModel.LoginUser("peanutbutter@jelly.time", "Spaghetti");
             }, "Expected an error to be thrown when trying to log in a user with bad password");
@@ -39,7 +40,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_LoginUser_BadEmail()
         {
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () =>
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParameterFormatException>(), async () =>
             {
                 await _userModel.LoginUser("peanutbutter@jelly@ohcrap", "Spaghetti1!");
             }, "Expected an error to be thrown when trying to log in user with bad email");

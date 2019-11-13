@@ -1,5 +1,6 @@
 ﻿using Model.DataAccess;
 using Model.Entities;
+using Model.Exceptions;
 using Model.Models.Validators;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Model.Models
             plan.Status = plan.Trainee == null ? DataTypes.Status.Draft : DataTypes.Status.Created;
             if (!PlanValidator.ValidateCreatePlan(plan))
             {
-                throw new HttpRequestException("Failed to create plan");
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_PLAN_PARAMS);
             }
             await PlanDataAccessor.CreatePlan(plan);
         }
@@ -30,7 +31,7 @@ namespace Model.Models
         {
             if (!PlanValidator.ValidateGetPlan(planId))
             {
-                throw new HttpRequestException("Failed to get plan");
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_PLAN_PARAMS);
             }
             return await PlanDataAccessor.GetPlan(planId);
         }
@@ -39,7 +40,7 @@ namespace Model.Models
         {
             if (!PlanValidator.ValidateUpdatePlan(plan))
             {
-                throw new HttpRequestException("Failed to update plan (improper plan)");
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS);
             }
             return await PlanDataAccessor.UpdatePlan(plan);
         }
@@ -49,7 +50,7 @@ namespace Model.Models
             workout.Status = DataTypes.Status.Created;
             if (!WorkoutValidator.ValidateCreateWorkout(workout, planId))
             {
-                throw new HttpRequestException("Failed to create workout");
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_WORKOUT_PARAMS);
             }
             await WorkoutDataAccessor.CreateWorkout(workout, planId);
         }
@@ -58,7 +59,7 @@ namespace Model.Models
         { 
             if (!WorkoutValidator.ValidateGetWorkout(workoutId))
             {
-                throw new HttpRequestException("Failed to get workout");
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUT_PARAMS);
             }
             return await WorkoutDataAccessor.GetWorkout(workoutId);
         }

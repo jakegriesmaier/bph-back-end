@@ -111,7 +111,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw new Exception("Errorat UpdatePasswordCore", e);
+                throw new Exception("Error at UpdatePasswordCore", e);
             }
         }
     }

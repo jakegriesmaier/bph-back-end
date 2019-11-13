@@ -1,4 +1,5 @@
 ﻿using Model.Entities;
+using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
@@ -35,7 +36,7 @@ namespace Model.UnitTests.Tests.Coach
         {
             var plan = MockPlans.Plan1();
 
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParametersException>(), async () => {
                 await _coachModel.CreatePlan(plan);
             }, "Expected an error to be thrown when adding a plan that already exists.");
         }

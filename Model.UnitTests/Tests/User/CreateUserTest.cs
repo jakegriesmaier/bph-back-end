@@ -30,7 +30,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_CreateUser_BadPassword()
         {
-            Assert.ThrowsAsync(Is.TypeOf<InvalidCredentialsException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParameterFormatException>(), async () => {
                 await _userModel.CreateUser("peanutbutter@jelly.time", "Spaghetti");
             }, "Expected an error to be thrown when trying to make a user with bad password");
         }
@@ -38,7 +38,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_CreateUser_BadEmail()
         {
-            Assert.ThrowsAsync(Is.TypeOf<InvalidCredentialsException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParameterFormatException>(), async () => {
                 await _userModel.CreateUser("peanutbutter@jelly@ohcrap", "Spaghetti1!");
             }, "Expected an error to be thrown when trying to make a user with bad email");
         }

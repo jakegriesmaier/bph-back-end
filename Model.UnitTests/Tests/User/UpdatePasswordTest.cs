@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
@@ -29,7 +30,7 @@ namespace Model.UnitTests.Tests.User
             [Test]
             public void Test_UpdatePassword_BadPassword()
             {
-                Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+                Assert.ThrowsAsync(Is.TypeOf<InvalidParameterFormatException>(), async () => {
                     await _userModel.UpdatePassword("GoodPass123$", "badpass");
                 }, "Threw an exception while updating password");
             }

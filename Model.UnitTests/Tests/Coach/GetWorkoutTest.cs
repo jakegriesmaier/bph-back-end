@@ -1,4 +1,5 @@
-﻿using Model.Models;
+﻿using Model.Exceptions;
+using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
 using System;
@@ -37,7 +38,7 @@ namespace Model.UnitTests.Tests.Coach
         {
             string workoutId = null;
 
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
                 await _coachModel.GetWorkout(workoutId);
             }, "Expected an error to be thrown when trying to get a workout without an id.");
         }
