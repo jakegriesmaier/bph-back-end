@@ -36,7 +36,6 @@ namespace Persistence.DataAccessors
             };
 
             var result = await _userManager.CreateAsync(user, password);
-
             if (result.Succeeded)
             {
                 return;

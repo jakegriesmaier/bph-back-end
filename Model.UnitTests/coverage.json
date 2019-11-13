@@ -1,0 +1,1388 @@
+{
+  "Model.dll": {
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\CoachModel.cs": {
+      "Model.Models.CoachModel": {
+        "System.Void Model.Models.CoachModel::.ctor(Model.DataAccess.DataAccessLocatorBase)": {
+          "Lines": {
+            "16": 33
+          },
+          "Branches": []
+        }
+      },
+      "Model.Models.CoachModel/<CreatePlan>d__1": {
+        "System.Void Model.Models.CoachModel/<CreatePlan>d__1::MoveNext()": {
+          "Lines": {
+            "19": 2,
+            "20": 2,
+            "21": 2,
+            "22": 2,
+            "23": 1,
+            "24": 1,
+            "26": 1,
+            "27": 1
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 20,
+              "Offset": 67,
+              "EndOffset": 136,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 21,
+              "Offset": 198,
+              "EndOffset": 200,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 21,
+              "Offset": 198,
+              "EndOffset": 203,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 226,
+              "EndOffset": 228,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 226,
+              "EndOffset": 240,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 1
+            },
+            {
+              "Line": 26,
+              "Offset": 276,
+              "EndOffset": 344,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetPlan>d__2": {
+        "System.Void Model.Models.CoachModel/<GetPlan>d__2::MoveNext()": {
+          "Lines": {
+            "30": 2,
+            "31": 2,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1
+          },
+          "Branches": [
+            {
+              "Line": 31,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 31,
+              "Offset": 31,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 35,
+              "Offset": 80,
+              "EndOffset": 147,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<UpdatePlan>d__3": {
+        "System.Void Model.Models.CoachModel/<UpdatePlan>d__3::MoveNext()": {
+          "Lines": {
+            "39": 2,
+            "40": 2,
+            "41": 1,
+            "42": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 40,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 40,
+              "Offset": 31,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 44,
+              "Offset": 80,
+              "EndOffset": 147,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<CreateWorkout>d__4": {
+        "System.Void Model.Models.CoachModel/<CreateWorkout>d__4::MoveNext()": {
+          "Lines": {
+            "48": 3,
+            "49": 3,
+            "50": 3,
+            "51": 2,
+            "52": 2,
+            "54": 1,
+            "55": 1
+          },
+          "Branches": [
+            {
+              "Line": 50,
+              "Offset": 53,
+              "EndOffset": 55,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 50,
+              "Offset": 53,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 108,
+              "EndOffset": 174,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetWorkout>d__5": {
+        "System.Void Model.Models.CoachModel/<GetWorkout>d__5::MoveNext()": {
+          "Lines": {
+            "58": 2,
+            "59": 2,
+            "60": 1,
+            "61": 1,
+            "63": 1,
+            "64": 1
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 59,
+              "Offset": 31,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 63,
+              "Offset": 80,
+              "EndOffset": 147,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\ModelBase.cs": {
+      "Model.Models.ModelBase": {
+        "Model.DataAccess.BaseAccessors.UserDataAccessorBase Model.Models.ModelBase::get_UserDataAccessor()": {
+          "Lines": {
+            "15": 7
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.PlanDataAccessorBase Model.Models.ModelBase::get_PlanDataAccessor()": {
+          "Lines": {
+            "16": 3
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase Model.Models.ModelBase::get_WorkoutDataAccessor()": {
+          "Lines": {
+            "17": 2
+          },
+          "Branches": []
+        },
+        "System.Void Model.Models.ModelBase::.ctor(Model.DataAccess.DataAccessLocatorBase)": {
+          "Lines": {
+            "20": 22,
+            "21": 22,
+            "22": 22,
+            "23": 22
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\UserModel.cs": {
+      "Model.Models.UserModel": {
+        "System.Void Model.Models.UserModel::.ctor(Model.DataAccess.DataAccessLocatorBase)": {
+          "Lines": {
+            "16": 33
+          },
+          "Branches": []
+        }
+      },
+      "Model.Models.UserModel/<CreateUser>d__1": {
+        "System.Void Model.Models.UserModel/<CreateUser>d__1::MoveNext()": {
+          "Lines": {
+            "19": 3,
+            "20": 3,
+            "21": 2,
+            "22": 2,
+            "25": 1,
+            "26": 1
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 20,
+              "Offset": 37,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 25,
+              "Offset": 92,
+              "EndOffset": 158,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.UserModel/<LoginUser>d__2": {
+        "System.Void Model.Models.UserModel/<LoginUser>d__2::MoveNext()": {
+          "Lines": {
+            "29": 3,
+            "30": 3,
+            "31": 2,
+            "32": 2,
+            "34": 1,
+            "35": 1
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 30,
+              "Offset": 37,
+              "EndOffset": 51,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 34,
+              "Offset": 92,
+              "EndOffset": 158,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.UserModel/<LogoutUser>d__3": {
+        "System.Void Model.Models.UserModel/<LogoutUser>d__3::MoveNext()": {
+          "Lines": {
+            "38": 1,
+            "39": 1,
+            "40": 1
+          },
+          "Branches": [
+            {
+              "Line": 39,
+              "Offset": 44,
+              "EndOffset": 110,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.UserModel/<GetCurrentUser>d__4": {
+        "System.Void Model.Models.UserModel/<GetCurrentUser>d__4::MoveNext()": {
+          "Lines": {
+            "43": 1,
+            "44": 1,
+            "45": 1
+          },
+          "Branches": [
+            {
+              "Line": 44,
+              "Offset": 44,
+              "EndOffset": 110,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.UserModel/<UpdateUser>d__5": {
+        "System.Void Model.Models.UserModel/<UpdateUser>d__5::MoveNext()": {
+          "Lines": {
+            "48": 3,
+            "49": 3,
+            "50": 2,
+            "51": 2,
+            "53": 1,
+            "55": 1
+          },
+          "Branches": [
+            {
+              "Line": 49,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 49,
+              "Offset": 31,
+              "EndOffset": 45,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 53,
+              "Offset": 80,
+              "EndOffset": 147,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\AccountTypeValidator.cs": {
+      "Model.Models.Validators.AccountTypeValidator": {
+        "System.Boolean Model.Models.Validators.AccountTypeValidator::ValidateIsTrainer(Model.Entities.User)": {
+          "Lines": {
+            "9": 0,
+            "10": 0,
+            "11": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\CredentialsValidator.cs": {
+      "Model.Models.Validators.CredentialsValidator": {
+        "System.Boolean Model.Models.Validators.CredentialsValidator::ValidateCredentials(System.String,System.String)": {
+          "Lines": {
+            "20": 6,
+            "21": 6,
+            "22": 6
+          },
+          "Branches": [
+            {
+              "Line": 21,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 21,
+              "Offset": 7,
+              "EndOffset": 17,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.CredentialsValidator::ValidateEmail(System.String)": {
+          "Lines": {
+            "25": 8,
+            "27": 8,
+            "28": 8,
+            "29": 5,
+            "31": 3,
+            "32": 3,
+            "33": 3,
+            "36": 8
+          },
+          "Branches": []
+        },
+        "System.Boolean Model.Models.Validators.CredentialsValidator::ValidatePassword(System.String)": {
+          "Lines": {
+            "40": 10,
+            "41": 10,
+            "42": 3,
+            "43": 3,
+            "45": 7,
+            "46": 0,
+            "47": 0,
+            "49": 7,
+            "50": 1,
+            "51": 1,
+            "53": 6,
+            "54": 1,
+            "55": 1,
+            "57": 5,
+            "58": 1,
+            "59": 1,
+            "61": 4,
+            "62": 1,
+            "63": 1,
+            "65": 3,
+            "66": 10
+          },
+          "Branches": [
+            {
+              "Line": 41,
+              "Offset": 17,
+              "EndOffset": 19,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 41,
+              "Offset": 17,
+              "EndOffset": 24,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 7
+            },
+            {
+              "Line": 45,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 45,
+              "Offset": 37,
+              "EndOffset": 44,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 7
+            },
+            {
+              "Line": 49,
+              "Offset": 60,
+              "EndOffset": 62,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 49,
+              "Offset": 60,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 6
+            },
+            {
+              "Line": 53,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 6,
+              "Hits": 1
+            },
+            {
+              "Line": 53,
+              "Offset": 85,
+              "EndOffset": 92,
+              "Path": 1,
+              "Ordinal": 7,
+              "Hits": 5
+            },
+            {
+              "Line": 57,
+              "Offset": 110,
+              "EndOffset": 112,
+              "Path": 0,
+              "Ordinal": 8,
+              "Hits": 1
+            },
+            {
+              "Line": 57,
+              "Offset": 110,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 9,
+              "Hits": 4
+            },
+            {
+              "Line": 61,
+              "Offset": 135,
+              "EndOffset": 137,
+              "Path": 0,
+              "Ordinal": 10,
+              "Hits": 1
+            },
+            {
+              "Line": 61,
+              "Offset": 135,
+              "EndOffset": 142,
+              "Path": 1,
+              "Ordinal": 11,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.CredentialsValidator::MatchRegex(System.Text.RegularExpressions.Regex,System.String)": {
+          "Lines": {
+            "68": 39,
+            "69": 39,
+            "70": 39
+          },
+          "Branches": []
+        }
+      },
+      "Model.Models.Validators.CredentialsValidator/PasswordRegex": {
+        "System.Void Model.Models.Validators.CredentialsValidator/PasswordRegex::.cctor()": {
+          "Lines": {
+            "11": 1,
+            "12": 1,
+            "13": 1,
+            "14": 1,
+            "15": 1,
+            "16": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\ExerciseValidator.cs": {
+      "Model.Models.Validators.ExerciseValidator": {
+        "System.Void Model.Models.Validators.ExerciseValidator::.ctor()": {
+          "Lines": {
+            "6": 0,
+            "7": 0,
+            "9": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\PlanValidator.cs": {
+      "Model.Models.Validators.PlanValidator": {
+        "System.Boolean Model.Models.Validators.PlanValidator::ValidateCreatePlan(Model.Entities.Plan)": {
+          "Lines": {
+            "9": 5,
+            "10": 5,
+            "11": 3,
+            "12": 3,
+            "14": 2,
+            "15": 0,
+            "16": 0,
+            "18": 2,
+            "19": 5
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 10,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 14,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 30,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.PlanValidator::ValidateGetPlan(System.String)": {
+          "Lines": {
+            "21": 4,
+            "22": 4,
+            "23": 2,
+            "24": 2,
+            "26": 2,
+            "27": 4
+          },
+          "Branches": [
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 22,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.PlanValidator::ValidateUpdatePlan(Model.Entities.Plan)": {
+          "Lines": {
+            "29": 5,
+            "30": 5,
+            "31": 2,
+            "32": 2,
+            "34": 3,
+            "35": 1,
+            "36": 1,
+            "38": 2,
+            "39": 5
+          },
+          "Branches": [
+            {
+              "Line": 30,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 30,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 34,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 34,
+              "Offset": 30,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\UserChangeValidator.cs": {
+      "Model.Models.Validators.UserChangeValidator": {
+        "System.Boolean Model.Models.Validators.UserChangeValidator::ValidateUpdateUser(Model.Entities.User)": {
+          "Lines": {
+            "10": 6,
+            "11": 6,
+            "12": 4,
+            "13": 4,
+            "16": 2,
+            "17": 6
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 11,
+              "Offset": 7,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 11,
+              "Offset": 23,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 11,
+              "Offset": 23,
+              "EndOffset": 30,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\WorkoutValidator.cs": {
+      "Model.Models.Validators.WorkoutValidator": {
+        "System.Boolean Model.Models.Validators.WorkoutValidator::ValidateCreateWorkout(Model.Entities.Workout,System.String)": {
+          "Lines": {
+            "9": 6,
+            "10": 6,
+            "11": 4,
+            "12": 4,
+            "14": 2,
+            "15": 6
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 10,
+              "Offset": 7,
+              "EndOffset": 15,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.WorkoutValidator::ValidateGetWorkout(System.String)": {
+          "Lines": {
+            "18": 4,
+            "19": 4,
+            "20": 2,
+            "21": 2,
+            "23": 2,
+            "24": 4
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 19,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Entities\\Comment.cs": {
+      "Model.Entities.Comment": {
+        "System.String Model.Entities.Comment::get_CommentId()": {
+          "Lines": {
+            "9": 0
+          },
+          "Branches": []
+        },
+        "System.DateTime Model.Entities.Comment::get_CreatedDate()": {
+          "Lines": {
+            "10": 0
+          },
+          "Branches": []
+        },
+        "Model.Entities.User Model.Entities.Comment::get_CreatedBy()": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": []
+        },
+        "System.String Model.Entities.Comment::get_Description()": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Entities\\Exercise.cs": {
+      "Model.Entities.Exercise": {
+        "System.String Model.Entities.Exercise::get_ExerciseId()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.String Model.Entities.Exercise::get_Name()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Model.Entities.Exercise::get_Order()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "Model.DataTypes.Status Model.Entities.Exercise::get_Status()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Model.Entities.Set> Model.Entities.Exercise::get_Sets()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Model.Entities.Comment> Model.Entities.Exercise::get_Comments()": {
+          "Lines": {
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Entities.Exercise::.ctor()": {
+          "Lines": {
+            "11": 0,
+            "12": 0,
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Entities\\Plan.cs": {
+      "Model.Entities.Plan": {
+        "System.String Model.Entities.Plan::get_PlanId()": {
+          "Lines": {
+            "16": 27
+          },
+          "Branches": []
+        },
+        "Model.DataTypes.Status Model.Entities.Plan::get_Status()": {
+          "Lines": {
+            "17": 15
+          },
+          "Branches": []
+        },
+        "Model.Entities.User Model.Entities.Plan::get_Trainee()": {
+          "Lines": {
+            "18": 13
+          },
+          "Branches": []
+        },
+        "Model.Entities.User Model.Entities.Plan::get_Coach()": {
+          "Lines": {
+            "19": 20
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Model.Entities.Workout> Model.Entities.Plan::get_Workouts()": {
+          "Lines": {
+            "21": 24
+          },
+          "Branches": []
+        },
+        "System.Void Model.Entities.Plan::.ctor()": {
+          "Lines": {
+            "11": 13,
+            "12": 13,
+            "13": 13,
+            "14": 13
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Entities\\Set.cs": {
+      "Model.Entities.Set": {
+        "System.String Model.Entities.Set::get_SetId()": {
+          "Lines": {
+            "15": 0
+          },
+          "Branches": []
+        },
+        "System.Int32 Model.Entities.Set::get_Order()": {
+          "Lines": {
+            "16": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Double> Model.Entities.Set::get_TargetRPE()": {
+          "Lines": {
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Double> Model.Entities.Set::get_ActualRPE()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> Model.Entities.Set::get_TargetReps()": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Int32> Model.Entities.Set::get_ActualReps()": {
+          "Lines": {
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Model.Entities.Comment> Model.Entities.Set::get_Comments()": {
+          "Lines": {
+            "22": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Entities.Set::.ctor()": {
+          "Lines": {
+            "10": 0,
+            "11": 0,
+            "12": 0,
+            "13": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Entities\\User.cs": {
+      "Model.Entities.User": {
+        "System.String Model.Entities.User::get_UserId()": {
+          "Lines": {
+            "10": 42
+          },
+          "Branches": []
+        },
+        "System.String Model.Entities.User::get_Email()": {
+          "Lines": {
+            "11": 42
+          },
+          "Branches": []
+        },
+        "System.String Model.Entities.User::get_FirstName()": {
+          "Lines": {
+            "12": 36
+          },
+          "Branches": []
+        },
+        "System.String Model.Entities.User::get_LastName()": {
+          "Lines": {
+            "13": 36
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Double> Model.Entities.User::get_Height()": {
+          "Lines": {
+            "14": 36
+          },
+          "Branches": []
+        },
+        "System.Nullable`1<System.Double> Model.Entities.User::get_Weight()": {
+          "Lines": {
+            "15": 36
+          },
+          "Branches": []
+        },
+        "Model.DataTypes.AccountType Model.Entities.User::get_AccountType()": {
+          "Lines": {
+            "16": 36
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Entities\\Workout.cs": {
+      "Model.Entities.Workout": {
+        "System.String Model.Entities.Workout::get_WorkoutId()": {
+          "Lines": {
+            "17": 27
+          },
+          "Branches": []
+        },
+        "System.DateTime Model.Entities.Workout::get_Date()": {
+          "Lines": {
+            "18": 18
+          },
+          "Branches": []
+        },
+        "System.String Model.Entities.Workout::get_Title()": {
+          "Lines": {
+            "19": 18
+          },
+          "Branches": []
+        },
+        "Model.DataTypes.Status Model.Entities.Workout::get_Status()": {
+          "Lines": {
+            "20": 21
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Model.Entities.Comment> Model.Entities.Workout::get_Comments()": {
+          "Lines": {
+            "22": 35
+          },
+          "Branches": []
+        },
+        "System.Collections.Generic.ICollection`1<Model.Entities.Exercise> Model.Entities.Workout::get_Exercises()": {
+          "Lines": {
+            "23": 35
+          },
+          "Branches": []
+        },
+        "System.Void Model.Entities.Workout::.ctor()": {
+          "Lines": {
+            "11": 19,
+            "12": 19,
+            "13": 19,
+            "14": 19,
+            "15": 19
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\DataAccess\\DataAccessLocatorBase.cs": {
+      "Model.DataAccess.DataAccessLocatorBase": {
+        "Model.DataAccess.BaseAccessors.UserDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetUserDataAccessor()": {
+          "Lines": {
+            "11": 7,
+            "12": 7,
+            "13": 7
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.PlanDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetPlanDataAccessor()": {
+          "Lines": {
+            "16": 3,
+            "17": 3,
+            "18": 3
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetWorkoutDataAccessor()": {
+          "Lines": {
+            "21": 2,
+            "22": 2,
+            "23": 2
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\DataAccess\\BaseAccessors\\PlanDataAccessorBase.cs": {
+      "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<CreatePlan>d__0": {
+        "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<CreatePlan>d__0::MoveNext()": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<GetPlan>d__1": {
+        "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<GetPlan>d__1::MoveNext()": {
+          "Lines": {
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": [
+            {
+              "Line": 18,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<UpdatePlan>d__2": {
+        "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<UpdatePlan>d__2::MoveNext()": {
+          "Lines": {
+            "22": 1,
+            "23": 1,
+            "24": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\DataAccess\\BaseAccessors\\UserDataAccessorBase.cs": {
+      "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<CreateUser>d__0": {
+        "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<CreateUser>d__0::MoveNext()": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 51,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<LoginUser>d__1": {
+        "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<LoginUser>d__1::MoveNext()": {
+          "Lines": {
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": [
+            {
+              "Line": 18,
+              "Offset": 51,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<LogoutUser>d__2": {
+        "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<LogoutUser>d__2::MoveNext()": {
+          "Lines": {
+            "22": 1,
+            "23": 1,
+            "24": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 39,
+              "EndOffset": 105,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<GetCurrentUser>d__3": {
+        "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<GetCurrentUser>d__3::MoveNext()": {
+          "Lines": {
+            "27": 3,
+            "28": 3,
+            "29": 3
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 39,
+              "EndOffset": 105,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<UpdateUser>d__4": {
+        "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<UpdateUser>d__4::MoveNext()": {
+          "Lines": {
+            "32": 1,
+            "33": 1,
+            "34": 1
+          },
+          "Branches": [
+            {
+              "Line": 33,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\DataAccess\\BaseAccessors\\WorkoutDataAccessorBase.cs": {
+      "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<CreateWorkout>d__0": {
+        "System.Void Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<CreateWorkout>d__0::MoveNext()": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "14": 1
+          },
+          "Branches": [
+            {
+              "Line": 13,
+              "Offset": 51,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<GetWorkout>d__1": {
+        "System.Void Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<GetWorkout>d__1::MoveNext()": {
+          "Lines": {
+            "17": 1,
+            "18": 1,
+            "19": 1
+          },
+          "Branches": [
+            {
+              "Line": 18,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    }
+  }
+}
