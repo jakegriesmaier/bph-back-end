@@ -61,5 +61,11 @@ namespace Presentation.Controllers.UserPresenter
         {
             return await UserModel.UpdateUser(user);
         }
+
+        [HttpPut("[action]")]
+        public async Task<User> UpdatePassword(string oldPassword, string newPassword)
+        {
+            return await UserModel.UpdatePassword(oldPassword, newPassword);
+        }
     }
 }

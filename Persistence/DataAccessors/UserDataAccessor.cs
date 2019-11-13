@@ -99,5 +99,21 @@ namespace Persistence.DataAccessors
                 throw new Exception("Error at UpdateUserCore", e);
             }
         }
+
+        protected override async Task<User> UpdatePasswordCore(User user, string oldPassword, string newPassword)
+        {
+            try
+            {
+
+                var applicationUser = Mapper.map(user);
+
+                await _userManager.ChangePasswordAsync(applicationUser, oldPassword, newPassword); 
+                return Mapper.map(applicationUser);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Errorat UpdatePasswordCore", e);
+            }
+        }
     }
 }
