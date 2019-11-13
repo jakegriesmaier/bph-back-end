@@ -6,6 +6,7 @@ using System.Web;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Model.Entities;
+using Model.Exceptions;
 
 namespace Model.Models
 {
@@ -19,7 +20,7 @@ namespace Model.Models
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                throw new HttpRequestException("Invalid Credentials");
+                throw new InvalidCredentialsException("The credentials entered do not match the required specifications.");
             }
         
             await UserDataAccessor.CreateUser(email, password);

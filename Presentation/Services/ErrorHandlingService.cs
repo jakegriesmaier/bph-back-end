@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Model.Exceptions;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,11 @@ namespace Presentation.Services
         {
             var statusCode = HttpStatusCode.InternalServerError; // 500 if unexpected
 
-            if(ex is HttpRequestException)
+            if(ex is CustomException)
+            {
+                statusCode = (ex as CustomException).StatusCode;
+            }
+            else if(ex is HttpRequestException)
             {
                 statusCode = HttpStatusCode.Forbidden; // 403 sent for now, TODO add custom exceptions for better responses
             }
