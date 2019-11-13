@@ -72,6 +72,7 @@ namespace Presentation
 
             app.UseCors(MyAllowSpecificOrigins);
 
+            app.UseMiddleware(typeof(ErrorHandlingService));
             app.UseAuthentication();
             app.UseHttpsRedirection();
             app.UseMvc();
