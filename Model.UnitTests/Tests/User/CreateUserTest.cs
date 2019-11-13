@@ -1,5 +1,6 @@
 ﻿using System.Net.Http;
 using System.Threading.Tasks;
+using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
@@ -29,7 +30,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_CreateUser_BadPassword()
         {
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidCredentialsException>(), async () => {
                 await _userModel.CreateUser("peanutbutter@jelly.time", "Spaghetti");
             }, "Expected an error to be thrown when trying to make a user with bad password");
         }
@@ -37,7 +38,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_CreateUser_BadEmail()
         {
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidCredentialsException>(), async () => {
                 await _userModel.CreateUser("peanutbutter@jelly@ohcrap", "Spaghetti1!");
             }, "Expected an error to be thrown when trying to make a user with bad email");
         }
