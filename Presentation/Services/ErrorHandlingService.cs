@@ -42,7 +42,7 @@ namespace Presentation.Services
             }
             else if(ex is HttpRequestException)
             {
-                statusCode = HttpStatusCode.Forbidden; // 403 sent for now, TODO add custom exceptions for better responses
+                statusCode = HttpStatusCode.BadRequest; 
             }
 
             var result = JsonConvert.SerializeObject(new { error = ex.Message });

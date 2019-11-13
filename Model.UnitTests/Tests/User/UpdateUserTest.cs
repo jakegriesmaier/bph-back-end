@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
@@ -36,7 +37,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_UpdateUser_NullUserId()
         {
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
                 await _userModel.UpdateUser(MockUsers.BadUserId());
             }, "Expected an error to be thrown when trying to make a user with bad password");
         }
@@ -44,7 +45,7 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_UpdateUser_BadEmail()
         {
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
                 await _userModel.UpdateUser(MockUsers.NullEmail());
             }, "Expected an error to be thrown when trying to make a user with bad email");
         }

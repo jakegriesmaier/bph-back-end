@@ -1,4 +1,5 @@
 ﻿using Model.Entities;
+using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
@@ -37,7 +38,7 @@ namespace Model.UnitTests.Tests.Coach
             var workout = MockWorkouts.Workout1();
             string planId = MockPlans.Plan1().PlanId;
 
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParametersException>(), async () => {
                 await _coachModel.CreateWorkout(workout, planId);
             }, "Expected and error to be thrown when adding a workout that has an id");
         }
@@ -48,7 +49,7 @@ namespace Model.UnitTests.Tests.Coach
             var workout = new Workout();
             string planId = null;
 
-            Assert.ThrowsAsync(Is.TypeOf<HttpRequestException>(), async () => {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParametersException>(), async () => {
                 await _coachModel.CreateWorkout(workout, planId);
             },"Expected and error to be thrown when adding a workout but not specifiting a plan");
         }

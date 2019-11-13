@@ -20,7 +20,7 @@ namespace Model.Models
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                throw new InvalidCredentialsException("The credentials entered do not match the required specifications.");
+                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_CREATE_ACCOUNT_PARAMS);
             }
         
             await UserDataAccessor.CreateUser(email, password);
@@ -30,7 +30,7 @@ namespace Model.Models
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                throw new HttpRequestException("Invalid Credentials");
+                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_LOG_IN_PARAMS);
             }
             await UserDataAccessor.LoginUser(email, password);
         }
@@ -49,7 +49,7 @@ namespace Model.Models
         {
             if (!UserChangeValidator.ValidateUpdateUser(user))
             {
-                throw new HttpRequestException("Updated User without Email or Password");
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_USER_PARAMS);
             }
             return await UserDataAccessor.UpdateUser(user);
 
@@ -61,7 +61,7 @@ namespace Model.Models
             
             if (!CredentialsValidator.ValidateCredentials(user.Email, newPassword))
             {
-                throw new HttpRequestException("New Password is Invalid");
+                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_UPDATE_PASSWORD_PARAMS);
             }
             return await UserDataAccessor.UpdatePassword(user, oldPassword, newPassword);
         }
