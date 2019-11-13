@@ -54,5 +54,16 @@ namespace Model.Models
             return await UserDataAccessor.UpdateUser(user);
 
         }
+
+        public async Task<User> UpdatePassword(String oldPassword, String newPassword)
+        {
+            User user = await GetCurrentUser();
+            
+            if (!CredentialsValidator.ValidateCredentials(user.Email, newPassword))
+            {
+                throw new HttpRequestException("New Password is Invalid");
+            }
+            return await UserDataAccessor.UpdatePassword(user, oldPassword, newPassword);
+        }
     }
 }

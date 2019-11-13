@@ -34,5 +34,10 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
         {
             return await Task.FromResult(user);
         }
+
+        protected override async Task<User> UpdatePasswordCore(User user, string oldPassword, string newPassword)
+        {
+            return await Task.FromResult(user);
+        }
     }
 }
