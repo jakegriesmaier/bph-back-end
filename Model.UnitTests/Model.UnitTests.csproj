@@ -29,6 +29,7 @@
   <ItemGroup>
     <Folder Include="Tests\Validators\" />
     <Folder Include="Tests\User\" />
+    <Folder Include="Tests\Trainee\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Tests\UnitTest1.cs" />
