@@ -2,10 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Model.Entities;
 using Model.Models;
-using Presentation.Controllers.CoachPresenter.InputData;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Presentation.Controllers.TraineePresenter.InputData;
 using System.Threading.Tasks;
 
 namespace Presentation.Controllers.TraineePresenter
