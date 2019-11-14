@@ -41,6 +41,9 @@ namespace Presentation.Controllers
 
         private CoachModel _coachModel;
         protected internal CoachModel CoachModel => _coachModel ?? (new CoachModel(DataAccessLocator));
+
+        private TraineeModel _traineeModel;
+        protected internal TraineeModel TraineeModel => _traineeModel ?? (new TraineeModel(DataAccessLocator));
         #endregion
     }
 }

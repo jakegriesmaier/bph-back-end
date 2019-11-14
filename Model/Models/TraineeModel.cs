@@ -21,6 +21,15 @@ namespace Model.Models
             return await PlanDataAccessor.GetPlan(planId);
         }
 
+        public async Task<Plan> UpdatePlan(Plan plan)
+        {
+            if (!PlanValidator.ValidateUpdatePlan(plan))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS);
+            }
+            return await PlanDataAccessor.UpdatePlan(plan);
+        }
+
         public async Task<Workout> GetWorkout(string workoutId)
         {
             if (!WorkoutValidator.ValidateGetWorkout(workoutId))
