@@ -21,10 +21,12 @@ namespace Model.UnitTests.Tests.User
         [Test]
         public void Test_CreateUser_HappyPath()
         {
+            var id = "";
             Assert.DoesNotThrowAsync(async () =>
-            {
-                await _userModel.CreateUser("peanutbutter@jelly.time", "Spaghetti1!");
+            {               
+                id = await _userModel.CreateUser("peanutbutter@jelly.time", "Spaghetti1!");
             }, "Error thrown while logging in user.");
+            Assert.AreEqual(MockUsers.Coach().UserId,id,"Expected a user Id to be returned when account is created but UserId came back empty");
         }
 
         [Test]

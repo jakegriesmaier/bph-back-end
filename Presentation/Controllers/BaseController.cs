@@ -21,7 +21,7 @@ namespace Presentation.Controllers
 
         // Service that gets data on the current user 
         private ICurrentUserService _currentUserService;
-        private ICurrentUserService CurrentUserService => _currentUserService ?? (HttpContext.RequestServices.GetService<ICurrentUserService>());
+        protected ICurrentUserService CurrentUserService => _currentUserService ?? (HttpContext.RequestServices.GetService<ICurrentUserService>());
 
         // Service used to add and delete users in the system
         private UserManager<ApplicationUser> _userManager;

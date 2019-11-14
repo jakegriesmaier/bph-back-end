@@ -16,23 +16,23 @@ namespace Model.Models
         // Required Constructor in order to implement ModelBase
         public UserModel(DataAccessLocatorBase dataAccessLocator) : base(dataAccessLocator) { }
 
-        public async Task CreateUser(string email, string password)
+        public async Task<string> CreateUser(string email, string password)
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
                 throw new InvalidParameterFormatException(ExceptionMessages.INVALID_CREATE_ACCOUNT_PARAMS);
             }
         
-            await UserDataAccessor.CreateUser(email, password);
+            return await UserDataAccessor.CreateUser(email, password);
         }
 
-        public async Task LoginUser(string email, string password)
+        public async Task<string> LoginUser(string email, string password)
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
                 throw new InvalidParameterFormatException(ExceptionMessages.INVALID_LOG_IN_PARAMS);
             }
-            await UserDataAccessor.LoginUser(email, password);
+            return await UserDataAccessor.LoginUser(email, password);
         }
 
         public async Task LogoutUser()
