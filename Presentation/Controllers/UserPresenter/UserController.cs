@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Model.Entities;
 using Presentation.Controllers.UserPresenter.InputData;
+using Presentation.Controllers.UserPresenter.OutputData;
 
 namespace Presentation.Controllers.UserPresenter
 {
@@ -19,17 +20,25 @@ namespace Presentation.Controllers.UserPresenter
         // POST api/User/CreateUser
         [AllowAnonymous]
         [HttpPost("[action]")]
-        public async Task CreateUser([FromBody] CreateUserInputData input)
+        public async Task<CreateUserOutputData> CreateUser([FromBody] CreateUserInputData input)
         {
-            await UserModel.CreateUser(input.Email, input.Password);
+            var result = await UserModel.CreateUser(input.Email, input.Password);
+            return new CreateUserOutputData
+            {
+                UserId = result
+            };
         }
 
         // POST api/User/LoginUser
         [AllowAnonymous]
         [HttpPost("[action]")]
-        public async Task LoginUser([FromBody] LoginUserInputData input)
+        public async Task<LoginUserOutputData> LoginUser([FromBody] LoginUserInputData input)
         {
-            await UserModel.LoginUser(input.Email, input.Password);
+            var result = await UserModel.LoginUser(input.Email, input.Password);
+            return new LoginUserOutputData
+            {
+                UserId = result
+            };
         }
 
         // POST api/User/LogoutUser
@@ -42,13 +51,13 @@ namespace Presentation.Controllers.UserPresenter
         // GET api/User/CheckSessionStatus
         [AllowAnonymous]
         [HttpGet("[action]")]
-        public bool CheckSessionStatus()
+        public CheckSessionStatusOutputData CheckSessionStatus()
         {
-            if (User.Identity.IsAuthenticated)
+            return new CheckSessionStatusOutputData
             {
-                return true;
-            }
-            return false;
+                ValidSession = CurrentUserService.IsAuthenticated,
+                UserId = CurrentUserService.UserId
+            };
         }
 
         [HttpGet("[action]")]

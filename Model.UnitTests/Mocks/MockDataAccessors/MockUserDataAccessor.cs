@@ -9,9 +9,9 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockUserDataAccessor : UserDataAccessorBase
     {
-        protected override async Task CreateUserCore(string email, string password)
+        protected override async Task<string> CreateUserCore(string email, string password)
         {
-            await Task.CompletedTask;
+            return await Task.FromResult(MockUsers.Coach().UserId);
         }
 
         protected override async Task<User> GetCurrentUserCore()
@@ -20,9 +20,9 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
             return await Task.FromResult(user);
         }
 
-        protected override async Task LoginUserCore(string email, string password)
+        protected override async Task<string> LoginUserCore(string email, string password)
         {
-            await Task.CompletedTask;
+            return await Task.FromResult(MockUsers.Coach().UserId);
         }
 
         protected override async Task LogoutUserCore()

@@ -27,7 +27,7 @@ namespace Persistence.DataAccessors
             _context = context;
         }
 
-        protected override async Task CreateUserCore(string email, string password)
+        protected override async Task<string> CreateUserCore(string email, string password)
         {
             var user = new ApplicationUser
             {
@@ -38,19 +38,23 @@ namespace Persistence.DataAccessors
             var result = await _userManager.CreateAsync(user, password);
             if (result.Succeeded)
             {
-                return;
+                return user.Id;
             }
 
             //TODO: Jake S make custom
             throw new Exception("Failed to create user.");
         }
 
-        protected override async Task LoginUserCore(string email, string password)
+        protected override async Task<string> LoginUserCore(string email, string password)
         {
             var result = await _signInManager.PasswordSignInAsync(email, password, false, false);//change if want cookie to persist
             if (result.Succeeded)
             {
-                return;
+                var user = await _userManager.FindByEmailAsync(email);
+                if(user != null)
+                {
+                    return user.Id;
+                }
             }
 
             throw new Exception("Failed to log in user.");
