@@ -8,14 +8,14 @@ namespace Model.DataAccess.BaseAccessors
 {
     public abstract class UserDataAccessorBase
     {
-        public async Task CreateUser(string email, string password)
+        public async Task<string> CreateUser(string email, string password)
         {
-            await CreateUserCore(email, password);
+            return await CreateUserCore(email, password);
         }
 
-        public async Task LoginUser(string email, string password)
+        public async Task<string> LoginUser(string email, string password)
         {
-            await LoginUserCore(email, password);
+            return await LoginUserCore(email, password);
         }
 
         public async Task LogoutUser()
@@ -39,8 +39,8 @@ namespace Model.DataAccess.BaseAccessors
         }
 
         #region necessary implementations
-        protected abstract Task CreateUserCore(string email, string password);
-        protected abstract Task LoginUserCore(string email, string password);
+        protected abstract Task<string> CreateUserCore(string email, string password);
+        protected abstract Task<string> LoginUserCore(string email, string password);
         protected abstract Task LogoutUserCore();
         protected abstract Task<User> GetCurrentUserCore();
         protected abstract Task<User> UpdateUserCore(User user);
