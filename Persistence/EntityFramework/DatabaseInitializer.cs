@@ -30,6 +30,7 @@ namespace Persistence.EntityFramework
                 FirstName = "Craig",
                 LastName = "LeMieux",
                 UserName = "clemieuxfit@gmail.com",
+                Email = "clemieuxfit@gmail.com",
                 AccountType = Model.DataTypes.AccountType.Coach
             };
             var result = await userManager.CreateAsync(coach,coachPassword);
@@ -41,6 +42,7 @@ namespace Persistence.EntityFramework
                 FirstName = "Small",
                 LastName = "Fry",
                 UserName = "smallfry@gmail.com",
+                Email = "smallfry@gmail.com",
                 AccountType = Model.DataTypes.AccountType.Trainee,
                 Height = 250,
                 Weight = 99
