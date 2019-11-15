@@ -22,12 +22,12 @@ namespace Model.UnitTests.Tests.Validators
         [Test]
         public void ValidateCreateComment_HappyPath()
         {
-            Assert.AreEqual(true, CommentValidator.ValidateCreateComment(withoutId, withoutOwnerId), "Marked a good comment as bad");
+            Assert.AreEqual(true, CommentValidator.ValidateCreateComment(withoutId, withOwnerId), "Marked a good comment as bad");
         }
         [Test]
         public void ValidateCreateComment_ExistingOwnerId()
         {
-            Assert.AreEqual(false, CommentValidator.ValidateCreateComment(withoutId, withOwnerId), "Marked a bad Comment (existing ownerId) as good");
+            Assert.AreEqual(false, CommentValidator.ValidateCreateComment(withoutId, withoutOwnerId), "Marked a bad Comment (existing ownerId) as good");
         }
         [Test]
         public void ValidateCreateComment_ExistingCommentId()

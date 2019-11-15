@@ -11,7 +11,7 @@ namespace Model.Models.Validators
             {
                 return false;
             }
-            if (ownerId != null)
+            if (ownerId == null)
             {
                 return false;
             }
