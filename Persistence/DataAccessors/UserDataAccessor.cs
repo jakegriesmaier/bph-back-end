@@ -107,7 +107,6 @@ namespace Persistence.DataAccessors
         {
             try
             {
-
                 var applicationUser = Mapper.map(user);
 
                 await _userManager.ChangePasswordAsync(applicationUser, oldPassword, newPassword); 
@@ -116,6 +115,19 @@ namespace Persistence.DataAccessors
             catch (Exception e)
             {
                 throw new Exception("Error at UpdatePasswordCore", e);
+            }
+        }
+
+        protected override async Task<User> GetUserCore(string userId)
+        {
+            try
+            {
+                var user = await _userManager.FindByIdAsync(userId);
+                return Mapper.map(user);
+            }
+            catch
+            {
+                throw;
             }
         }
     }
