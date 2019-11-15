@@ -11,7 +11,7 @@ namespace Model.Models.Validators
             {
                 return false;
             }
-            if (plan.Coach == null)
+            if (plan.CoachId == null)
             {
                 return false;
             }
@@ -31,7 +31,7 @@ namespace Model.Models.Validators
             {
                 return false;
             }
-            if (plan.Coach == null)
+            if (plan.CoachId == null)
             {
                 return false;
             }

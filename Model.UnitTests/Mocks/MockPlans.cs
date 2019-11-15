@@ -23,9 +23,9 @@ namespace Model.UnitTests.Mocks
             {
                 PlanId = "plan-1",
                 Status = DataTypes.Status.Created,
-                Coach = MockUsers.Coach(),
-                Trainee = MockUsers.Trainee(),
-                Workouts = new List<Workout> { MockWorkouts.Workout1() },
+                CoachId = MockUsers.Coach().UserId,
+                TraineeId = MockUsers.Trainee().UserId,
+                WorkoutIds = new List<string> { MockWorkouts.Workout1().WorkoutId }
             };
         }
         public static Plan creationNullPlanId()
@@ -34,9 +34,9 @@ namespace Model.UnitTests.Mocks
             {
                 PlanId = null,
                 Status = DataTypes.Status.Created,
-                Coach = MockUsers.Coach(),
-                Trainee = MockUsers.Trainee(),
-                Workouts = new List<Workout> { MockWorkouts.Workout1() },
+                CoachId = MockUsers.Coach().UserId,
+                TraineeId = MockUsers.Trainee().UserId,
+                WorkoutIds = new List<string> { MockWorkouts.Workout1().WorkoutId }
             };
         }
         public static Plan creationWithId()
@@ -45,9 +45,9 @@ namespace Model.UnitTests.Mocks
             {
                 PlanId = "Spaghetti",
                 Status = DataTypes.Status.Created,
-                Coach = MockUsers.Coach(),
-                Trainee = MockUsers.Trainee(),
-                Workouts = new List<Workout> { MockWorkouts.Workout1() },
+                CoachId = MockUsers.Coach().UserId,
+                TraineeId = MockUsers.Trainee().UserId,
+                WorkoutIds = new List<string> { MockWorkouts.Workout1().WorkoutId }
             };
         }
         public static Plan creationWithoutCoach()
@@ -56,9 +56,9 @@ namespace Model.UnitTests.Mocks
             {
                 PlanId = "plan-1",
                 Status = DataTypes.Status.Created,
-                Coach = null,
-                Trainee = MockUsers.Trainee(),
-                Workouts = new List<Workout> { MockWorkouts.Workout1() },
+                CoachId = null,
+                TraineeId = MockUsers.Trainee().UserId,
+                WorkoutIds = new List<string> { MockWorkouts.Workout1().WorkoutId }
             };
         }
     }

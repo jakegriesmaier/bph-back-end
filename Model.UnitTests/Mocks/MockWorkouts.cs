@@ -25,8 +25,8 @@ namespace Model.UnitTests.Mocks
                 Date = new DateTime(2222, 11, 11),
                 Status = DataTypes.Status.Created,
                 Title = "Test Workout",
-                Comments = new List<Comment>(),
-                Exercises = new List<Exercise>()
+                CommentIds = new List<string>(),
+                ExerciseIds = new List<string>()
             };
         }
     }

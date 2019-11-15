@@ -29,7 +29,7 @@ namespace Model.UnitTests.Tests.Coach
 
             Assert.AreEqual(expected.PlanId, actual.PlanId, "plan id does not match expected id");
             Assert.AreEqual(expected.Status, actual.Status, "plan id does not match expected id");
-            Assert.AreEqual(expected.Coach.UserId, actual.Coach.UserId, "plan id does not match expected id");
+            Assert.AreEqual(expected.CoachId, actual.CoachId, "plan id does not match expected id");
         }
 
         [Test] 
