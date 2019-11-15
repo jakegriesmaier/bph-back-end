@@ -16,16 +16,19 @@ namespace Model.Exceptions
         public InvalidParametersException() : base()
         {
             this.StatusCode = code;
+            this.DeveloperMessage = "";
         }
 
         public InvalidParametersException(string devMessage, string message) : base(devMessage, message)
         {
             this.StatusCode = code;
+            this.DeveloperMessage = devMessage;
         }
 
         public InvalidParametersException(string devMessage, string message, Exception innerException) : base(devMessage, message, innerException)
         {
             this.StatusCode = code;
+            this.DeveloperMessage = devMessage;
         }
     }
 }
