@@ -64,5 +64,11 @@ namespace Model.Models
             return await WorkoutDataAccessor.GetWorkout(workoutId);
         }
 
+        public async Task<IEnumerable<Plan>> GetPlans()
+        {
+            var user = await UserDataAccessor.GetCurrentUser();
+            return await PlanDataAccessor.GetPlans(user,user.AccountType);
+        }
+
     }
 }
