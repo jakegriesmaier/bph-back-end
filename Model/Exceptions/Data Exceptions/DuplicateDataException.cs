@@ -8,7 +8,7 @@ namespace Model.Exceptions
     /// </summary>
     public class DuplicateDataException : CustomException
     {
-        private const HttpStatusCode code = HttpStatusCode.409;
+        private const HttpStatusCode code = HttpStatusCode.Conflict;
 
         public DuplicateDataException() : base()
         {
