@@ -165,5 +165,10 @@ namespace Presentation.Controllers.CoachPresenter
             return await CoachModel.GetComments(input.OwnerId);
         }
 
+        [HttpGet("[action]")]
+        public async Task<User> GetTrainee([FromBody] GetTraineeInputData input)
+        {
+            return await CoachModel.GetTrainee(input.TraineeId);
+        }
     }
 }

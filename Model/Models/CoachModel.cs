@@ -178,5 +178,11 @@ namespace Model.Models
             //TODO VALIDATE
             return await CommentDataAccessor.GetComments(ownerId);
         }
+
+        public async Task<User> GetTrainee(string userId)
+        {
+            //TODO VALIDATE 
+            return await UserDataAccessor.GetUser(userId);
+        }
     }
 }
