@@ -26,8 +26,9 @@ namespace Model.UnitTests.Tests.Validators
         {
             Assert.AreEqual(false, WorkoutValidator.ValidateCreateWorkout(filledOutWorkout, null), "Marked a bad workout (no Plan Id) as good");
         }
+
         [Test]
-         public void ValidateCreateWorkout_NonNullWorkoutId()
+        public void ValidateCreateWorkout_NonNullWorkoutId()
         {
             Assert.AreEqual(false, WorkoutValidator.ValidateCreateWorkout(filledOutWorkout, "2124"), "Marked a bad workout (Non-null Workout ID) as good");
         }
@@ -37,10 +38,35 @@ namespace Model.UnitTests.Tests.Validators
         {
             Assert.AreEqual(true, WorkoutValidator.ValidateGetWorkout(filledOutWorkout.WorkoutId), "Marked a good ValidateGetWorkout as bad");
         }
+
         [Test]
         public void ValidateGetWorkout_NullWorkoutId()
         {
             Assert.AreEqual(false, WorkoutValidator.ValidateGetWorkout(null), "Marked a bad workout (no Plan Id) as good");
+        }
+
+        [Test]
+        public void ValidateGetExercises_HappyPath()
+        {
+            Assert.AreEqual(true, WorkoutValidator.ValidateGetExercises(filledOutWorkout.WorkoutId), "Marked a good ValidateGetExercises as bad");
+        }
+
+        [Test]
+        public void ValidateGetExercises_NullWorkoutId()
+        {
+            Assert.AreEqual(false, WorkoutValidator.ValidateGetExercises(null), "Validator did not catch Null workout ID for get exercises");
+        }
+
+        [Test]
+        public void ValidateDeleteWorkout_HappyPath()
+        {
+            Assert.AreEqual(true, WorkoutValidator.ValidateDeleteWorkout(filledOutWorkout.WorkoutId), "Marked a good ValidateDeleteWorkout as bad");
+        }
+
+        [Test]
+        public void ValidateDeleteWorkout_NullWorkoutId()
+        {
+            Assert.AreEqual(false, WorkoutValidator.ValidateDeleteWorkout(null), "Validator did not catch Null workout id while deleting.");
         }
 
 

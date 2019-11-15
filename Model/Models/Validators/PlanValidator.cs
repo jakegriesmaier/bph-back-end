@@ -37,5 +37,14 @@ namespace Model.Models.Validators
             }
             return true;
         }
+        public static bool ValidateGetWorkouts(string planId)
+        {
+            //TODO: TEST
+            if (planId == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
