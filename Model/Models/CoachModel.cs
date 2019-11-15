@@ -95,7 +95,6 @@ namespace Model.Models
 
         public async Task<string> CreateExercise(Exercise exercise, string workoutId)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateCreateExercise(exercise, workoutId))
             {
                 throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS,
@@ -107,7 +106,6 @@ namespace Model.Models
 
         public async Task<Exercise> GetExercise(string exerciseId)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateGetExercise(exerciseId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISE_PARAMS,
