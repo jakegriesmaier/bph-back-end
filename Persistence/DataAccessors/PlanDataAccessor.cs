@@ -92,6 +92,14 @@ namespace Persistence.DataAccessors
                 var planDao = Mapper.map(plan);
                 _context.Entry(planDao).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
+                if (planDao.CoachId != null)
+                {
+                    planDao.Coach = await _userManager.FindByIdAsync(planDao.CoachId);
+                }
+                if (planDao.TraineeId != null)
+                {
+                    planDao.Trainee = await _userManager.FindByIdAsync(planDao.TraineeId);
+                }
                 return Mapper.map(planDao);
             }
             catch
