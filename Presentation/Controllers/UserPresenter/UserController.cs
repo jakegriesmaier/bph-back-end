@@ -72,9 +72,9 @@ namespace Presentation.Controllers.UserPresenter
         }
 
         [HttpPut("[action]")]
-        public async Task<User> UpdatePassword(string oldPassword, string newPassword)
+        public async Task<User> UpdatePassword([FromBody] UpdatePasswordInputData input)
         {
-            return await UserModel.UpdatePassword(oldPassword, newPassword);
+            return await UserModel.UpdatePassword(input.OldPassword, input.NewPassword);
         }
     }
 }
