@@ -75,7 +75,6 @@ namespace Model.Models
 
         public async Task<Workout> UpdateWorkout(Workout workout)
         {
-            //TODO TEST
             if (!WorkoutValidator.ValidateUpdateWorkout(workout))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS,
@@ -86,7 +85,6 @@ namespace Model.Models
 
         public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
         {
-            //TODO TEST
             if (!PlanValidator.ValidateGetWorkouts(planId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUTS_PARAMS,
@@ -97,10 +95,9 @@ namespace Model.Models
 
         public async Task<string> CreateExercise(Exercise exercise, string workoutId)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateCreateExercise(exercise, workoutId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS,
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS,
                    ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS_USER_FRIENDLY);
             }
             return await ExerciseDataAccessor.CreateExercise(exercise, workoutId);
@@ -109,7 +106,6 @@ namespace Model.Models
 
         public async Task<Exercise> GetExercise(string exerciseId)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateGetExercise(exerciseId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISE_PARAMS,
@@ -120,7 +116,6 @@ namespace Model.Models
 
         public async Task<Exercise> UpdateExercise(Exercise exercise)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateUpdateExercise(exercise))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS,
@@ -131,7 +126,6 @@ namespace Model.Models
 
         public async Task<bool> DeleteExercise(string exerciseId)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateDeleteExercise(exerciseId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_EXERCISE_PARAMS,
@@ -142,7 +136,6 @@ namespace Model.Models
 
         public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
         {
-            //TODO TEST
             if (!WorkoutValidator.ValidateGetExercises(workoutId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISES_PARAMS,
@@ -153,10 +146,9 @@ namespace Model.Models
 
         public async Task<string> CreateSet(Set set, string exerciseId)
         {
-            //TODO TEST
             if (!SetValidator.ValidateCreateSet(set, exerciseId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_CREATE_SET_PARAMS,
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_SET_PARAMS,
                     ExceptionMessages.INVALID_CREATE_SET_PARAMS_USER_FRIENDLY);
             }
             return await SetDataAccessor.CreateSet(set, exerciseId);
@@ -164,7 +156,6 @@ namespace Model.Models
 
         public async Task<Set> GetSet(string setId)
         {
-            //TODO TEST
             if (!SetValidator.ValidateGetSet(setId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_SET_PARAMS,
@@ -175,7 +166,6 @@ namespace Model.Models
 
         public async Task<Set> UpdateSet(Set set)
         {
-            //TODO TEST
             if (!SetValidator.ValidateUpdateSet(set))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_SET_PARAMS,
@@ -186,7 +176,6 @@ namespace Model.Models
 
         public async Task<bool> DeleteSet(string setId)
         {
-            //TODO TEST
             if (!SetValidator.ValidateDeleteSet(setId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_SET_PARAMS,
