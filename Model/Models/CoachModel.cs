@@ -88,5 +88,36 @@ namespace Model.Models
             return await WorkoutDataAccessor.GetWorkouts(planId);
         }
 
+        public async Task<string> CreateExercise(Exercise exercise, string workoutId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.CreateExercise(exercise, workoutId);
+
+        }
+
+        public async Task<Exercise> GetExercise(string exerciseId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.GetExercise(exerciseId);
+        }
+
+        public async Task<Exercise> UpdateExercise(Exercise exercise)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.UpdateExercise(exercise);
+        }
+
+        public async Task<bool> DeleteExercise(string exerciseId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.DeleteExercise(exerciseId);
+        }
+
+        public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.GetExercises(workoutId);
+        }
+
     }
 }

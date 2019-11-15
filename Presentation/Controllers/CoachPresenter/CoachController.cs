@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Model.Entities;
 using Presentation.Controllers.CoachPresenter.InputData;
+using Presentation.Controllers.CoachPresenter.OutputData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,5 +69,36 @@ namespace Presentation.Controllers.CoachPresenter
             return await CoachModel.GetWorkouts(input.PlanId);
         }
 
+        [HttpPost("[action]")]
+        public async Task<CreateExerciseOutputData> CreateExercise([FromBody] CreateExerciseInputData input)
+        {
+            var result = await CoachModel.CreateExercise(input.Exercise,input.WorkoutId);
+            return new CreateExerciseOutputData { ExerciseId = result };
+        }
+
+        [HttpGet("[action]")]
+        public async Task<Exercise> GetExercise([FromBody] GetExerciseInputData input)
+        {
+            return await CoachModel.GetExercise(input.ExerciseId);
+        }
+
+        [HttpPut("[action]")]
+        public async Task<Exercise> UpdateExercise([FromBody] Exercise exercise)
+        {
+            return await CoachModel.UpdateExercise(exercise);
+        }
+
+        [HttpDelete("[action]")]
+        public async Task<DeleteExerciseOutputData> DeleteExercise([FromBody] DeleteExerciseInputData input)
+        {
+            var result = await CoachModel.DeleteExercise(input.ExerciseId);
+            return new DeleteExerciseOutputData { Deleted = result };
+        }
+
+        [HttpGet("[action]")]
+        public  async Task<IEnumerable<Exercise>> GetExercises([FromBody] GetExercisesInputData input)
+        {
+            return await CoachModel.GetExercises(input.WorkoutId);
+        }
     }
 }

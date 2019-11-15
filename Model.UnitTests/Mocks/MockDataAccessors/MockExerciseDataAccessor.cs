@@ -9,7 +9,7 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockExerciseDataAccessor : ExerciseDataAccessorBase
     {
-        protected override Task<string> CreateExerciseCore(Exercise exercise)
+        protected override Task<string> CreateExerciseCore(Exercise exercise, string workoutId)
         {
             throw new NotImplementedException();
         }
