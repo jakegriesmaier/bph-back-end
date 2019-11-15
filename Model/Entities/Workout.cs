@@ -10,8 +10,8 @@ namespace Model.Entities
 
         public Workout()
         {
-            Comments = new List<Comment>();
-            Exercises = new List<Exercise>();
+            CommentIds = new List<string>();
+            ExerciseIds = new List<string>();
         }
 
         public string WorkoutId { get; set; }
@@ -19,8 +19,8 @@ namespace Model.Entities
         public string Title { get; set; }
         public Status Status { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
-        public ICollection<Exercise> Exercises { get; set; }
+        public ICollection<string> CommentIds { get; set; }
+        public ICollection<string> ExerciseIds { get; set; }
 
     }
 }
