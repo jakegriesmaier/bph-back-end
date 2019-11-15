@@ -16,7 +16,7 @@ namespace Model.Models
         {
             if (!PlanValidator.ValidateGetPlan(planId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_PLAN_PARAMS);
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_PLAN_PARAMS, ExceptionMessages.INVALID_GET_PLAN_PARAMS_USER_FRIENDLY);
             }
             return await PlanDataAccessor.GetPlan(planId);
         }
@@ -25,7 +25,7 @@ namespace Model.Models
         {
             if (!PlanValidator.ValidateUpdatePlan(plan))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS);
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS, ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS_USER_FRIENDLY);
             }
             return await PlanDataAccessor.UpdatePlan(plan);
         }
@@ -34,7 +34,7 @@ namespace Model.Models
         {
             if (!WorkoutValidator.ValidateGetWorkout(workoutId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUT_PARAMS);
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUT_PARAMS, ExceptionMessages.INVALID_GET_WORKOUT_PARAMS_USER_FRIENDLY);
             }
             return await WorkoutDataAccessor.GetWorkout(workoutId);
         }

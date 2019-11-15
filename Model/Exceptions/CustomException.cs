@@ -9,11 +9,13 @@ namespace Model.Exceptions
     {
         public HttpStatusCode StatusCode { get; set; }
 
+        public string DeveloperMessage { get; set; }
+
         public CustomException() : base() { }
 
-        public CustomException(string message) : base(message) { }
+        public CustomException(string devMessage, string message) : base(message) { }
 
-        public CustomException(string message, Exception innerException) : base(message, innerException) { }
+        public CustomException(string devMessage, string message, Exception innerException) : base(message, innerException) { }
 
     }
 }

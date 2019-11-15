@@ -18,12 +18,12 @@ namespace Model.Exceptions
             this.StatusCode = code;
         }
 
-        public InsufficientInformationException(string message) : base(message)
+        public InsufficientInformationException(string devMessage, string message) : base(devMessage, message)
         {
             this.StatusCode = code;
         }
 
-        public InsufficientInformationException(string message, Exception innerException) : base(message, innerException)
+        public InsufficientInformationException(string devMessage, string message, Exception innerException) : base(devMessage, message, innerException)
         {
             this.StatusCode = code;
         }
