@@ -49,7 +49,7 @@ namespace Model.Models
 
         public async Task<User> UpdateUser(User user)
         {
-            if (!UserChangeValidator.ValidateUpdateUser(user))
+            if (!UserValidator.ValidateUpdateUser(user))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_USER_PARAMS,
                     ExceptionMessages.INVALID_UPDATE_USER_PARAMS_USER_FRIENDLY);
