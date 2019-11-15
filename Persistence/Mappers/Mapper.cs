@@ -48,11 +48,10 @@ namespace Persistence.Mappers
 
         public static Comment map(CommentDAO dao)
         {
-            var createdBy = map(dao.CreatedBy);
             return new Comment
             {
                 CommentId = dao.CommentId,
-                CreatedById = createdBy.UserId,
+                CreatedById = dao.CreatedById,
                 CreatedDate = dao.CreatedDate,
                 Description = dao.Description
             };

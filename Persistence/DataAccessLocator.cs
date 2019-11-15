@@ -41,5 +41,20 @@ namespace Persistence
         {
             return new WorkoutDataAccessor(_context);
         }
+
+        protected override ExerciseDataAccessorBase GetExerciseDataAccessorBaseCore()
+        {
+            return new ExerciseDataAccessor(_context);
+        }
+
+        protected override SetDataAccessorBase GetSetDataAccessorCore()
+        {
+            return new SetDataAccessor(_context);
+        }
+
+        protected override CommentDataAccessorBase GetCommentDataAccessorCore()
+        {
+            return new CommentDataAccessor(_context, _currentUserService);
+        }
     }
 }

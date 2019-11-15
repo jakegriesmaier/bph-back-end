@@ -76,5 +76,107 @@ namespace Model.Models
             return await PlanDataAccessor.GetPlans(user,user.AccountType);
         }
 
+        public async Task<Workout> UpdateWorkout(Workout workout)
+        {
+            //TODO VALIDATE
+            return await WorkoutDataAccessor.UpdateWorkout(workout);
+        }
+
+        public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
+        {
+            //TODO VALIDATE
+            return await WorkoutDataAccessor.GetWorkouts(planId);
+        }
+
+        public async Task<string> CreateExercise(Exercise exercise, string workoutId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.CreateExercise(exercise, workoutId);
+
+        }
+
+        public async Task<Exercise> GetExercise(string exerciseId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.GetExercise(exerciseId);
+        }
+
+        public async Task<Exercise> UpdateExercise(Exercise exercise)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.UpdateExercise(exercise);
+        }
+
+        public async Task<bool> DeleteExercise(string exerciseId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.DeleteExercise(exerciseId);
+        }
+
+        public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
+        {
+            //TODO VALIDATE
+            return await ExerciseDataAccessor.GetExercises(workoutId);
+        }
+
+        public async Task<string> CreateSet(Set set, string exerciseId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.CreateSet(set, exerciseId);
+        }
+
+        public async Task<Set> GetSet(string setId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.GetSet(setId);
+        }
+
+        public async Task<Set> UpdateSet(Set set)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.UpdateSet(set);
+        }
+
+        public async Task<bool> DeleteSet(string setId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.DeleteSet(setId);
+        }
+
+        public async Task<IEnumerable<Set>> GetSets(string exerciseId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.GetSets(exerciseId);
+        }
+
+        public async Task<string> CreateComment(Comment comment, string ownerId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.CreateComment(comment, ownerId);
+        }
+
+        public async Task<Comment> GetComment(string commentId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.GetComment(commentId);
+        }
+
+        public async Task<Comment> UpdateComment(Comment comment)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.UpdateComment(comment);
+        }
+
+        public async Task<bool> DeleteComment(string commentId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.DeleteComment(commentId);
+        }
+
+        public async Task<IEnumerable<Comment>> GetComments(string ownerId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.GetComments(ownerId);
+        }
     }
 }
