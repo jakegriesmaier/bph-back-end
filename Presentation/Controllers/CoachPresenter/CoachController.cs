@@ -56,5 +56,17 @@ namespace Presentation.Controllers.CoachPresenter
             return await CoachModel.GetPlans();
         }
 
+        [HttpPut("[action]")]
+        public async Task<Workout> UpdateWorkout([FromBody] Workout workout)
+        {
+            return await CoachModel.UpdateWorkout(workout);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Workout>> GetWorkouts([FromBody] GetWorkoutsInputData input)
+        {
+            return await CoachModel.GetWorkouts(input.PlanId);
+        }
+
     }
 }
