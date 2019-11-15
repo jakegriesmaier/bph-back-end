@@ -116,7 +116,6 @@ namespace Model.Models
 
         public async Task<Exercise> UpdateExercise(Exercise exercise)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateUpdateExercise(exercise))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS,
@@ -127,7 +126,6 @@ namespace Model.Models
 
         public async Task<bool> DeleteExercise(string exerciseId)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateDeleteExercise(exerciseId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_EXERCISE_PARAMS,
