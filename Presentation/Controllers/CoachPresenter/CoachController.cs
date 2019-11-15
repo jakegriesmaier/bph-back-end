@@ -133,5 +133,37 @@ namespace Presentation.Controllers.CoachPresenter
             return await CoachModel.GetSets(input.ExerciseId);
         }
 
+        [HttpPost("[action]")]
+        public async Task<CreateCommentOutputData> CreateComment([FromBody] CreateCommentInputData input)
+        {
+            var result = await CoachModel.CreateComment(input.Comment, input.OwnerId);
+            return new CreateCommentOutputData { CommentId = result };
+        }
+
+        [HttpGet("[action]")]
+        public async Task<Comment> GetComment([FromBody] GetCommentInputData input)
+        {
+            return await CoachModel.GetComment(input.CommentId);
+        }
+
+        [HttpPut("[action]")]
+        public async Task<Comment> UpdateComment([FromBody] Comment comment)
+        {
+            return await CoachModel.UpdateComment(comment);
+        }
+
+        [HttpDelete("[action]")]
+        public async Task<DeleteCommentOutputData> DeleteComment([FromBody] DeleteCommentInputData input)
+        {
+            var result = await CoachModel.DeleteComment(input.CommentId);
+            return new DeleteCommentOutputData { Deleted = result };
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Comment>> GetComments([FromBody] GetCommentsInputData input)
+        {
+            return await CoachModel.GetComments(input.OwnerId);
+        }
+
     }
 }

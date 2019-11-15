@@ -149,5 +149,34 @@ namespace Model.Models
             return await SetDataAccessor.GetSets(exerciseId);
         }
 
+        public async Task<string> CreateComment(Comment comment, string ownerId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.CreateComment(comment, ownerId);
+        }
+
+        public async Task<Comment> GetComment(string commentId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.GetComment(commentId);
+        }
+
+        public async Task<Comment> UpdateComment(Comment comment)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.UpdateComment(comment);
+        }
+
+        public async Task<bool> DeleteComment(string commentId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.DeleteComment(commentId);
+        }
+
+        public async Task<IEnumerable<Comment>> GetComments(string ownerId)
+        {
+            //TODO VALIDATE
+            return await CommentDataAccessor.GetComments(ownerId);
+        }
     }
 }
