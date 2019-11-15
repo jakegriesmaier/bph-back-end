@@ -9,29 +9,31 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockExerciseDataAccessor : ExerciseDataAccessorBase
     {
-        protected override Task<string> CreateExerciseCore(Exercise exercise, string workoutId)
+        protected override async Task<string> CreateExerciseCore(Exercise exercise, string workoutId)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(exercise.ExerciseId);
         }
 
-        protected override Task<bool> DeleteExerciseCore(string exerciseId)
+        protected override async Task<bool> DeleteExerciseCore(string exerciseId)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(true);
         }
 
-        protected override Task<Exercise> GetExerciseCore(string exerciseId)
+        protected override async Task<Exercise> GetExerciseCore(string exerciseId)
         {
-            throw new NotImplementedException();
+            var exercise = MockExercises.GetExercise(exerciseId);
+            return await Task.FromResult(exercise);
         }
 
-        protected override Task<IEnumerable<Exercise>> GetExercisesCore(string workoutId)
+        protected override async Task<IEnumerable<Exercise>> GetExercisesCore(string workoutId)
         {
-            throw new NotImplementedException();
+            var exercises = new List<Exercise> { MockExercises.Exercise1() };
+            return await Task.FromResult(exercises);
         }
 
-        protected override Task<Exercise> UpdateExerciseCore(Exercise exercise)
+        protected override async Task<Exercise> UpdateExerciseCore(Exercise exercise)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(exercise);
         }
     }
 }
