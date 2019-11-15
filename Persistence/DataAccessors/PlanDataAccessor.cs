@@ -1,9 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
+using Model.DataTypes;
 using Model.Entities;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Persistence.DataAccessors
@@ -55,6 +58,33 @@ namespace Persistence.DataAccessors
                 throw;
             }
         }
+
+        protected override async Task<IEnumerable<Plan>> GetPlansCore(string userId, AccountType accountType)
+        {
+            try
+            {
+                var plans = await _context.Plans.ToListAsync();
+                var currentUser = await _userManager.FindByIdAsync(userId);
+                plans.ForEach(async p => {
+                    if(p.CoachId != null)
+                    {
+                        p.Coach = (p.CoachId == userId) ? currentUser 
+                        : await _userManager.FindByIdAsync(p.CoachId);
+                    }
+                    if(p.TraineeId != null)
+                    {
+                        p.Trainee = (p.TraineeId == userId) ? currentUser
+                        : await _userManager.FindByIdAsync(p.TraineeId);
+                    }
+                });
+                return plans.Select(p => Mapper.map(p)).ToList();
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
         protected override async Task<Plan> UpdatePlanCore(Plan plan)
         {
             try
