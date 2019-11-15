@@ -75,7 +75,6 @@ namespace Model.Models
 
         public async Task<Workout> UpdateWorkout(Workout workout)
         {
-            //TODO TEST
             if (!WorkoutValidator.ValidateUpdateWorkout(workout))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS,
@@ -86,7 +85,6 @@ namespace Model.Models
 
         public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
         {
-            //TODO TEST
             if (!PlanValidator.ValidateGetWorkouts(planId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUTS_PARAMS,
@@ -100,7 +98,7 @@ namespace Model.Models
             //TODO TEST
             if (!ExerciseValidator.ValidateCreateExercise(exercise, workoutId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS,
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS,
                    ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS_USER_FRIENDLY);
             }
             return await ExerciseDataAccessor.CreateExercise(exercise, workoutId);

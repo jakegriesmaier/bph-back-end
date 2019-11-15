@@ -1,5 +1,4 @@
 ﻿using System;
-using Model.Entities;
 using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
@@ -7,7 +6,7 @@ using NUnit.Framework;
 
 namespace Model.UnitTests.Tests.Coach
 {
-    public class UpdateWorkoutTest
+    public class GetWorkoutsTest
     {
         private CoachModel _coachModel;
 
@@ -19,23 +18,21 @@ namespace Model.UnitTests.Tests.Coach
         }
 
         [Test]
-        public void UpdateWorkout_HappyPath()
+        public void GetWorkouts_HappyPath()
         {
-            var workout = MockWorkouts.Workout1();
-
+            string planId = "weee";
             Assert.DoesNotThrowAsync(async () => {
-                await _coachModel.UpdateWorkout(workout);
+                await _coachModel.GetWorkouts(planId);
             }, "attempted to update a workout but failed.");
         }
 
         [Test]
-        public void UpdateWorkout_NoWorkoutId()
+        public void GetWorkouts_NullPlanId()
         {
-            var workout = new Workout();
-
+            string planId = null;
             Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
-                await _coachModel.UpdateWorkout(workout);
-            }, "Expected an error to be thrown when updating a workout without a workout id.");
+                await _coachModel.GetWorkouts(planId);
+            }, "Expected an error to be thrown when getting workouts from a null plan id");
         }
     }
 }

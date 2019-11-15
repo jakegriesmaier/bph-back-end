@@ -39,7 +39,6 @@ namespace Model.Models.Validators
         }
         public static bool ValidateGetWorkouts(string planId)
         {
-            //TODO: TEST
             if (planId == null)
             {
                 return false;
