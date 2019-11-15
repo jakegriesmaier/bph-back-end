@@ -9,9 +9,9 @@ namespace Model.DataAccess.BaseAccessors
     public abstract class ExerciseDataAccessorBase
     {
 
-        public async Task<string> CreateExercise(Exercise exercise)
+        public async Task<string> CreateExercise(Exercise exercise, string workoutId)
         {
-            return await CreateExerciseCore(exercise);
+            return await CreateExerciseCore(exercise,workoutId);
         }
 
         public async Task<Exercise> GetExercise(string exerciseId)
@@ -35,7 +35,7 @@ namespace Model.DataAccess.BaseAccessors
         }
 
         #region necessary implementations
-        protected abstract Task<string> CreateExerciseCore(Exercise exercise);
+        protected abstract Task<string> CreateExerciseCore(Exercise exercise, string workoutId);
         protected abstract Task<Exercise> GetExerciseCore(string exerciseId);
         protected abstract Task<Exercise> UpdateExerciseCore(Exercise exercise);
         protected abstract Task<bool> DeleteExerciseCore(string exerciseId);
