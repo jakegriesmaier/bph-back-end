@@ -23,5 +23,32 @@ namespace Model.Models.Validators
             return true;
         }
 
+        public static bool ValidateUpdateWorkout(Workout workout)
+        {
+            if (workout.WorkoutId == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidateDeleteWorkout(string workoutId)
+        {
+            if (workoutId == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool ValidateGetExercises(string workoutId)
+        {
+            if (workoutId == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
     }
 }

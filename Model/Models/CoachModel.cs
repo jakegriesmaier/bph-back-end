@@ -61,7 +61,7 @@ namespace Model.Models
         }
 
         public async Task<Workout> GetWorkout(string workoutId)
-        { 
+        {
             if (!WorkoutValidator.ValidateGetWorkout(workoutId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUT_PARAMS,
@@ -73,79 +73,139 @@ namespace Model.Models
         public async Task<IEnumerable<Plan>> GetPlans()
         {
             var user = await UserDataAccessor.GetCurrentUser();
-            return await PlanDataAccessor.GetPlans(user,user.AccountType);
+            return await PlanDataAccessor.GetPlans(user, user.AccountType);
         }
 
         public async Task<Workout> UpdateWorkout(Workout workout)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!WorkoutValidator.ValidateUpdateWorkout(workout))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS,
+                   ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS_USER_FRIENDLY);
+            }
             return await WorkoutDataAccessor.UpdateWorkout(workout);
         }
 
         public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!PlanValidator.ValidateGetWorkouts(planId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUTS_PARAMS,
+                   ExceptionMessages.INVALID_GET_WORKOUTS_PARAMS_USER_FRIENDLY);
+            }
             return await WorkoutDataAccessor.GetWorkouts(planId);
         }
 
         public async Task<string> CreateExercise(Exercise exercise, string workoutId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!ExerciseValidator.ValidateCreateExercise(exercise, workoutId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS,
+                   ExceptionMessages.INVALID_CREATE_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
             return await ExerciseDataAccessor.CreateExercise(exercise, workoutId);
 
         }
 
         public async Task<Exercise> GetExercise(string exerciseId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!ExerciseValidator.ValidateGetExercise(exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISE_PARAMS,
+                   ExceptionMessages.INVALID_GET_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
             return await ExerciseDataAccessor.GetExercise(exerciseId);
         }
 
         public async Task<Exercise> UpdateExercise(Exercise exercise)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!ExerciseValidator.ValidateUpdateExercise(exercise))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS,
+                  ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
             return await ExerciseDataAccessor.UpdateExercise(exercise);
         }
 
         public async Task<bool> DeleteExercise(string exerciseId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!ExerciseValidator.ValidateDeleteExercise(exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_EXERCISE_PARAMS,
+                  ExceptionMessages.INVALID_DELETE_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
             return await ExerciseDataAccessor.DeleteExercise(exerciseId);
         }
 
         public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!WorkoutValidator.ValidateGetExercises(workoutId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISES_PARAMS,
+                  ExceptionMessages.INVALID_GET_EXERCISES_PARAMS_USER_FRIENDLY);
+            }
             return await ExerciseDataAccessor.GetExercises(workoutId);
         }
 
         public async Task<string> CreateSet(Set set, string exerciseId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!SetValidator.ValidateCreateSet(set, exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_CREATE_SET_PARAMS,
+                    ExceptionMessages.INVALID_CREATE_SET_PARAMS_USER_FRIENDLY);
+            }
             return await SetDataAccessor.CreateSet(set, exerciseId);
         }
 
         public async Task<Set> GetSet(string setId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!SetValidator.ValidateGetSet(setId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_SET_PARAMS,
+                    ExceptionMessages.INVALID_GET_SET_PARAMS_USER_FRIENDLY);
+            }
             return await SetDataAccessor.GetSet(setId);
         }
 
         public async Task<Set> UpdateSet(Set set)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!SetValidator.ValidateUpdateSet(set))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_SET_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_SET_PARAMS_USER_FRIENDLY);
+            }
             return await SetDataAccessor.UpdateSet(set);
         }
 
         public async Task<bool> DeleteSet(string setId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!SetValidator.ValidateDeleteSet(setId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_SET_PARAMS,
+                    ExceptionMessages.INVALID_DELETE_SET_PARAMS_USER_FRIENDLY);
+            }
             return await SetDataAccessor.DeleteSet(setId);
         }
 
         public async Task<IEnumerable<Set>> GetSets(string exerciseId)
         {
-            //TODO VALIDATE
+            //TODO TEST
+            if (!ExerciseValidator.ValidateGetSets(exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_SETS_PARAMS,
+                    ExceptionMessages.INVALID_GET_SETS_PARAMS_USER_FRIENDLY);
+            }
             return await SetDataAccessor.GetSets(exerciseId);
         }
 
