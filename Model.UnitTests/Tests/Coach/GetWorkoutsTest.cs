@@ -1,5 +1,4 @@
-﻿using System;
-using Model.Exceptions;
+﻿using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
