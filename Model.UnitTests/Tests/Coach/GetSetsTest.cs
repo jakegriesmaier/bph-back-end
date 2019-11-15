@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 namespace Model.UnitTests.Tests.Coach
 {
-    public class GetExercisesTest
+    public class GetSetsTest
     {
         private CoachModel _coachModel;
 
@@ -18,21 +18,21 @@ namespace Model.UnitTests.Tests.Coach
         }
 
         [Test]
-        public void GetExercises_HappyPath()
+        public void GetSets_HappyPath()
         {
-            string workoutId = "weee";
+            string exerciseId = "weee";
             Assert.DoesNotThrowAsync(async () => {
-                await _coachModel.GetExercises(workoutId);
-            }, "attempted to update a exercise but failed.");
+                await _coachModel.GetSets(exerciseId);
+            }, "attempted to update a set but failed.");
         }
 
         [Test]
-        public void GetExercises_NullWorkoutId()
+        public void GetSets_NullExerciseId()
         {
-            string workoutId = null;
+            string exerciseId = null;
             Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
-                await _coachModel.GetExercises(workoutId);
-            }, "Expected an error to be thrown when getting exercises from a null workout id");
+                await _coachModel.GetSets(exerciseId);
+            }, "Expected an error to be thrown when getting sets from a null exercise id");
         }
     }
 }

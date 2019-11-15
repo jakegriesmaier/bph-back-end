@@ -146,7 +146,6 @@ namespace Model.Models
 
         public async Task<string> CreateSet(Set set, string exerciseId)
         {
-            //TODO TEST
             if (!SetValidator.ValidateCreateSet(set, exerciseId))
             {
                 throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_SET_PARAMS,
@@ -157,7 +156,6 @@ namespace Model.Models
 
         public async Task<Set> GetSet(string setId)
         {
-            //TODO TEST
             if (!SetValidator.ValidateGetSet(setId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_SET_PARAMS,
@@ -168,7 +166,6 @@ namespace Model.Models
 
         public async Task<Set> UpdateSet(Set set)
         {
-            //TODO TEST
             if (!SetValidator.ValidateUpdateSet(set))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_SET_PARAMS,
@@ -179,7 +176,6 @@ namespace Model.Models
 
         public async Task<bool> DeleteSet(string setId)
         {
-            //TODO TEST
             if (!SetValidator.ValidateDeleteSet(setId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_SET_PARAMS,

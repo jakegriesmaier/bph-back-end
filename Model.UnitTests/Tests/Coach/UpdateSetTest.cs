@@ -1,4 +1,5 @@
 ﻿using System;
+using Model.Entities;
 using Model.Exceptions;
 using Model.Models;
 using Model.UnitTests.Mocks;
@@ -6,7 +7,7 @@ using NUnit.Framework;
 
 namespace Model.UnitTests.Tests.Coach
 {
-    public class GetExercisesTest
+    public class UpdateSetTest
     {
         private CoachModel _coachModel;
 
@@ -18,21 +19,23 @@ namespace Model.UnitTests.Tests.Coach
         }
 
         [Test]
-        public void GetExercises_HappyPath()
+        public void UpdateSet_HappyPath()
         {
-            string workoutId = "weee";
+            var set = MockSets.Set1();
+
             Assert.DoesNotThrowAsync(async () => {
-                await _coachModel.GetExercises(workoutId);
-            }, "attempted to update a exercise but failed.");
+                await _coachModel.UpdateSet(set);
+            }, "attempted to update a set but failed.");
         }
 
         [Test]
-        public void GetExercises_NullWorkoutId()
+        public void UpdateSet_NoSetId()
         {
-            string workoutId = null;
+            var set = new Set();
+
             Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
-                await _coachModel.GetExercises(workoutId);
-            }, "Expected an error to be thrown when getting exercises from a null workout id");
+                await _coachModel.UpdateSet(set);
+            }, "Expected an error to be thrown when updating a set without a set id.");
         }
     }
 }
