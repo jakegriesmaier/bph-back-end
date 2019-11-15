@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Model.Exceptions
+namespace Model.Exceptions.DataExceptions
 {
     /// <summary>
     /// Exception thrown when the call should not have been called from the 
