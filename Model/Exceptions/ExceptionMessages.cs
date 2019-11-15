@@ -34,6 +34,10 @@ namespace Model.Exceptions
 
         public static readonly string INVALID_UPDATE_PASSWORD_PARAMS =
             "Unable to update pasword. The password entered did not match the required format.";
+
+        public static readonly string INVALID_GET_USER_PARAMS =
+            "Unable to get user. Null userId provided (should be non-null).";
+
         #endregion User Model Dev
 
         #region User Model User Friendly
@@ -48,6 +52,10 @@ namespace Model.Exceptions
 
         public static readonly string INVALID_UPDATE_PASSWORD_PARAMS_USER_FRIENDLY =
             "Password must match required format.";
+
+        public static readonly string INVALID_GET_USER_PARAMS_USER_FRIENDLY =
+            "There was some trouble finding a user.";
+
         #endregion
 
         #endregion User Model

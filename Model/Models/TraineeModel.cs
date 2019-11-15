@@ -44,7 +44,10 @@ namespace Model.Models
 
         public async Task<User> GetCoach(string userId)
         {
-            //TODO VALIDATE
+            if (!UserValidator.ValidateGetUser(userId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_USER_PARAMS, ExceptionMessages.INVALID_GET_USER_PARAMS_USER_FRIENDLY);
+            }
             return await UserDataAccessor.GetUser(userId);
         } 
     }
