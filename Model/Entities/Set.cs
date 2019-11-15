@@ -9,7 +9,7 @@ namespace Model.Entities
 
         public Set()
         {
-            Comments = new List<Comment>();
+            CommentIds = new List<string>();
         }
 
         public string SetId { get; set; }
@@ -19,6 +19,6 @@ namespace Model.Entities
         public int? TargetReps { get; set; }
         public int? ActualReps { get; set; }
 
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<string> CommentIds { get; set; }
     }
 }

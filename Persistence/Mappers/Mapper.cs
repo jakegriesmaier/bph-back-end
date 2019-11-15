@@ -52,7 +52,7 @@ namespace Persistence.Mappers
             return new Comment
             {
                 CommentId = dao.CommentId,
-                CreatedBy = createdBy,
+                CreatedById = createdBy.UserId,
                 CreatedDate = dao.CreatedDate,
                 Description = dao.Description
             };
@@ -61,70 +61,51 @@ namespace Persistence.Mappers
         //does not include owner, ownerId
         public static CommentDAO map(Comment entity)
         {
-            if(entity.CreatedBy == null)
-            {
-                throw new HttpRequestException("CreatedBy must be specified");
-            }
-            var createdBy = map(entity.CreatedBy);
             return new CommentDAO
             {
                 CommentId = entity.CommentId,
                 CreatedDate = entity.CreatedDate,
-                CreatedById = createdBy.Id,
+                CreatedById = entity.CreatedById,
                 Description = entity.Description
             };
         }
 
         public static Plan map(PlanDAO dao)
         {
-            var coach = dao.Coach != null ? map(dao.Coach) : null;
-            var trainee = dao.Trainee != null ? map(dao.Trainee) : null;
-            var workouts = dao.Workouts != null ? dao.Workouts.Select(w => map(w)).ToList() : new List<Workout>();
-
+            var workoutIds = (dao.Workouts != null) ? dao.Workouts.Select(w => w.Id).ToList() : new List<string>();
             return new Plan
             {
                 PlanId = dao.PlanId,
-                Coach = coach,
+                CoachId = dao.CoachId,
                 Status = dao.Status,
-                Trainee = trainee,
-                Workouts = workouts
+                TraineeId = dao.TraineeId,
+                WorkoutIds= workoutIds
             };
         }
 
         public static PlanDAO map(Plan entity)
         {
-            if(entity.Coach == null)
-            {
-                throw new HttpRequestException("Coach must be specified");
-            }
-            var coach = map(entity.Coach);
-            var dao = new PlanDAO
+            return new PlanDAO
             {
                 PlanId = entity.PlanId,
                 Status = entity.Status,
-                CoachId = coach.Id,
+                CoachId = entity.CoachId,
+                TraineeId = entity.TraineeId
             };
-
-            if (entity.Trainee != null)
-            {
-                dao.TraineeId = entity.Trainee.UserId;
-            }
-            dao.Workouts = entity.Workouts.Select(w => map(w)).ToList();
-            return dao;
         }
 
         public static Workout map(WorkoutDAO dao)
         {
-            var comments = dao.Comments.Select(c => map(c)).ToList();
-            var exercises = dao.Exercises.Select(e => map(e)).ToList();
+            var commentIds = dao.Comments.Select(c => c.CommentId).ToList();
+            var exerciseIds = dao.Exercises.Select(e => e.Id).ToList(); 
             return new Workout
             {
                 WorkoutId = dao.Id,
                 Date = dao.Date,
                 Status = dao.Status,
                 Title = dao.Title,
-                Comments = comments,
-                Exercises = exercises
+                CommentIds = commentIds,
+                ExerciseIds = exerciseIds
             };
         }
 
@@ -142,38 +123,34 @@ namespace Persistence.Mappers
 
         public static Exercise map(ExerciseDAO dao)
         {
-            var sets = dao.Sets.Select(s => map(s)).ToList();
-            var comments = dao.Comments.Select(c => map(c)).ToList();
+            var setIds = dao.Sets.Select(s => s.Id).ToList();
+            var commentIds = dao.Comments.Select(c => c.CommentId).ToList();
             return new Exercise
             {
                 ExerciseId = dao.Id,
                 Name = dao.Name,
                 Order = dao.Order,
                 Status = dao.Status,
-                Sets = sets,
-                Comments = comments
+                SetIds = setIds,
+                CommentIds = commentIds
             };
         }
 
         // does not specify Workout, WorkoutId
         public static ExerciseDAO map(Exercise entity)
         {
-            var comments = entity.Comments.Select(c => map(c)).ToList();
-            var sets = entity.Sets.Select(s => map(s)).ToList();
             return new ExerciseDAO
             {
                 Id = entity.ExerciseId,
                 Name = entity.Name,
                 Order = entity.Order,
-                Status = entity.Status,
-                Comments = comments,
-                Sets = sets
+                Status = entity.Status
             };
         }
 
         public static Set map(SetDAO dao)
         {
-            var comments = dao.Comments.Select(c => map(c)).ToList();
+            var commentIds = dao.Comments.Select(c => c.CommentId).ToList();
             return new Set
             {
                 SetId = dao.Id,
@@ -182,14 +159,13 @@ namespace Persistence.Mappers
                 ActualRPE = dao.ActualRPE,
                 TargetReps = dao.TargetReps,
                 TargetRPE = dao.TargetRPE,
-                Comments = comments
+                CommentIds = commentIds
             };
         }
 
         // does not map Exercise, ExerciseId
         public static SetDAO map(Set entity)
         {
-            var comments = entity.Comments.Select(c => map(c)).ToList();
             return new SetDAO
             {
                 Id = entity.SetId,
@@ -197,8 +173,7 @@ namespace Persistence.Mappers
                 ActualRPE = entity.ActualRPE,
                 Order = entity.Order, 
                 TargetReps = entity.TargetReps,
-                TargetRPE = entity.TargetRPE,
-                Comments = comments,
+                TargetRPE = entity.TargetRPE
             };
         }
 
