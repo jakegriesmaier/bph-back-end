@@ -35,17 +35,21 @@ namespace Presentation.Services
         private static Task HandleExceptionAsync(HttpContext context, Exception ex)
         {
             var statusCode = HttpStatusCode.InternalServerError; // 500 if unexpected
+            var result = JsonConvert.SerializeObject(new { error = ex.Message });
 
-            if(ex is CustomException)
+            if (ex is CustomException)
             {
                 statusCode = (ex as CustomException).StatusCode;
+                result = JsonConvert.SerializeObject(new {
+                    error = ex.Message,
+                    developerMessage = (ex as CustomException).DeveloperMessage
+                });
             }
-            else if(ex is HttpRequestException)
+            else if (ex is HttpRequestException)
             {
                 statusCode = HttpStatusCode.BadRequest; 
             }
 
-            var result = JsonConvert.SerializeObject(new { error = ex.Message });
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)statusCode;
             return context.Response.WriteAsync(result);

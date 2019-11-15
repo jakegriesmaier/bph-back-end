@@ -18,12 +18,12 @@ namespace Model.Exceptions
             this.StatusCode = code;
         }
 
-        public InvalidParametersException(string message) : base(message)
+        public InvalidParametersException(string devMessage, string message) : base(devMessage, message)
         {
             this.StatusCode = code;
         }
 
-        public InvalidParametersException(string message, Exception innerException) : base(message, innerException)
+        public InvalidParametersException(string devMessage, string message, Exception innerException) : base(devMessage, message, innerException)
         {
             this.StatusCode = code;
         }

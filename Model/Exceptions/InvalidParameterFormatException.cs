@@ -17,11 +17,12 @@ namespace Model.Exceptions
             this.StatusCode = code;
         }
 
-        public InvalidParameterFormatException(string message) : base(message) {
+        public InvalidParameterFormatException(string devMessage, string message) : base(devMessage, message)
+        {
             this.StatusCode = code;
         }
 
-        public InvalidParameterFormatException(string message, Exception innerException) : base(message, innerException) {
+        public InvalidParameterFormatException(string devMessage, string message, Exception innerException) : base(devMessage, message, innerException) {
             this.StatusCode = code;
         }
     }

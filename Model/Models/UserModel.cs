@@ -20,7 +20,7 @@ namespace Model.Models
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_CREATE_ACCOUNT_PARAMS);
+                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_CREATE_ACCOUNT_PARAMS, ExceptionMessages.INVALID_CREATE_ACCOUNT_PARAMS_USER_FRIENDLY);
             }
         
             return await UserDataAccessor.CreateUser(email, password);
@@ -30,7 +30,7 @@ namespace Model.Models
         {
             if (!CredentialsValidator.ValidateCredentials(email, password))
             {
-                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_LOG_IN_PARAMS);
+                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_LOG_IN_PARAMS, ExceptionMessages.INVALID_LOG_IN_PARAMS_USER_FRIENDLY);
             }
             return await UserDataAccessor.LoginUser(email, password);
         }
@@ -49,7 +49,7 @@ namespace Model.Models
         {
             if (!UserChangeValidator.ValidateUpdateUser(user))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_USER_PARAMS);
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_USER_PARAMS, ExceptionMessages.INVALID_UPDATE_USER_PARAMS_USER_FRIENDLY);
             }
             return await UserDataAccessor.UpdateUser(user);
 
@@ -61,7 +61,7 @@ namespace Model.Models
             
             if (!CredentialsValidator.ValidateCredentials(user.Email, newPassword))
             {
-                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_UPDATE_PASSWORD_PARAMS);
+                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_UPDATE_PASSWORD_PARAMS, ExceptionMessages.INVALID_UPDATE_PASSWORD_PARAMS_USER_FRIENDLY);
             }
             return await UserDataAccessor.UpdatePassword(user, oldPassword, newPassword);
         }

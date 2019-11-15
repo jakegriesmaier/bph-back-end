@@ -22,7 +22,7 @@ namespace Model.Models
             plan.Status = plan.Trainee == null ? DataTypes.Status.Draft : DataTypes.Status.Created;
             if (!PlanValidator.ValidateCreatePlan(plan))
             {
-                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_PLAN_PARAMS);
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_PLAN_PARAMS, ExceptionMessages.INVALID_CREATE_PLAN_PARAMS_USER_FRIENDLY);
             }
             await PlanDataAccessor.CreatePlan(plan);
         }
@@ -31,7 +31,7 @@ namespace Model.Models
         {
             if (!PlanValidator.ValidateGetPlan(planId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_PLAN_PARAMS);
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_PLAN_PARAMS, ExceptionMessages.INVALID_GET_PLAN_PARAMS_USER_FRIENDLY);
             }
             return await PlanDataAccessor.GetPlan(planId);
         }
@@ -40,7 +40,7 @@ namespace Model.Models
         {
             if (!PlanValidator.ValidateUpdatePlan(plan))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS);
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS, ExceptionMessages.INVALID_UPDATE_PLAN_PARAMS_USER_FRIENDLY);
             }
             return await PlanDataAccessor.UpdatePlan(plan);
         }
@@ -50,7 +50,7 @@ namespace Model.Models
             workout.Status = DataTypes.Status.Created;
             if (!WorkoutValidator.ValidateCreateWorkout(workout, planId))
             {
-                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_WORKOUT_PARAMS);
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_WORKOUT_PARAMS, ExceptionMessages.INVALID_CREATE_WORKOUT_PARAMS_USER_FRIENDLY);
             }
             await WorkoutDataAccessor.CreateWorkout(workout, planId);
         }
@@ -59,7 +59,7 @@ namespace Model.Models
         { 
             if (!WorkoutValidator.ValidateGetWorkout(workoutId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUT_PARAMS);
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_WORKOUT_PARAMS, ExceptionMessages.INVALID_GET_WORKOUT_PARAMS_USER_FRIENDLY);
             }
             return await WorkoutDataAccessor.GetWorkout(workoutId);
         }
