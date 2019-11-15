@@ -100,5 +100,38 @@ namespace Presentation.Controllers.CoachPresenter
         {
             return await CoachModel.GetExercises(input.WorkoutId);
         }
+
+        [HttpPost("[action]")]
+        public async Task<CreateSetOutputData> CreateSet([FromBody] CreateSetInputData input)
+        {
+            var result = await CoachModel.CreateSet(input.Set,input.ExerciseId);
+            return new CreateSetOutputData { SetId = result };
+        }
+
+        [HttpGet("[action]")]
+        public async Task<Set> GetSet([FromBody] GetSetInputData input)
+        {
+            return await CoachModel.GetSet(input.SetId);
+        }
+
+        [HttpPut("[action]")]
+        public async Task<Set> UpdateSet([FromBody] Set set)
+        {
+            return await CoachModel.UpdateSet(set);
+        }
+
+        [HttpDelete("[action]")]
+        public async Task<DeleteSetOutputData> DeleteSet([FromBody] DeleteSetInputData input)
+        {
+            var result = await CoachModel.DeleteSet(input.SetId);
+            return new DeleteSetOutputData { Deleted = result };
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Set>> GetSets([FromBody] GetSetsInputData input)
+        {
+            return await CoachModel.GetSets(input.ExerciseId);
+        }
+
     }
 }

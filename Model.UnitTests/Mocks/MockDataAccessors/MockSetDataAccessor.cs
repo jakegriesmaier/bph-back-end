@@ -9,7 +9,7 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockSetDataAccessor : SetDataAccessorBase
     {
-        protected override Task<string> CreateSetCore(Set set)
+        protected override Task<string> CreateSetCore(Set set, string exerciseId)
         {
             throw new NotImplementedException();
         }
