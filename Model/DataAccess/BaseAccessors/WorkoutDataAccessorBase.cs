@@ -18,9 +18,21 @@ namespace Model.DataAccess.BaseAccessors
             return await GetWorkoutCore(workoutId);
         }
 
+        public async Task<Workout> UpdateWorkout(Workout workout)
+        {
+            return await UpdateWorkoutCore(workout);
+        }
+
+        public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
+        {
+            return await GetWorkoutsCore(planId);
+        }
+
         #region necessary implementations
         protected abstract Task CreateWorkoutCore(Workout workout, string planId);
         protected abstract Task<Workout> GetWorkoutCore(string workoutId);
+        protected abstract Task<Workout> UpdateWorkoutCore(Workout workout);
+        protected abstract Task<IEnumerable<Workout>> GetWorkoutsCore(string planId);
         #endregion
     }
 }

@@ -20,5 +20,16 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
             var workout = MockWorkouts.GetWorkout(workoutId);
             return await Task.FromResult(workout);
         }
+
+        protected override async Task<IEnumerable<Workout>> GetWorkoutsCore(string planId)
+        {
+            var workouts = new List<Workout> { MockWorkouts.Workout1() };
+            return await Task.FromResult(workouts);
+        }
+
+        protected override async Task<Workout> UpdateWorkoutCore(Workout workout)
+        {
+            return await Task.FromResult(workout);
+        }
     }
 }

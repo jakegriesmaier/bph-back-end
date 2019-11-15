@@ -76,5 +76,17 @@ namespace Model.Models
             return await PlanDataAccessor.GetPlans(user,user.AccountType);
         }
 
+        public async Task<Workout> UpdateWorkout(Workout workout)
+        {
+            //TODO VALIDATE
+            return await WorkoutDataAccessor.UpdateWorkout(workout);
+        }
+
+        public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
+        {
+            //TODO VALIDATE
+            return await WorkoutDataAccessor.GetWorkouts(planId);
+        }
+
     }
 }
