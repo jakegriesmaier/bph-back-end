@@ -43,14 +43,8 @@ namespace Persistence.DataAccessors
             try
             {
                 var plan = await _context.Plans.FindAsync(planId);
-                if (plan.CoachId != null)
-                {
-                    plan.Coach = await _userManager.FindByIdAsync(plan.CoachId);
-                }
-                if (plan.TraineeId != null)
-                {
-                    plan.Trainee = await _userManager.FindByIdAsync(plan.TraineeId);
-                }
+                var workouts = _context.Workouts.Where(w => w.PlanId == planId).ToList();
+                plan.Workouts = workouts;
                 return Mapper.map(plan);
             }
             catch
@@ -64,19 +58,7 @@ namespace Persistence.DataAccessors
             try
             {
                 var plans = await _context.Plans.ToListAsync();
-                var userDao = Mapper.map(user);
-                plans.ForEach(async p => {
-                    if(p.CoachId != null)
-                    {
-                        p.Coach = (p.CoachId == userDao.Id) ? userDao  
-                        : await _userManager.FindByIdAsync(p.CoachId);
-                    }
-                    if(p.TraineeId != null)
-                    {
-                        p.Trainee = (p.TraineeId == userDao.Id) ? userDao
-                        : await _userManager.FindByIdAsync(p.TraineeId);
-                    }
-                });
+                plans.ForEach(p => p.Workouts = _context.Workouts.Where(w => w.PlanId == p.PlanId).ToList());
                 return plans.Select(p => Mapper.map(p)).ToList();
             }
             catch
@@ -92,14 +74,8 @@ namespace Persistence.DataAccessors
                 var planDao = Mapper.map(plan);
                 _context.Entry(planDao).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
-                if (planDao.CoachId != null)
-                {
-                    planDao.Coach = await _userManager.FindByIdAsync(planDao.CoachId);
-                }
-                if (planDao.TraineeId != null)
-                {
-                    planDao.Trainee = await _userManager.FindByIdAsync(planDao.TraineeId);
-                }
+                var workouts = _context.Workouts.Where(w => w.PlanId == planDao.PlanId).ToList();
+                planDao.Workouts = workouts;
                 return Mapper.map(planDao);
             }
             catch
