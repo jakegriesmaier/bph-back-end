@@ -2,10 +2,7 @@
 using Model.Entities;
 using Model.Exceptions;
 using Model.Models.Validators;
-using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Model.Models
