@@ -6,6 +6,20 @@ namespace Model.Exceptions
 {
     public static class ExceptionMessages
     {
+        #region Data Access
+
+        #region Data Access User Friendly
+        public static readonly string UNAUTHORIZED_ACCESS_ATTEMPT_USER_FRIENDLY =
+            "Oops! You aren't supposed to do that!";
+        #endregion Data Access User Friendly
+
+        #region Data Access Dev
+        public static readonly string UNAUTHORIZED_ACCESS_ATTEMPT_DEV =
+            "Wrong type of user for this action.";
+        #endregion Data Access Dev
+
+        #endregion Data Access
+
         #region User Model
 
         #region User Model Dev
