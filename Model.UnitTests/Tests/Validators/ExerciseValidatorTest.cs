@@ -1,5 +1,4 @@
-﻿using System;
-using Model.Entities;
+﻿using Model.Entities;
 using Model.Models.Validators;
 using Model.UnitTests.Mocks;
 using NUnit.Framework;
@@ -47,13 +46,13 @@ namespace Model.UnitTests.Tests.Validators
         }
 
         [Test]
-        public void ValidateGetExercises_HappyPath()
+        public void ValidateGetSets_HappyPath()
         {
             Assert.AreEqual(true, ExerciseValidator.ValidateGetSets(filledOutExercise.ExerciseId), "Marked a good ValidateGetExercises as bad");
         }
 
         [Test]
-        public void ValidateGetExercises_NullExerciseId()
+        public void ValidateGetSets_NullExerciseId()
         {
             Assert.AreEqual(false, ExerciseValidator.ValidateGetSets(null), "Validator did not catch Null exercise ID for get exercises");
         }
