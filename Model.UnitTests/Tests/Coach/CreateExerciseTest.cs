@@ -48,7 +48,7 @@ namespace Model.UnitTests.Tests.Coach
 
             Assert.ThrowsAsync(Is.TypeOf<InvalidParametersException>(), async () => {
                 await _coachModel.CreateExercise(exercise, workoutId);
-            }, "Expected and error to be thrown when adding a exercise but not specifiting a workout");
+            }, "Expected and error to be thrown when adding a exercise but not specifying a workout");
         }
     }
 }

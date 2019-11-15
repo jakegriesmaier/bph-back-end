@@ -136,7 +136,6 @@ namespace Model.Models
 
         public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
         {
-            //TODO TEST
             if (!WorkoutValidator.ValidateGetExercises(workoutId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISES_PARAMS,
@@ -150,7 +149,7 @@ namespace Model.Models
             //TODO TEST
             if (!SetValidator.ValidateCreateSet(set, exerciseId))
             {
-                throw new InsufficientInformationException(ExceptionMessages.INVALID_CREATE_SET_PARAMS,
+                throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_SET_PARAMS,
                     ExceptionMessages.INVALID_CREATE_SET_PARAMS_USER_FRIENDLY);
             }
             return await SetDataAccessor.CreateSet(set, exerciseId);
