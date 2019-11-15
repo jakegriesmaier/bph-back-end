@@ -41,5 +41,11 @@ namespace Model.Models
             }
             return await WorkoutDataAccessor.GetWorkout(workoutId);
         }
+
+        public async Task<User> GetCoach(string userId)
+        {
+            //TODO VALIDATE
+            return await UserDataAccessor.GetUser(userId);
+        } 
     }
 }
