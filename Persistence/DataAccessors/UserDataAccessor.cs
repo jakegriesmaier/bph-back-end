@@ -107,10 +107,13 @@ namespace Persistence.DataAccessors
         {
             try
             {
-                var applicationUser = Mapper.map(user);
-
-                await _userManager.ChangePasswordAsync(applicationUser, oldPassword, newPassword); 
-                return Mapper.map(applicationUser);
+                var applicationUser = await _userManager.FindByIdAsync(user.UserId);
+                var result = await _userManager.ChangePasswordAsync(applicationUser, oldPassword, newPassword);
+                if (result.Succeeded)
+                {
+                    return Mapper.map(applicationUser);
+                }
+                throw new Exception("Failed to Update Password");
             }
             catch (Exception e)
             {
