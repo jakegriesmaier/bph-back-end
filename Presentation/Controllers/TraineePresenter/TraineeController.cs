@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Model.Entities;
 using Model.Models;
 using Presentation.Controllers.TraineePresenter.InputData;
+using Presentation.Controllers.TraineePresenter.OutputData;
 using System.Threading.Tasks;
 
 namespace Presentation.Controllers.TraineePresenter
@@ -30,6 +31,17 @@ namespace Presentation.Controllers.TraineePresenter
         public async Task<Workout> GetWorkout([FromBody] GetWorkoutInputData input)
         {
             return await TraineeModel.GetWorkout(input.WorkoutId);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<GetCoachOutputData> GetCoach([FromBody] GetCoachInputData input)
+        {
+            var result = await TraineeModel.GetCoach(input.CoachId);
+            return new GetCoachOutputData {
+                CoachId = result.UserId,
+                FirstName = result.FirstName,
+                LastName = result.LastName
+            };
         }
 
     }
