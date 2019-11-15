@@ -24,16 +24,16 @@ namespace Model.DataAccess.BaseAccessors
             return await UpdatePlanCore(plan);
         }
 
-        public async Task<IEnumerable<Plan>> GetPlans(string userId, AccountType accountType)
+        public async Task<IEnumerable<Plan>> GetPlans(User user, AccountType accountType)
         {
-            return await GetPlansCore(userId,accountType);
+            return await GetPlansCore(user,accountType);
         }
 
         #region necessary implementations
         protected abstract Task CreatePlanCore(Plan plan);
         protected abstract Task<Plan> GetPlanCore(string planId);
         protected abstract Task<Plan> UpdatePlanCore(Plan plan);
-        protected abstract Task<IEnumerable<Plan>> GetPlansCore(string userId, AccountType accountType);
+        protected abstract Task<IEnumerable<Plan>> GetPlansCore(User user, AccountType accountType);
         #endregion
     }
 }

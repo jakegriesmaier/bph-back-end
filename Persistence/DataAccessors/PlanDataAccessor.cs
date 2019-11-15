@@ -59,21 +59,21 @@ namespace Persistence.DataAccessors
             }
         }
 
-        protected override async Task<IEnumerable<Plan>> GetPlansCore(string userId, AccountType accountType)
+        protected override async Task<IEnumerable<Plan>> GetPlansCore(User user, AccountType accountType)
         {
             try
             {
                 var plans = await _context.Plans.ToListAsync();
-                var currentUser = await _userManager.FindByIdAsync(userId);
+                var userDao = Mapper.map(user);
                 plans.ForEach(async p => {
                     if(p.CoachId != null)
                     {
-                        p.Coach = (p.CoachId == userId) ? currentUser 
+                        p.Coach = (p.CoachId == userDao.Id) ? userDao  
                         : await _userManager.FindByIdAsync(p.CoachId);
                     }
                     if(p.TraineeId != null)
                     {
-                        p.Trainee = (p.TraineeId == userId) ? currentUser
+                        p.Trainee = (p.TraineeId == userDao.Id) ? userDao
                         : await _userManager.FindByIdAsync(p.TraineeId);
                     }
                 });

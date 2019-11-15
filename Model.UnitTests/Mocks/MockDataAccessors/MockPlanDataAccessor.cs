@@ -21,7 +21,7 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
             return await Task.FromResult(plan);
         }
 
-        protected override async Task<IEnumerable<Plan>> GetPlansCore(string userId, AccountType accountType)
+        protected override async Task<IEnumerable<Plan>> GetPlansCore(User user, AccountType accountType)
         {
             var plan = MockPlans.Plan1();
             return await Task.FromResult(new List<Plan> { plan });

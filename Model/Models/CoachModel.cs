@@ -67,7 +67,7 @@ namespace Model.Models
         public async Task<IEnumerable<Plan>> GetPlans()
         {
             var user = await UserDataAccessor.GetCurrentUser();
-            return await PlanDataAccessor.GetPlans(user.UserId,user.AccountType);
+            return await PlanDataAccessor.GetPlans(user,user.AccountType);
         }
 
     }
