@@ -9,7 +9,7 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockCommentDataAccessor : CommentDataAccessorBase
     {
-        protected override Task<string> CreateCommentCore(Comment comment)
+        protected override Task<string> CreateCommentCore(Comment comment, string ownerId)
         {
             throw new NotImplementedException();
         }

@@ -119,5 +119,35 @@ namespace Model.Models
             return await ExerciseDataAccessor.GetExercises(workoutId);
         }
 
+        public async Task<string> CreateSet(Set set, string exerciseId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.CreateSet(set, exerciseId);
+        }
+
+        public async Task<Set> GetSet(string setId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.GetSet(setId);
+        }
+
+        public async Task<Set> UpdateSet(Set set)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.UpdateSet(set);
+        }
+
+        public async Task<bool> DeleteSet(string setId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.DeleteSet(setId);
+        }
+
+        public async Task<IEnumerable<Set>> GetSets(string exerciseId)
+        {
+            //TODO VALIDATE
+            return await SetDataAccessor.GetSets(exerciseId);
+        }
+
     }
 }

@@ -9,9 +9,9 @@ namespace Model.DataAccess.BaseAccessors
     public abstract class CommentDataAccessorBase
     {
 
-        public async Task<string> CreateComment(Comment comment)
+        public async Task<string> CreateComment(Comment comment, string ownerId)
         {
-            return await CreateCommentCore(comment);
+            return await CreateCommentCore(comment, ownerId);
         }
 
         public async Task<Comment> GetComment(string commentId)
@@ -35,7 +35,7 @@ namespace Model.DataAccess.BaseAccessors
         }
 
         #region necessary implementations
-        protected abstract Task<string> CreateCommentCore(Comment comment);
+        protected abstract Task<string> CreateCommentCore(Comment comment, string ownerId);
         protected abstract Task<Comment> GetCommentCore(string commentId);
         protected abstract Task<Comment> UpdateCommentCore(Comment comment);
         protected abstract Task<bool> DeleteCommentCore(string commentId);

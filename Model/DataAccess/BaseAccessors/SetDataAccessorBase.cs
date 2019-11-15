@@ -9,9 +9,9 @@ namespace Model.DataAccess.BaseAccessors
     public abstract class SetDataAccessorBase
     {
 
-        public async Task<string> CreateSet(Set set)
+        public async Task<string> CreateSet(Set set, string exerciseId)
         {
-            return await CreateSetCore(set);
+            return await CreateSetCore(set,exerciseId);
         } 
 
         public async Task<Set> GetSet(string setId)
@@ -36,7 +36,7 @@ namespace Model.DataAccess.BaseAccessors
 
 
         #region necessary implementations
-        protected abstract Task<string> CreateSetCore(Set set);
+        protected abstract Task<string> CreateSetCore(Set set, string exerciseId);
         protected abstract Task<Set> GetSetCore(string setId);
         protected abstract Task<Set> UpdateSetCore(Set set);
         protected abstract Task<bool> DeleteSetCore(string setId);
