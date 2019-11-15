@@ -6,7 +6,7 @@ using System.Text;
 namespace Model.Exceptions
 {
     /// <summary>
-    /// Exception that is thrown when the input data dos not meet the required format
+    /// Exception that is thrown when the input data does not meet the required format
     /// (Use for any calls that check the format of the input data, such as email and password)
     /// </summary>
     public class InvalidParameterFormatException : CustomException
