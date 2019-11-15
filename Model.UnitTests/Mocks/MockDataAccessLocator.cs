@@ -23,5 +23,20 @@ namespace Model.UnitTests.Mocks
         {
             return new MockWorkoutDataAccessor();
         }
+
+        protected override ExerciseDataAccessorBase GetExerciseDataAccessorBaseCore()
+        {
+            return new MockExerciseDataAccessor();
+        }
+
+        protected override SetDataAccessorBase GetSetDataAccessorCore()
+        {
+            return new MockSetDataAccessor();
+        }
+
+        protected override CommentDataAccessorBase GetCommentDataAccessorCore()
+        {
+            return new MockCommentDataAccessor();
+        }
     }
 }
