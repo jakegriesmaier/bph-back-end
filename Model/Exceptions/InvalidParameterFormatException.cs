@@ -15,15 +15,18 @@ namespace Model.Exceptions
 
         public InvalidParameterFormatException() : base() {
             this.StatusCode = code;
+            this.DeveloperMessage = "";
         }
 
         public InvalidParameterFormatException(string devMessage, string message) : base(devMessage, message)
         {
             this.StatusCode = code;
+            this.DeveloperMessage = devMessage;
         }
 
         public InvalidParameterFormatException(string devMessage, string message, Exception innerException) : base(devMessage, message, innerException) {
             this.StatusCode = code;
+            this.DeveloperMessage = devMessage;
         }
     }
 }
