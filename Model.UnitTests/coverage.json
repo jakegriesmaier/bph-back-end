@@ -4,7 +4,7 @@
       "Model.Models.CoachModel": {
         "System.Void Model.Models.CoachModel::.ctor(Model.DataAccess.DataAccessLocatorBase)": {
           "Lines": {
-            "16": 33
+            "14": 114
           },
           "Branches": []
         }
@@ -12,10 +12,12 @@
       "Model.Models.CoachModel/<CreatePlan>d__1": {
         "System.Void Model.Models.CoachModel/<CreatePlan>d__1::MoveNext()": {
           "Lines": {
+            "17": 2,
+            "18": 2,
             "19": 2,
             "20": 2,
             "21": 2,
-            "22": 2,
+            "22": 1,
             "23": 1,
             "24": 1,
             "26": 1,
@@ -23,7 +25,7 @@
           },
           "Branches": [
             {
-              "Line": 19,
+              "Line": 17,
               "Offset": 14,
               "EndOffset": 25,
               "Path": 0,
@@ -31,49 +33,49 @@
               "Hits": 2
             },
             {
-              "Line": 20,
-              "Offset": 67,
-              "EndOffset": 136,
+              "Line": 18,
+              "Offset": 55,
+              "EndOffset": 124,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 2
             },
             {
-              "Line": 21,
-              "Offset": 198,
-              "EndOffset": 200,
+              "Line": 20,
+              "Offset": 196,
+              "EndOffset": 198,
               "Path": 0,
               "Ordinal": 4,
               "Hits": 1
             },
             {
-              "Line": 21,
-              "Offset": 198,
-              "EndOffset": 203,
+              "Line": 20,
+              "Offset": 196,
+              "EndOffset": 201,
               "Path": 1,
               "Ordinal": 5,
               "Hits": 1
             },
             {
-              "Line": 22,
-              "Offset": 226,
-              "EndOffset": 228,
+              "Line": 21,
+              "Offset": 224,
+              "EndOffset": 226,
               "Path": 0,
               "Ordinal": 6,
               "Hits": 1
             },
             {
-              "Line": 22,
-              "Offset": 226,
-              "EndOffset": 240,
+              "Line": 21,
+              "Offset": 224,
+              "EndOffset": 243,
               "Path": 1,
               "Ordinal": 7,
               "Hits": 1
             },
             {
               "Line": 26,
-              "Offset": 276,
-              "EndOffset": 344,
+              "Offset": 279,
+              "EndOffset": 347,
               "Path": 1,
               "Ordinal": 9,
               "Hits": 1
@@ -88,8 +90,9 @@
             "31": 2,
             "32": 1,
             "33": 1,
-            "35": 1,
-            "36": 1
+            "34": 1,
+            "36": 1,
+            "37": 1
           },
           "Branches": [
             {
@@ -103,15 +106,15 @@
             {
               "Line": 31,
               "Offset": 31,
-              "EndOffset": 45,
+              "EndOffset": 50,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 35,
-              "Offset": 80,
-              "EndOffset": 147,
+              "Line": 36,
+              "Offset": 85,
+              "EndOffset": 152,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
@@ -122,16 +125,17 @@
       "Model.Models.CoachModel/<UpdatePlan>d__3": {
         "System.Void Model.Models.CoachModel/<UpdatePlan>d__3::MoveNext()": {
           "Lines": {
-            "39": 2,
             "40": 2,
-            "41": 1,
+            "41": 2,
             "42": 1,
+            "43": 1,
             "44": 1,
-            "45": 1
+            "46": 1,
+            "47": 1
           },
           "Branches": [
             {
-              "Line": 40,
+              "Line": 41,
               "Offset": 31,
               "EndOffset": 33,
               "Path": 0,
@@ -139,17 +143,17 @@
               "Hits": 1
             },
             {
-              "Line": 40,
+              "Line": 41,
               "Offset": 31,
-              "EndOffset": 45,
+              "EndOffset": 50,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 44,
-              "Offset": 80,
-              "EndOffset": 147,
+              "Line": 46,
+              "Offset": 85,
+              "EndOffset": 152,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
@@ -160,17 +164,18 @@
       "Model.Models.CoachModel/<CreateWorkout>d__4": {
         "System.Void Model.Models.CoachModel/<CreateWorkout>d__4::MoveNext()": {
           "Lines": {
-            "48": 3,
-            "49": 3,
             "50": 3,
-            "51": 2,
-            "52": 2,
-            "54": 1,
-            "55": 1
+            "51": 3,
+            "52": 3,
+            "53": 2,
+            "54": 2,
+            "55": 2,
+            "57": 1,
+            "58": 1
           },
           "Branches": [
             {
-              "Line": 50,
+              "Line": 52,
               "Offset": 53,
               "EndOffset": 55,
               "Path": 0,
@@ -178,17 +183,17 @@
               "Hits": 2
             },
             {
-              "Line": 50,
+              "Line": 52,
               "Offset": 53,
-              "EndOffset": 67,
+              "EndOffset": 72,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 54,
-              "Offset": 108,
-              "EndOffset": 174,
+              "Line": 57,
+              "Offset": 113,
+              "EndOffset": 179,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
@@ -199,16 +204,17 @@
       "Model.Models.CoachModel/<GetWorkout>d__5": {
         "System.Void Model.Models.CoachModel/<GetWorkout>d__5::MoveNext()": {
           "Lines": {
-            "58": 2,
-            "59": 2,
-            "60": 1,
-            "61": 1,
+            "61": 2,
+            "62": 2,
             "63": 1,
-            "64": 1
+            "64": 1,
+            "65": 1,
+            "67": 1,
+            "68": 1
           },
           "Branches": [
             {
-              "Line": 59,
+              "Line": 62,
               "Offset": 31,
               "EndOffset": 33,
               "Path": 0,
@@ -216,20 +222,686 @@
               "Hits": 1
             },
             {
-              "Line": 59,
+              "Line": 62,
               "Offset": 31,
-              "EndOffset": 45,
+              "EndOffset": 50,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 63,
-              "Offset": 80,
-              "EndOffset": 147,
+              "Line": 67,
+              "Offset": 85,
+              "EndOffset": 152,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetPlans>d__6": {
+        "System.Void Model.Models.CoachModel/<GetPlans>d__6::MoveNext()": {
+          "Lines": {
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1
+          },
+          "Branches": [
+            {
+              "Line": 71,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 72,
+              "Offset": 55,
+              "EndOffset": 124,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 73,
+              "Offset": 203,
+              "EndOffset": 271,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<UpdateWorkout>d__7": {
+        "System.Void Model.Models.CoachModel/<UpdateWorkout>d__7::MoveNext()": {
+          "Lines": {
+            "77": 2,
+            "78": 2,
+            "79": 1,
+            "80": 1,
+            "81": 1,
+            "83": 1,
+            "84": 1
+          },
+          "Branches": [
+            {
+              "Line": 78,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 78,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 83,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetWorkouts>d__8": {
+        "System.Void Model.Models.CoachModel/<GetWorkouts>d__8::MoveNext()": {
+          "Lines": {
+            "87": 2,
+            "88": 2,
+            "89": 1,
+            "90": 1,
+            "91": 1,
+            "93": 1,
+            "94": 1
+          },
+          "Branches": [
+            {
+              "Line": 88,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 88,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 93,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<CreateExercise>d__9": {
+        "System.Void Model.Models.CoachModel/<CreateExercise>d__9::MoveNext()": {
+          "Lines": {
+            "97": 3,
+            "98": 3,
+            "99": 2,
+            "100": 2,
+            "101": 2,
+            "103": 1,
+            "105": 1
+          },
+          "Branches": [
+            {
+              "Line": 98,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 98,
+              "Offset": 37,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 103,
+              "Offset": 97,
+              "EndOffset": 164,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetExercise>d__10": {
+        "System.Void Model.Models.CoachModel/<GetExercise>d__10::MoveNext()": {
+          "Lines": {
+            "108": 2,
+            "109": 2,
+            "110": 1,
+            "111": 1,
+            "112": 1,
+            "114": 1,
+            "115": 1
+          },
+          "Branches": [
+            {
+              "Line": 109,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 109,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 114,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<UpdateExercise>d__11": {
+        "System.Void Model.Models.CoachModel/<UpdateExercise>d__11::MoveNext()": {
+          "Lines": {
+            "118": 2,
+            "119": 2,
+            "120": 1,
+            "121": 1,
+            "122": 1,
+            "124": 1,
+            "125": 1
+          },
+          "Branches": [
+            {
+              "Line": 119,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 119,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 124,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<DeleteExercise>d__12": {
+        "System.Void Model.Models.CoachModel/<DeleteExercise>d__12::MoveNext()": {
+          "Lines": {
+            "128": 2,
+            "129": 2,
+            "130": 1,
+            "131": 1,
+            "132": 1,
+            "134": 1,
+            "135": 1
+          },
+          "Branches": [
+            {
+              "Line": 129,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 129,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 134,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetExercises>d__13": {
+        "System.Void Model.Models.CoachModel/<GetExercises>d__13::MoveNext()": {
+          "Lines": {
+            "138": 2,
+            "139": 2,
+            "140": 1,
+            "141": 1,
+            "142": 1,
+            "144": 1,
+            "145": 1
+          },
+          "Branches": [
+            {
+              "Line": 139,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 139,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 144,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<CreateSet>d__14": {
+        "System.Void Model.Models.CoachModel/<CreateSet>d__14::MoveNext()": {
+          "Lines": {
+            "148": 3,
+            "149": 3,
+            "150": 2,
+            "151": 2,
+            "152": 2,
+            "154": 1,
+            "155": 1
+          },
+          "Branches": [
+            {
+              "Line": 149,
+              "Offset": 37,
+              "EndOffset": 39,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 149,
+              "Offset": 37,
+              "EndOffset": 56,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 154,
+              "Offset": 97,
+              "EndOffset": 164,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetSet>d__15": {
+        "System.Void Model.Models.CoachModel/<GetSet>d__15::MoveNext()": {
+          "Lines": {
+            "158": 2,
+            "159": 2,
+            "160": 1,
+            "161": 1,
+            "162": 1,
+            "164": 1,
+            "165": 1
+          },
+          "Branches": [
+            {
+              "Line": 159,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 159,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 164,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<UpdateSet>d__16": {
+        "System.Void Model.Models.CoachModel/<UpdateSet>d__16::MoveNext()": {
+          "Lines": {
+            "168": 2,
+            "169": 2,
+            "170": 1,
+            "171": 1,
+            "172": 1,
+            "174": 1,
+            "175": 1
+          },
+          "Branches": [
+            {
+              "Line": 169,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 169,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 174,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<DeleteSet>d__17": {
+        "System.Void Model.Models.CoachModel/<DeleteSet>d__17::MoveNext()": {
+          "Lines": {
+            "178": 2,
+            "179": 2,
+            "180": 1,
+            "181": 1,
+            "182": 1,
+            "184": 1,
+            "185": 1
+          },
+          "Branches": [
+            {
+              "Line": 179,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 179,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 184,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetSets>d__18": {
+        "System.Void Model.Models.CoachModel/<GetSets>d__18::MoveNext()": {
+          "Lines": {
+            "188": 2,
+            "190": 2,
+            "191": 1,
+            "192": 1,
+            "193": 1,
+            "195": 1,
+            "196": 1
+          },
+          "Branches": [
+            {
+              "Line": 190,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 190,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 195,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<CreateComment>d__19": {
+        "System.Void Model.Models.CoachModel/<CreateComment>d__19::MoveNext()": {
+          "Lines": {
+            "199": 0,
+            "201": 0,
+            "202": 0
+          },
+          "Branches": [
+            {
+              "Line": 201,
+              "Offset": 56,
+              "EndOffset": 58,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 201,
+              "Offset": 56,
+              "EndOffset": 122,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetComment>d__20": {
+        "System.Void Model.Models.CoachModel/<GetComment>d__20::MoveNext()": {
+          "Lines": {
+            "205": 0,
+            "207": 0,
+            "208": 0
+          },
+          "Branches": [
+            {
+              "Line": 207,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 207,
+              "Offset": 50,
+              "EndOffset": 116,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<UpdateComment>d__21": {
+        "System.Void Model.Models.CoachModel/<UpdateComment>d__21::MoveNext()": {
+          "Lines": {
+            "211": 0,
+            "213": 0,
+            "214": 0
+          },
+          "Branches": [
+            {
+              "Line": 213,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 213,
+              "Offset": 50,
+              "EndOffset": 116,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<DeleteComment>d__22": {
+        "System.Void Model.Models.CoachModel/<DeleteComment>d__22::MoveNext()": {
+          "Lines": {
+            "217": 0,
+            "219": 0,
+            "220": 0
+          },
+          "Branches": [
+            {
+              "Line": 219,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 219,
+              "Offset": 50,
+              "EndOffset": 116,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetComments>d__23": {
+        "System.Void Model.Models.CoachModel/<GetComments>d__23::MoveNext()": {
+          "Lines": {
+            "223": 0,
+            "225": 0,
+            "226": 0
+          },
+          "Branches": [
+            {
+              "Line": 225,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 225,
+              "Offset": 50,
+              "EndOffset": 116,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.Models.CoachModel/<GetTrainee>d__24": {
+        "System.Void Model.Models.CoachModel/<GetTrainee>d__24::MoveNext()": {
+          "Lines": {
+            "229": 0,
+            "231": 0,
+            "232": 0
+          },
+          "Branches": [
+            {
+              "Line": 231,
+              "Offset": 50,
+              "EndOffset": 52,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 231,
+              "Offset": 50,
+              "EndOffset": 116,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
             }
           ]
         }
@@ -239,30 +911,223 @@
       "Model.Models.ModelBase": {
         "Model.DataAccess.BaseAccessors.UserDataAccessorBase Model.Models.ModelBase::get_UserDataAccessor()": {
           "Lines": {
-            "15": 7
+            "15": 11
           },
           "Branches": []
         },
         "Model.DataAccess.BaseAccessors.PlanDataAccessorBase Model.Models.ModelBase::get_PlanDataAccessor()": {
           "Lines": {
-            "16": 3
+            "16": 6
           },
           "Branches": []
         },
         "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase Model.Models.ModelBase::get_WorkoutDataAccessor()": {
           "Lines": {
-            "17": 2
+            "17": 5
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase Model.Models.ModelBase::get_ExerciseDataAccessor()": {
+          "Lines": {
+            "18": 5
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.SetDataAccessorBase Model.Models.ModelBase::get_SetDataAccessor()": {
+          "Lines": {
+            "19": 5
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.CommentDataAccessorBase Model.Models.ModelBase::get_CommentDataAccessor()": {
+          "Lines": {
+            "20": 0
           },
           "Branches": []
         },
         "System.Void Model.Models.ModelBase::.ctor(Model.DataAccess.DataAccessLocatorBase)": {
           "Lines": {
-            "20": 22,
-            "21": 22,
-            "22": 22,
-            "23": 22
+            "23": 57,
+            "24": 57,
+            "25": 57,
+            "26": 57
           },
           "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\TraineeModel.cs": {
+      "Model.Models.TraineeModel": {
+        "System.Void Model.Models.TraineeModel::.ctor(Model.DataAccess.DataAccessLocatorBase)": {
+          "Lines": {
+            "11": 6,
+            "12": 6,
+            "13": 6
+          },
+          "Branches": []
+        }
+      },
+      "Model.Models.TraineeModel/<GetPlan>d__1": {
+        "System.Void Model.Models.TraineeModel/<GetPlan>d__1::MoveNext()": {
+          "Lines": {
+            "16": 2,
+            "17": 2,
+            "18": 1,
+            "19": 1,
+            "20": 1,
+            "22": 1,
+            "23": 1
+          },
+          "Branches": [
+            {
+              "Line": 17,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 17,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 22,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.TraineeModel/<UpdatePlan>d__2": {
+        "System.Void Model.Models.TraineeModel/<UpdatePlan>d__2::MoveNext()": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 32,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.TraineeModel/<GetWorkout>d__3": {
+        "System.Void Model.Models.TraineeModel/<GetWorkout>d__3::MoveNext()": {
+          "Lines": {
+            "36": 2,
+            "37": 2,
+            "38": 1,
+            "39": 1,
+            "40": 1,
+            "42": 1,
+            "43": 1
+          },
+          "Branches": [
+            {
+              "Line": 37,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            },
+            {
+              "Line": 42,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.TraineeModel/<GetCoach>d__4": {
+        "System.Void Model.Models.TraineeModel/<GetCoach>d__4::MoveNext()": {
+          "Lines": {
+            "46": 0,
+            "47": 0,
+            "48": 0,
+            "49": 0,
+            "51": 0,
+            "52": 0
+          },
+          "Branches": [
+            {
+              "Line": 47,
+              "Offset": 31,
+              "EndOffset": 33,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 47,
+              "Offset": 31,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 85,
+              "EndOffset": 87,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 51,
+              "Offset": 85,
+              "EndOffset": 152,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
         }
       }
     },
@@ -270,7 +1135,7 @@
       "Model.Models.UserModel": {
         "System.Void Model.Models.UserModel::.ctor(Model.DataAccess.DataAccessLocatorBase)": {
           "Lines": {
-            "16": 33
+            "17": 39
           },
           "Branches": []
         }
@@ -278,16 +1143,17 @@
       "Model.Models.UserModel/<CreateUser>d__1": {
         "System.Void Model.Models.UserModel/<CreateUser>d__1::MoveNext()": {
           "Lines": {
-            "19": 3,
             "20": 3,
-            "21": 2,
+            "21": 3,
             "22": 2,
-            "25": 1,
-            "26": 1
+            "23": 2,
+            "24": 2,
+            "27": 1,
+            "28": 1
           },
           "Branches": [
             {
-              "Line": 20,
+              "Line": 21,
               "Offset": 37,
               "EndOffset": 39,
               "Path": 0,
@@ -295,17 +1161,17 @@
               "Hits": 2
             },
             {
-              "Line": 20,
+              "Line": 21,
               "Offset": 37,
-              "EndOffset": 51,
+              "EndOffset": 56,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 25,
-              "Offset": 92,
-              "EndOffset": 158,
+              "Line": 27,
+              "Offset": 97,
+              "EndOffset": 164,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
@@ -316,16 +1182,17 @@
       "Model.Models.UserModel/<LoginUser>d__2": {
         "System.Void Model.Models.UserModel/<LoginUser>d__2::MoveNext()": {
           "Lines": {
-            "29": 3,
-            "30": 3,
-            "31": 2,
-            "32": 2,
-            "34": 1,
-            "35": 1
+            "31": 3,
+            "32": 3,
+            "33": 2,
+            "34": 2,
+            "35": 2,
+            "37": 1,
+            "38": 1
           },
           "Branches": [
             {
-              "Line": 30,
+              "Line": 32,
               "Offset": 37,
               "EndOffset": 39,
               "Path": 0,
@@ -333,17 +1200,17 @@
               "Hits": 2
             },
             {
-              "Line": 30,
+              "Line": 32,
               "Offset": 37,
-              "EndOffset": 51,
+              "EndOffset": 56,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 34,
-              "Offset": 92,
-              "EndOffset": 158,
+              "Line": 37,
+              "Offset": 97,
+              "EndOffset": 164,
               "Path": 1,
               "Ordinal": 3,
               "Hits": 1
@@ -354,13 +1221,13 @@
       "Model.Models.UserModel/<LogoutUser>d__3": {
         "System.Void Model.Models.UserModel/<LogoutUser>d__3::MoveNext()": {
           "Lines": {
-            "38": 1,
-            "39": 1,
-            "40": 1
+            "41": 1,
+            "42": 1,
+            "43": 1
           },
           "Branches": [
             {
-              "Line": 39,
+              "Line": 42,
               "Offset": 44,
               "EndOffset": 110,
               "Path": 1,
@@ -373,18 +1240,18 @@
       "Model.Models.UserModel/<GetCurrentUser>d__4": {
         "System.Void Model.Models.UserModel/<GetCurrentUser>d__4::MoveNext()": {
           "Lines": {
-            "43": 1,
-            "44": 1,
-            "45": 1
+            "46": 3,
+            "47": 3,
+            "48": 3
           },
           "Branches": [
             {
-              "Line": 44,
+              "Line": 47,
               "Offset": 44,
               "EndOffset": 110,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 1
+              "Hits": 3
             }
           ]
         }
@@ -392,16 +1259,17 @@
       "Model.Models.UserModel/<UpdateUser>d__5": {
         "System.Void Model.Models.UserModel/<UpdateUser>d__5::MoveNext()": {
           "Lines": {
-            "48": 3,
-            "49": 3,
-            "50": 2,
-            "51": 2,
-            "53": 1,
-            "55": 1
+            "51": 3,
+            "52": 3,
+            "53": 2,
+            "54": 2,
+            "55": 2,
+            "57": 1,
+            "59": 1
           },
           "Branches": [
             {
-              "Line": 49,
+              "Line": 52,
               "Offset": 31,
               "EndOffset": 33,
               "Path": 0,
@@ -409,19 +1277,75 @@
               "Hits": 2
             },
             {
-              "Line": 49,
+              "Line": 52,
               "Offset": 31,
-              "EndOffset": 45,
+              "EndOffset": 50,
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
             },
             {
-              "Line": 53,
-              "Offset": 80,
-              "EndOffset": 147,
+              "Line": 57,
+              "Offset": 85,
+              "EndOffset": 152,
               "Path": 1,
               "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.Models.UserModel/<UpdatePassword>d__6": {
+        "System.Void Model.Models.UserModel/<UpdatePassword>d__6::MoveNext()": {
+          "Lines": {
+            "62": 2,
+            "63": 2,
+            "65": 2,
+            "66": 1,
+            "67": 1,
+            "68": 1,
+            "70": 1,
+            "71": 1
+          },
+          "Branches": [
+            {
+              "Line": 62,
+              "Offset": 14,
+              "EndOffset": 25,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 63,
+              "Offset": 50,
+              "EndOffset": 119,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            },
+            {
+              "Line": 65,
+              "Offset": 180,
+              "EndOffset": 182,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 1
+            },
+            {
+              "Line": 65,
+              "Offset": 180,
+              "EndOffset": 199,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            },
+            {
+              "Line": 70,
+              "Offset": 247,
+              "EndOffset": 315,
+              "Path": 1,
+              "Ordinal": 7,
               "Hits": 1
             }
           ]
@@ -440,13 +1364,214 @@
         }
       }
     },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\CommentValidator.cs": {
+      "Model.Models.Validators.CommentValidator": {
+        "System.Boolean Model.Models.Validators.CommentValidator::ValidateCreateComment(Model.Entities.Comment,System.String)": {
+          "Lines": {
+            "9": 4,
+            "10": 4,
+            "11": 2,
+            "12": 2,
+            "14": 2,
+            "15": 1,
+            "16": 1,
+            "18": 1,
+            "19": 0,
+            "20": 0,
+            "22": 1,
+            "23": 4
+          },
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 10,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 14,
+              "Offset": 25,
+              "EndOffset": 27,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 14,
+              "Offset": 25,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            },
+            {
+              "Line": 18,
+              "Offset": 43,
+              "EndOffset": 45,
+              "Path": 0,
+              "Ordinal": 4,
+              "Hits": 0
+            },
+            {
+              "Line": 18,
+              "Offset": 43,
+              "EndOffset": 50,
+              "Path": 1,
+              "Ordinal": 5,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.CommentValidator::ValidateGetComment(System.String)": {
+          "Lines": {
+            "25": 2,
+            "26": 2,
+            "27": 1,
+            "28": 1,
+            "30": 1,
+            "31": 2
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 26,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.CommentValidator::ValidateUpdateComment(Model.Entities.Comment)": {
+          "Lines": {
+            "33": 3,
+            "34": 3,
+            "35": 1,
+            "36": 1,
+            "38": 2,
+            "39": 1,
+            "40": 1,
+            "42": 1,
+            "43": 3
+          },
+          "Branches": [
+            {
+              "Line": 34,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 34,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 38,
+              "Offset": 30,
+              "EndOffset": 32,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 38,
+              "Offset": 30,
+              "EndOffset": 37,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.CommentValidator::ValidateDeleteComment(System.String)": {
+          "Lines": {
+            "45": 2,
+            "46": 2,
+            "47": 1,
+            "48": 1,
+            "50": 1,
+            "51": 2
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.CommentValidator::ValidateGetComments(System.String)": {
+          "Lines": {
+            "53": 2,
+            "54": 2,
+            "55": 1,
+            "56": 1,
+            "58": 1,
+            "59": 2
+          },
+          "Branches": [
+            {
+              "Line": 54,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 54,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
     "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\CredentialsValidator.cs": {
       "Model.Models.Validators.CredentialsValidator": {
         "System.Boolean Model.Models.Validators.CredentialsValidator::ValidateCredentials(System.String,System.String)": {
           "Lines": {
-            "20": 6,
-            "21": 6,
-            "22": 6
+            "20": 8,
+            "21": 8,
+            "22": 8
           },
           "Branches": [
             {
@@ -455,7 +1580,7 @@
               "EndOffset": 9,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 4
+              "Hits": 6
             },
             {
               "Line": 21,
@@ -469,40 +1594,40 @@
         },
         "System.Boolean Model.Models.Validators.CredentialsValidator::ValidateEmail(System.String)": {
           "Lines": {
-            "25": 8,
-            "27": 8,
-            "28": 8,
-            "29": 5,
+            "25": 10,
+            "27": 10,
+            "28": 10,
+            "29": 7,
             "31": 3,
             "32": 3,
             "33": 3,
-            "36": 8
+            "36": 10
           },
           "Branches": []
         },
         "System.Boolean Model.Models.Validators.CredentialsValidator::ValidatePassword(System.String)": {
           "Lines": {
-            "40": 10,
-            "41": 10,
-            "42": 3,
-            "43": 3,
-            "45": 7,
+            "40": 12,
+            "41": 12,
+            "42": 4,
+            "43": 4,
+            "45": 8,
             "46": 0,
             "47": 0,
-            "49": 7,
+            "49": 8,
             "50": 1,
             "51": 1,
-            "53": 6,
+            "53": 7,
             "54": 1,
             "55": 1,
-            "57": 5,
+            "57": 6,
             "58": 1,
             "59": 1,
-            "61": 4,
+            "61": 5,
             "62": 1,
             "63": 1,
-            "65": 3,
-            "66": 10
+            "65": 4,
+            "66": 12
           },
           "Branches": [
             {
@@ -511,7 +1636,7 @@
               "EndOffset": 19,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 3
+              "Hits": 4
             },
             {
               "Line": 41,
@@ -519,7 +1644,7 @@
               "EndOffset": 24,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 7
+              "Hits": 8
             },
             {
               "Line": 45,
@@ -535,7 +1660,7 @@
               "EndOffset": 44,
               "Path": 1,
               "Ordinal": 3,
-              "Hits": 7
+              "Hits": 8
             },
             {
               "Line": 49,
@@ -551,7 +1676,7 @@
               "EndOffset": 67,
               "Path": 1,
               "Ordinal": 5,
-              "Hits": 6
+              "Hits": 7
             },
             {
               "Line": 53,
@@ -567,7 +1692,7 @@
               "EndOffset": 92,
               "Path": 1,
               "Ordinal": 7,
-              "Hits": 5
+              "Hits": 6
             },
             {
               "Line": 57,
@@ -583,7 +1708,7 @@
               "EndOffset": 117,
               "Path": 1,
               "Ordinal": 9,
-              "Hits": 4
+              "Hits": 5
             },
             {
               "Line": 61,
@@ -599,15 +1724,15 @@
               "EndOffset": 142,
               "Path": 1,
               "Ordinal": 11,
-              "Hits": 3
+              "Hits": 4
             }
           ]
         },
         "System.Boolean Model.Models.Validators.CredentialsValidator::MatchRegex(System.Text.RegularExpressions.Regex,System.String)": {
           "Lines": {
-            "68": 39,
-            "69": 39,
-            "70": 39
+            "68": 46,
+            "69": 46,
+            "70": 46
           },
           "Branches": []
         }
@@ -628,13 +1753,161 @@
     },
     "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\ExerciseValidator.cs": {
       "Model.Models.Validators.ExerciseValidator": {
-        "System.Void Model.Models.Validators.ExerciseValidator::.ctor()": {
+        "System.Boolean Model.Models.Validators.ExerciseValidator::ValidateCreateExercise(Model.Entities.Exercise,System.String)": {
           "Lines": {
-            "6": 0,
-            "7": 0,
-            "9": 0
+            "9": 6,
+            "10": 6,
+            "11": 4,
+            "12": 4,
+            "14": 2,
+            "15": 6
           },
-          "Branches": []
+          "Branches": [
+            {
+              "Line": 10,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 10,
+              "Offset": 7,
+              "EndOffset": 15,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 10,
+              "Offset": 18,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.ExerciseValidator::ValidateGetExercise(System.String)": {
+          "Lines": {
+            "18": 4,
+            "19": 4,
+            "20": 2,
+            "21": 2,
+            "23": 2,
+            "24": 4
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 19,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.ExerciseValidator::ValidateUpdateExercise(Model.Entities.Exercise)": {
+          "Lines": {
+            "27": 2,
+            "28": 2,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 2
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.ExerciseValidator::ValidateDeleteExercise(System.String)": {
+          "Lines": {
+            "36": 4,
+            "37": 4,
+            "38": 2,
+            "39": 2,
+            "41": 2,
+            "42": 4
+          },
+          "Branches": [
+            {
+              "Line": 37,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 37,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.ExerciseValidator::ValidateGetSets(System.String)": {
+          "Lines": {
+            "45": 4,
+            "46": 4,
+            "47": 2,
+            "48": 2,
+            "50": 2,
+            "51": 4
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
         }
       }
     },
@@ -689,12 +1962,12 @@
         },
         "System.Boolean Model.Models.Validators.PlanValidator::ValidateGetPlan(System.String)": {
           "Lines": {
-            "21": 4,
-            "22": 4,
-            "23": 2,
-            "24": 2,
-            "26": 2,
-            "27": 4
+            "21": 6,
+            "22": 6,
+            "23": 3,
+            "24": 3,
+            "26": 3,
+            "27": 6
           },
           "Branches": [
             {
@@ -703,7 +1976,7 @@
               "EndOffset": 9,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 2
+              "Hits": 3
             },
             {
               "Line": 22,
@@ -711,21 +1984,21 @@
               "EndOffset": 14,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 2
+              "Hits": 3
             }
           ]
         },
         "System.Boolean Model.Models.Validators.PlanValidator::ValidateUpdatePlan(Model.Entities.Plan)": {
           "Lines": {
-            "29": 5,
-            "30": 5,
-            "31": 2,
-            "32": 2,
-            "34": 3,
+            "29": 7,
+            "30": 7,
+            "31": 3,
+            "32": 3,
+            "34": 4,
             "35": 1,
             "36": 1,
-            "38": 2,
-            "39": 5
+            "38": 3,
+            "39": 7
           },
           "Branches": [
             {
@@ -734,7 +2007,7 @@
               "EndOffset": 14,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 2
+              "Hits": 3
             },
             {
               "Line": 30,
@@ -742,7 +2015,7 @@
               "EndOffset": 19,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 3
+              "Hits": 4
             },
             {
               "Line": 34,
@@ -758,22 +2031,182 @@
               "EndOffset": 37,
               "Path": 1,
               "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.PlanValidator::ValidateGetWorkouts(System.String)": {
+          "Lines": {
+            "41": 2,
+            "42": 2,
+            "43": 1,
+            "44": 1,
+            "46": 1,
+            "47": 2
+          },
+          "Branches": [
+            {
+              "Line": 42,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 42,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\SetValidator.cs": {
+      "Model.Models.Validators.SetValidator": {
+        "System.Boolean Model.Models.Validators.SetValidator::ValidateCreateSet(Model.Entities.Set,System.String)": {
+          "Lines": {
+            "8": 6,
+            "9": 6,
+            "10": 4,
+            "11": 4,
+            "13": 2,
+            "14": 6
+          },
+          "Branches": [
+            {
+              "Line": 9,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 9,
+              "Offset": 7,
+              "EndOffset": 15,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 9,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 4
+            },
+            {
+              "Line": 9,
+              "Offset": 18,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.SetValidator::ValidateGetSet(System.String)": {
+          "Lines": {
+            "17": 4,
+            "18": 4,
+            "19": 2,
+            "20": 2,
+            "22": 2,
+            "23": 4
+          },
+          "Branches": [
+            {
+              "Line": 18,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 18,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.SetValidator::ValidateUpdateSet(Model.Entities.Set)": {
+          "Lines": {
+            "26": 2,
+            "27": 2,
+            "28": 1,
+            "29": 1,
+            "31": 1,
+            "32": 2
+          },
+          "Branches": [
+            {
+              "Line": 27,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 27,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.SetValidator::ValidateDeleteSet(System.String)": {
+          "Lines": {
+            "35": 4,
+            "36": 4,
+            "37": 2,
+            "38": 2,
+            "40": 2,
+            "41": 4
+          },
+          "Branches": [
+            {
+              "Line": 36,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 36,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
               "Hits": 2
             }
           ]
         }
       }
     },
-    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\UserChangeValidator.cs": {
-      "Model.Models.Validators.UserChangeValidator": {
-        "System.Boolean Model.Models.Validators.UserChangeValidator::ValidateUpdateUser(Model.Entities.User)": {
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Models\\Validators\\UserValidator.cs": {
+      "Model.Models.Validators.UserValidator": {
+        "System.Boolean Model.Models.Validators.UserValidator::ValidateGetUser(System.String)": {
           "Lines": {
-            "10": 6,
-            "11": 6,
-            "12": 4,
-            "13": 4,
-            "16": 2,
-            "17": 6
+            "10": 2,
+            "11": 2,
+            "12": 1,
+            "13": 1,
+            "15": 1,
+            "16": 2
           },
           "Branches": [
             {
@@ -782,10 +2215,38 @@
               "EndOffset": 9,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 4
+              "Hits": 1
             },
             {
               "Line": 11,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.UserValidator::ValidateUpdateUser(Model.Entities.User)": {
+          "Lines": {
+            "19": 6,
+            "20": 6,
+            "21": 4,
+            "22": 4,
+            "24": 2,
+            "25": 6
+          },
+          "Branches": [
+            {
+              "Line": 20,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 4
+            },
+            {
+              "Line": 20,
               "Offset": 7,
               "EndOffset": 20,
               "Path": 1,
@@ -793,7 +2254,7 @@
               "Hits": 2
             },
             {
-              "Line": 11,
+              "Line": 20,
               "Offset": 23,
               "EndOffset": 25,
               "Path": 0,
@@ -801,7 +2262,7 @@
               "Hits": 4
             },
             {
-              "Line": 11,
+              "Line": 20,
               "Offset": 23,
               "EndOffset": 30,
               "Path": 1,
@@ -860,12 +2321,12 @@
         },
         "System.Boolean Model.Models.Validators.WorkoutValidator::ValidateGetWorkout(System.String)": {
           "Lines": {
-            "18": 4,
-            "19": 4,
-            "20": 2,
-            "21": 2,
-            "23": 2,
-            "24": 4
+            "18": 6,
+            "19": 6,
+            "20": 3,
+            "21": 3,
+            "23": 3,
+            "24": 6
           },
           "Branches": [
             {
@@ -874,10 +2335,94 @@
               "EndOffset": 9,
               "Path": 0,
               "Ordinal": 0,
-              "Hits": 2
+              "Hits": 3
             },
             {
               "Line": 19,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.WorkoutValidator::ValidateUpdateWorkout(Model.Entities.Workout)": {
+          "Lines": {
+            "27": 2,
+            "28": 2,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 2
+          },
+          "Branches": [
+            {
+              "Line": 28,
+              "Offset": 12,
+              "EndOffset": 14,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 28,
+              "Offset": 12,
+              "EndOffset": 19,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.WorkoutValidator::ValidateDeleteWorkout(System.String)": {
+          "Lines": {
+            "36": 2,
+            "37": 2,
+            "38": 1,
+            "39": 1,
+            "41": 1,
+            "42": 2
+          },
+          "Branches": [
+            {
+              "Line": 37,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 37,
+              "Offset": 7,
+              "EndOffset": 14,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Boolean Model.Models.Validators.WorkoutValidator::ValidateGetExercises(System.String)": {
+          "Lines": {
+            "45": 4,
+            "46": 4,
+            "47": 2,
+            "48": 2,
+            "50": 2,
+            "51": 4
+          },
+          "Branches": [
+            {
+              "Line": 46,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 2
+            },
+            {
+              "Line": 46,
               "Offset": 7,
               "EndOffset": 14,
               "Path": 1,
@@ -888,29 +2433,366 @@
         }
       }
     },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\CustomException.cs": {
+      "Model.Exceptions.CustomException": {
+        "System.Net.HttpStatusCode Model.Exceptions.CustomException::get_StatusCode()": {
+          "Lines": {
+            "10": 30
+          },
+          "Branches": []
+        },
+        "System.String Model.Exceptions.CustomException::get_DeveloperMessage()": {
+          "Lines": {
+            "12": 30
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.CustomException::.ctor()": {
+          "Lines": {
+            "14": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.CustomException::.ctor(System.String,System.String)": {
+          "Lines": {
+            "16": 90
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.CustomException::.ctor(System.String,System.String,System.Exception)": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\Data Exceptions\\DuplicateDataException.cs": {
+      "Model.Exceptions.DuplicateDataException": {
+        "System.Void Model.Exceptions.DuplicateDataException::.ctor()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.DuplicateDataException::.ctor(System.String,System.String)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.DuplicateDataException::.ctor(System.String,System.String,System.Exception)": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\ExceptionMessages.cs": {
+      "Model.Exceptions.ExceptionMessages": {
+        "System.Void Model.Exceptions.ExceptionMessages::.cctor()": {
+          "Lines": {
+            "12": 1,
+            "13": 1,
+            "17": 1,
+            "18": 1,
+            "26": 1,
+            "27": 1,
+            "29": 1,
+            "30": 1,
+            "32": 1,
+            "33": 1,
+            "35": 1,
+            "36": 1,
+            "38": 1,
+            "39": 1,
+            "44": 1,
+            "45": 1,
+            "47": 1,
+            "48": 1,
+            "50": 1,
+            "51": 1,
+            "53": 1,
+            "54": 1,
+            "56": 1,
+            "57": 1,
+            "69": 1,
+            "70": 1,
+            "72": 1,
+            "73": 1,
+            "75": 1,
+            "76": 1,
+            "81": 1,
+            "82": 1,
+            "84": 1,
+            "85": 1,
+            "87": 1,
+            "88": 1,
+            "90": 1,
+            "91": 1,
+            "96": 1,
+            "97": 1,
+            "99": 1,
+            "100": 1,
+            "102": 1,
+            "103": 1,
+            "105": 1,
+            "106": 1,
+            "108": 1,
+            "109": 1,
+            "115": 1,
+            "116": 1,
+            "118": 1,
+            "119": 1,
+            "121": 1,
+            "122": 1,
+            "124": 1,
+            "125": 1,
+            "127": 1,
+            "128": 1,
+            "138": 1,
+            "139": 1,
+            "141": 1,
+            "142": 1,
+            "144": 1,
+            "145": 1,
+            "151": 1,
+            "152": 1,
+            "154": 1,
+            "155": 1,
+            "157": 1,
+            "158": 1,
+            "160": 1,
+            "161": 1,
+            "166": 1,
+            "167": 1,
+            "169": 1,
+            "170": 1,
+            "172": 1,
+            "173": 1,
+            "175": 1,
+            "176": 1,
+            "178": 1,
+            "179": 1,
+            "185": 1,
+            "186": 1,
+            "188": 1,
+            "189": 1,
+            "191": 1,
+            "192": 1,
+            "194": 1,
+            "195": 1,
+            "197": 1,
+            "198": 1
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\InsufficientInformationException.cs": {
+      "Model.Exceptions.InsufficientInformationException": {
+        "System.Void Model.Exceptions.InsufficientInformationException::.ctor()": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.InsufficientInformationException::.ctor(System.String,System.String)": {
+          "Lines": {
+            "22": 18,
+            "23": 18,
+            "24": 18,
+            "25": 18,
+            "26": 18
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.InsufficientInformationException::.ctor(System.String,System.String,System.Exception)": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\InvalidParameterFormatException.cs": {
+      "Model.Exceptions.InvalidParameterFormatException": {
+        "System.Void Model.Exceptions.InvalidParameterFormatException::.ctor()": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.InvalidParameterFormatException::.ctor(System.String,System.String)": {
+          "Lines": {
+            "21": 5,
+            "22": 5,
+            "23": 5,
+            "24": 5,
+            "25": 5
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.InvalidParameterFormatException::.ctor(System.String,System.String,System.Exception)": {
+          "Lines": {
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\InvalidParametersException.cs": {
+      "Model.Exceptions.InvalidParametersException": {
+        "System.Void Model.Exceptions.InvalidParametersException::.ctor()": {
+          "Lines": {
+            "16": 0,
+            "17": 0,
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.InvalidParametersException::.ctor(System.String,System.String)": {
+          "Lines": {
+            "22": 7,
+            "23": 7,
+            "24": 7,
+            "25": 7,
+            "26": 7
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.InvalidParametersException::.ctor(System.String,System.String,System.Exception)": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\Data Exceptions\\DataAccessException.cs": {
+      "Model.Exceptions.DataExceptions.DataAccessException": {
+        "System.Void Model.Exceptions.DataExceptions.DataAccessException::.ctor()": {
+          "Lines": {
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0,
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.DataExceptions.DataAccessException::.ctor(System.String,System.String)": {
+          "Lines": {
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0,
+            "24": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.DataExceptions.DataAccessException::.ctor(System.String,System.String,System.Exception)": {
+          "Lines": {
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Exceptions\\Data Exceptions\\DataDoesNotExistException.cs": {
+      "Model.Exceptions.DataExceptions.DataDoesNotExistException": {
+        "System.Void Model.Exceptions.DataExceptions.DataDoesNotExistException::.ctor()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0,
+            "16": 0,
+            "17": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.DataExceptions.DataDoesNotExistException::.ctor(System.String,System.String)": {
+          "Lines": {
+            "19": 0,
+            "20": 0,
+            "21": 0,
+            "22": 0,
+            "23": 0
+          },
+          "Branches": []
+        },
+        "System.Void Model.Exceptions.DataExceptions.DataDoesNotExistException::.ctor(System.String,System.String,System.Exception)": {
+          "Lines": {
+            "25": 0,
+            "26": 0,
+            "27": 0,
+            "28": 0,
+            "29": 0
+          },
+          "Branches": []
+        }
+      }
+    },
     "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\Entities\\Comment.cs": {
       "Model.Entities.Comment": {
         "System.String Model.Entities.Comment::get_CommentId()": {
           "Lines": {
-            "9": 0
+            "9": 10
           },
           "Branches": []
         },
         "System.DateTime Model.Entities.Comment::get_CreatedDate()": {
           "Lines": {
-            "10": 0
+            "10": 3
           },
           "Branches": []
         },
-        "Model.Entities.User Model.Entities.Comment::get_CreatedBy()": {
+        "System.String Model.Entities.Comment::get_CreatedById()": {
           "Lines": {
-            "11": 0
+            "11": 3
           },
           "Branches": []
         },
         "System.String Model.Entities.Comment::get_Description()": {
           "Lines": {
-            "12": 0
+            "12": 6
           },
           "Branches": []
         }
@@ -920,47 +2802,47 @@
       "Model.Entities.Exercise": {
         "System.String Model.Entities.Exercise::get_ExerciseId()": {
           "Lines": {
-            "17": 0
+            "17": 22
           },
           "Branches": []
         },
         "System.String Model.Entities.Exercise::get_Name()": {
           "Lines": {
-            "18": 0
+            "18": 7
           },
           "Branches": []
         },
         "System.Int32 Model.Entities.Exercise::get_Order()": {
           "Lines": {
-            "19": 0
+            "19": 7
           },
           "Branches": []
         },
         "Model.DataTypes.Status Model.Entities.Exercise::get_Status()": {
           "Lines": {
-            "20": 0
+            "20": 7
           },
           "Branches": []
         },
-        "System.Collections.Generic.ICollection`1<Model.Entities.Set> Model.Entities.Exercise::get_Sets()": {
+        "System.Collections.Generic.ICollection`1<System.String> Model.Entities.Exercise::get_SetIds()": {
           "Lines": {
-            "22": 0
+            "22": 12
           },
           "Branches": []
         },
-        "System.Collections.Generic.ICollection`1<Model.Entities.Comment> Model.Entities.Exercise::get_Comments()": {
+        "System.Collections.Generic.ICollection`1<System.String> Model.Entities.Exercise::get_CommentIds()": {
           "Lines": {
-            "23": 0
+            "23": 12
           },
           "Branches": []
         },
         "System.Void Model.Entities.Exercise::.ctor()": {
           "Lines": {
-            "11": 0,
-            "12": 0,
-            "13": 0,
-            "14": 0,
-            "15": 0
+            "11": 12,
+            "12": 12,
+            "13": 12,
+            "14": 12,
+            "15": 12
           },
           "Branches": []
         }
@@ -970,40 +2852,40 @@
       "Model.Entities.Plan": {
         "System.String Model.Entities.Plan::get_PlanId()": {
           "Lines": {
-            "16": 27
+            "16": 44
           },
           "Branches": []
         },
         "Model.DataTypes.Status Model.Entities.Plan::get_Status()": {
           "Lines": {
-            "17": 15
+            "17": 24
           },
           "Branches": []
         },
-        "Model.Entities.User Model.Entities.Plan::get_Trainee()": {
+        "System.String Model.Entities.Plan::get_TraineeId()": {
           "Lines": {
-            "18": 13
+            "18": 22
           },
           "Branches": []
         },
-        "Model.Entities.User Model.Entities.Plan::get_Coach()": {
+        "System.String Model.Entities.Plan::get_CoachId()": {
           "Lines": {
-            "19": 20
+            "19": 28
           },
           "Branches": []
         },
-        "System.Collections.Generic.ICollection`1<Model.Entities.Workout> Model.Entities.Plan::get_Workouts()": {
+        "System.Collections.Generic.ICollection`1<System.String> Model.Entities.Plan::get_WorkoutIds()": {
           "Lines": {
-            "21": 24
+            "21": 39
           },
           "Branches": []
         },
         "System.Void Model.Entities.Plan::.ctor()": {
           "Lines": {
-            "11": 13,
-            "12": 13,
-            "13": 13,
-            "14": 13
+            "11": 21,
+            "12": 21,
+            "13": 21,
+            "14": 21
           },
           "Branches": []
         }
@@ -1013,52 +2895,52 @@
       "Model.Entities.Set": {
         "System.String Model.Entities.Set::get_SetId()": {
           "Lines": {
-            "15": 0
+            "15": 17
           },
           "Branches": []
         },
         "System.Int32 Model.Entities.Set::get_Order()": {
           "Lines": {
-            "16": 0
+            "16": 5
           },
           "Branches": []
         },
         "System.Nullable`1<System.Double> Model.Entities.Set::get_TargetRPE()": {
           "Lines": {
-            "17": 0
+            "17": 5
           },
           "Branches": []
         },
         "System.Nullable`1<System.Double> Model.Entities.Set::get_ActualRPE()": {
           "Lines": {
-            "18": 0
+            "18": 5
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> Model.Entities.Set::get_TargetReps()": {
           "Lines": {
-            "19": 0
+            "19": 5
           },
           "Branches": []
         },
         "System.Nullable`1<System.Int32> Model.Entities.Set::get_ActualReps()": {
           "Lines": {
-            "20": 0
+            "20": 5
           },
           "Branches": []
         },
-        "System.Collections.Generic.ICollection`1<Model.Entities.Comment> Model.Entities.Set::get_Comments()": {
+        "System.Collections.Generic.ICollection`1<System.String> Model.Entities.Set::get_CommentIds()": {
           "Lines": {
-            "22": 0
+            "22": 10
           },
           "Branches": []
         },
         "System.Void Model.Entities.Set::.ctor()": {
           "Lines": {
-            "10": 0,
-            "11": 0,
-            "12": 0,
-            "13": 0
+            "10": 10,
+            "11": 10,
+            "12": 10,
+            "13": 10
           },
           "Branches": []
         }
@@ -1068,43 +2950,43 @@
       "Model.Entities.User": {
         "System.String Model.Entities.User::get_UserId()": {
           "Lines": {
-            "10": 42
+            "10": 110
           },
           "Branches": []
         },
         "System.String Model.Entities.User::get_Email()": {
           "Lines": {
-            "11": 42
+            "11": 69
           },
           "Branches": []
         },
         "System.String Model.Entities.User::get_FirstName()": {
           "Lines": {
-            "12": 36
+            "12": 61
           },
           "Branches": []
         },
         "System.String Model.Entities.User::get_LastName()": {
           "Lines": {
-            "13": 36
+            "13": 61
           },
           "Branches": []
         },
         "System.Nullable`1<System.Double> Model.Entities.User::get_Height()": {
           "Lines": {
-            "14": 36
+            "14": 61
           },
           "Branches": []
         },
         "System.Nullable`1<System.Double> Model.Entities.User::get_Weight()": {
           "Lines": {
-            "15": 36
+            "15": 61
           },
           "Branches": []
         },
         "Model.DataTypes.AccountType Model.Entities.User::get_AccountType()": {
           "Lines": {
-            "16": 36
+            "16": 62
           },
           "Branches": []
         }
@@ -1114,47 +2996,47 @@
       "Model.Entities.Workout": {
         "System.String Model.Entities.Workout::get_WorkoutId()": {
           "Lines": {
-            "17": 27
+            "17": 69
           },
           "Branches": []
         },
         "System.DateTime Model.Entities.Workout::get_Date()": {
           "Lines": {
-            "18": 18
+            "18": 34
           },
           "Branches": []
         },
         "System.String Model.Entities.Workout::get_Title()": {
           "Lines": {
-            "19": 18
+            "19": 34
           },
           "Branches": []
         },
         "Model.DataTypes.Status Model.Entities.Workout::get_Status()": {
           "Lines": {
-            "20": 21
+            "20": 37
           },
           "Branches": []
         },
-        "System.Collections.Generic.ICollection`1<Model.Entities.Comment> Model.Entities.Workout::get_Comments()": {
+        "System.Collections.Generic.ICollection`1<System.String> Model.Entities.Workout::get_CommentIds()": {
           "Lines": {
-            "22": 35
+            "22": 64
           },
           "Branches": []
         },
-        "System.Collections.Generic.ICollection`1<Model.Entities.Exercise> Model.Entities.Workout::get_Exercises()": {
+        "System.Collections.Generic.ICollection`1<System.String> Model.Entities.Workout::get_ExerciseIds()": {
           "Lines": {
-            "23": 35
+            "23": 64
           },
           "Branches": []
         },
         "System.Void Model.Entities.Workout::.ctor()": {
           "Lines": {
-            "11": 19,
-            "12": 19,
-            "13": 19,
-            "14": 19,
-            "15": 19
+            "11": 34,
+            "12": 34,
+            "13": 34,
+            "14": 34,
+            "15": 34
           },
           "Branches": []
         }
@@ -1164,27 +3046,285 @@
       "Model.DataAccess.DataAccessLocatorBase": {
         "Model.DataAccess.BaseAccessors.UserDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetUserDataAccessor()": {
           "Lines": {
-            "11": 7,
-            "12": 7,
-            "13": 7
+            "11": 11,
+            "12": 11,
+            "13": 11
           },
           "Branches": []
         },
         "Model.DataAccess.BaseAccessors.PlanDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetPlanDataAccessor()": {
           "Lines": {
-            "16": 3,
-            "17": 3,
-            "18": 3
+            "16": 6,
+            "17": 6,
+            "18": 6
           },
           "Branches": []
         },
         "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetWorkoutDataAccessor()": {
           "Lines": {
-            "21": 2,
-            "22": 2,
-            "23": 2
+            "21": 5,
+            "22": 5,
+            "23": 5
           },
           "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetExerciseDataAccessor()": {
+          "Lines": {
+            "26": 5,
+            "27": 5,
+            "28": 5
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.SetDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetSetDataAccessor()": {
+          "Lines": {
+            "31": 5,
+            "32": 5,
+            "33": 5
+          },
+          "Branches": []
+        },
+        "Model.DataAccess.BaseAccessors.CommentDataAccessorBase Model.DataAccess.DataAccessLocatorBase::GetCommentDataAccessor()": {
+          "Lines": {
+            "36": 0,
+            "37": 0,
+            "38": 0
+          },
+          "Branches": []
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\DataAccess\\BaseAccessors\\CommentDataAccessorBase.cs": {
+      "Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<CreateComment>d__0": {
+        "System.Void Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<CreateComment>d__0::MoveNext()": {
+          "Lines": {
+            "13": 0,
+            "14": 0,
+            "15": 0
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 51,
+              "EndOffset": 53,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 51,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<GetComment>d__1": {
+        "System.Void Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<GetComment>d__1::MoveNext()": {
+          "Lines": {
+            "18": 0,
+            "19": 0,
+            "20": 0
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 19,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<UpdateComment>d__2": {
+        "System.Void Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<UpdateComment>d__2::MoveNext()": {
+          "Lines": {
+            "23": 0,
+            "24": 0,
+            "25": 0
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 24,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<DeleteComment>d__3": {
+        "System.Void Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<DeleteComment>d__3::MoveNext()": {
+          "Lines": {
+            "28": 0,
+            "29": 0,
+            "30": 0
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 29,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<GetComments>d__4": {
+        "System.Void Model.DataAccess.BaseAccessors.CommentDataAccessorBase/<GetComments>d__4::MoveNext()": {
+          "Lines": {
+            "33": 0,
+            "34": 0,
+            "35": 0
+          },
+          "Branches": [
+            {
+              "Line": 34,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 34,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\DataAccess\\BaseAccessors\\ExerciseDataAccessorBase.cs": {
+      "Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<CreateExercise>d__0": {
+        "System.Void Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<CreateExercise>d__0::MoveNext()": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 51,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<GetExercise>d__1": {
+        "System.Void Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<GetExercise>d__1::MoveNext()": {
+          "Lines": {
+            "18": 1,
+            "19": 1,
+            "20": 1
+          },
+          "Branches": [
+            {
+              "Line": 19,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<UpdateExercise>d__2": {
+        "System.Void Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<UpdateExercise>d__2::MoveNext()": {
+          "Lines": {
+            "23": 1,
+            "24": 1,
+            "25": 1
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<DeleteExercise>d__3": {
+        "System.Void Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<DeleteExercise>d__3::MoveNext()": {
+          "Lines": {
+            "28": 1,
+            "29": 1,
+            "30": 1
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<GetExercises>d__4": {
+        "System.Void Model.DataAccess.BaseAccessors.ExerciseDataAccessorBase/<GetExercises>d__4::MoveNext()": {
+          "Lines": {
+            "33": 1,
+            "34": 1,
+            "35": 1
+          },
+          "Branches": [
+            {
+              "Line": 34,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
         }
       }
     },
@@ -1192,13 +3332,13 @@
       "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<CreatePlan>d__0": {
         "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<CreatePlan>d__0::MoveNext()": {
           "Lines": {
-            "12": 1,
             "13": 1,
-            "14": 1
+            "14": 1,
+            "15": 1
           },
           "Branches": [
             {
-              "Line": 13,
+              "Line": 14,
               "Offset": 45,
               "EndOffset": 111,
               "Path": 1,
@@ -1211,13 +3351,91 @@
       "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<GetPlan>d__1": {
         "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<GetPlan>d__1::MoveNext()": {
           "Lines": {
-            "17": 1,
-            "18": 1,
-            "19": 1
+            "18": 2,
+            "19": 2,
+            "20": 2
           },
           "Branches": [
             {
-              "Line": 18,
+              "Line": 19,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<UpdatePlan>d__2": {
+        "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<UpdatePlan>d__2::MoveNext()": {
+          "Lines": {
+            "23": 2,
+            "24": 2,
+            "25": 2
+          },
+          "Branches": [
+            {
+              "Line": 24,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<GetPlans>d__3": {
+        "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<GetPlans>d__3::MoveNext()": {
+          "Lines": {
+            "28": 1,
+            "29": 1,
+            "30": 1
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 51,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\gdari\\OneDrive\\Documents\\GitHub\\bph-back-end\\Model\\DataAccess\\BaseAccessors\\SetDataAccessorBase.cs": {
+      "Model.DataAccess.BaseAccessors.SetDataAccessorBase/<CreateSet>d__0": {
+        "System.Void Model.DataAccess.BaseAccessors.SetDataAccessorBase/<CreateSet>d__0::MoveNext()": {
+          "Lines": {
+            "13": 1,
+            "14": 1,
+            "15": 1
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 51,
+              "EndOffset": 117,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.SetDataAccessorBase/<GetSet>d__1": {
+        "System.Void Model.DataAccess.BaseAccessors.SetDataAccessorBase/<GetSet>d__1::MoveNext()": {
+          "Lines": {
+            "18": 1,
+            "19": 1,
+            "20": 1
+          },
+          "Branches": [
+            {
+              "Line": 19,
               "Offset": 45,
               "EndOffset": 111,
               "Path": 1,
@@ -1227,16 +3445,54 @@
           ]
         }
       },
-      "Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<UpdatePlan>d__2": {
-        "System.Void Model.DataAccess.BaseAccessors.PlanDataAccessorBase/<UpdatePlan>d__2::MoveNext()": {
+      "Model.DataAccess.BaseAccessors.SetDataAccessorBase/<UpdateSet>d__2": {
+        "System.Void Model.DataAccess.BaseAccessors.SetDataAccessorBase/<UpdateSet>d__2::MoveNext()": {
           "Lines": {
-            "22": 1,
             "23": 1,
-            "24": 1
+            "24": 1,
+            "25": 1
           },
           "Branches": [
             {
-              "Line": 23,
+              "Line": 24,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.SetDataAccessorBase/<DeleteSet>d__3": {
+        "System.Void Model.DataAccess.BaseAccessors.SetDataAccessorBase/<DeleteSet>d__3::MoveNext()": {
+          "Lines": {
+            "28": 1,
+            "29": 1,
+            "30": 1
+          },
+          "Branches": [
+            {
+              "Line": 29,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.SetDataAccessorBase/<GetSets>d__4": {
+        "System.Void Model.DataAccess.BaseAccessors.SetDataAccessorBase/<GetSets>d__4::MoveNext()": {
+          "Lines": {
+            "33": 1,
+            "34": 1,
+            "35": 1
+          },
+          "Branches": [
+            {
+              "Line": 34,
               "Offset": 45,
               "EndOffset": 111,
               "Path": 1,
@@ -1308,9 +3564,9 @@
       "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<GetCurrentUser>d__3": {
         "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<GetCurrentUser>d__3::MoveNext()": {
           "Lines": {
-            "27": 3,
-            "28": 3,
-            "29": 3
+            "27": 6,
+            "28": 6,
+            "29": 6
           },
           "Branches": [
             {
@@ -1319,7 +3575,7 @@
               "EndOffset": 105,
               "Path": 1,
               "Ordinal": 1,
-              "Hits": 3
+              "Hits": 6
             }
           ]
         }
@@ -1339,6 +3595,52 @@
               "Path": 1,
               "Ordinal": 1,
               "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<UpdatePassword>d__5": {
+        "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<UpdatePassword>d__5::MoveNext()": {
+          "Lines": {
+            "37": 1,
+            "38": 1,
+            "39": 1
+          },
+          "Branches": [
+            {
+              "Line": 38,
+              "Offset": 57,
+              "EndOffset": 123,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.UserDataAccessorBase/<GetUser>d__6": {
+        "System.Void Model.DataAccess.BaseAccessors.UserDataAccessorBase/<GetUser>d__6::MoveNext()": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "44": 0
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 45,
+              "EndOffset": 47,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
             }
           ]
         }
@@ -1367,13 +3669,51 @@
       "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<GetWorkout>d__1": {
         "System.Void Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<GetWorkout>d__1::MoveNext()": {
           "Lines": {
-            "17": 1,
-            "18": 1,
-            "19": 1
+            "17": 2,
+            "18": 2,
+            "19": 2
           },
           "Branches": [
             {
               "Line": 18,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<UpdateWorkout>d__2": {
+        "System.Void Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<UpdateWorkout>d__2::MoveNext()": {
+          "Lines": {
+            "22": 1,
+            "23": 1,
+            "24": 1
+          },
+          "Branches": [
+            {
+              "Line": 23,
+              "Offset": 45,
+              "EndOffset": 111,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 1
+            }
+          ]
+        }
+      },
+      "Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<GetWorkouts>d__3": {
+        "System.Void Model.DataAccess.BaseAccessors.WorkoutDataAccessorBase/<GetWorkouts>d__3::MoveNext()": {
+          "Lines": {
+            "27": 1,
+            "28": 1,
+            "29": 1
+          },
+          "Branches": [
+            {
+              "Line": 28,
               "Offset": 45,
               "EndOffset": 111,
               "Path": 1,
