@@ -9,29 +9,31 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockCommentDataAccessor : CommentDataAccessorBase
     {
-        protected override Task<string> CreateCommentCore(Comment comment, string ownerId)
+        protected override async Task<string> CreateCommentCore(Comment comment, string ownerId)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(comment.CommentId);
         }
 
-        protected override Task<bool> DeleteCommentCore(string commentId)
+        protected override async Task<bool> DeleteCommentCore(string commentId)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(true);
         }
 
-        protected override Task<Comment> GetCommentCore(string commentId)
+        protected override async Task<Comment> GetCommentCore(string commentId)
         {
-            throw new NotImplementedException();
+            var comment = MockComments.GetComment(commentId);
+            return await Task.FromResult(comment);
         }
 
-        protected override Task<IEnumerable<Comment>> GetCommentsCore(string ownerId)
+        protected override async Task<IEnumerable<Comment>> GetCommentsCore(string ownerId)
         {
-            throw new NotImplementedException();
+            var comments = new List<Comment> { MockComments.Comment1() };
+            return await Task.FromResult(comments);
         }
 
-        protected override Task<Comment> UpdateCommentCore(Comment comment)
+        protected override async Task<Comment> UpdateCommentCore(Comment comment)
         {
-            throw new NotImplementedException();
+            return await Task.FromResult(comment);
         }
     }
 }
