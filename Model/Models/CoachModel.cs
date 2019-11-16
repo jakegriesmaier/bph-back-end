@@ -186,7 +186,6 @@ namespace Model.Models
 
         public async Task<IEnumerable<Set>> GetSets(string exerciseId)
         {
-            //TODO TEST
             if (!ExerciseValidator.ValidateGetSets(exerciseId))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_SETS_PARAMS,
@@ -247,7 +246,10 @@ namespace Model.Models
 
         public async Task<User> GetTrainee(string userId)
         {
-            //TODO VALIDATE 
+            if (!UserValidator.ValidateGetUser(userId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_USER_PARAMS, ExceptionMessages.INVALID_GET_USER_PARAMS_USER_FRIENDLY);
+            }
             return await UserDataAccessor.GetUser(userId);
         }
     }
