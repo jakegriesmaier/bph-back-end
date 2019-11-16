@@ -197,31 +197,51 @@ namespace Model.Models
 
         public async Task<string> CreateComment(Comment comment, string ownerId)
         {
-            //TODO VALIDATE
+            if (!CommentValidator.ValidateCreateComment(comment, ownerId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_CREATE_COMMENT_PARAMS,
+                    ExceptionMessages.INVALID_CREATE_COMMENT_PARAMS_USER_FRIENDLY);
+            }
             return await CommentDataAccessor.CreateComment(comment, ownerId);
         }
 
         public async Task<Comment> GetComment(string commentId)
         {
-            //TODO VALIDATE
+            if (!CommentValidator.ValidateGetComment(commentId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_COMMENT_PARAMS,
+                    ExceptionMessages.INVALID_GET_COMMENT_PARAMS_USER_FRIENDLY);
+            }
             return await CommentDataAccessor.GetComment(commentId);
         }
 
         public async Task<Comment> UpdateComment(Comment comment)
         {
-            //TODO VALIDATE
+            if (!CommentValidator.ValidateUpdateComment(comment))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_COMMENT_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_COMMENT_PARAMS_USER_FRIENDLY);
+            }
             return await CommentDataAccessor.UpdateComment(comment);
         }
 
         public async Task<bool> DeleteComment(string commentId)
         {
-            //TODO VALIDATE
+            if (!CommentValidator.ValidateGetComment(commentId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_COMMENT_PARAMS,
+                    ExceptionMessages.INVALID_DELETE_COMMENT_PARAMS_USER_FRIENDLY);
+            }
             return await CommentDataAccessor.DeleteComment(commentId);
         }
 
         public async Task<IEnumerable<Comment>> GetComments(string ownerId)
         {
-            //TODO VALIDATE
+            if (!CommentValidator.ValidateGetComment(ownerId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_COMMENTS_PARAMS,
+                    ExceptionMessages.INVALID_GET_COMMENTS_PARAMS_USER_FRIENDLY);
+            }
             return await CommentDataAccessor.GetComments(ownerId);
         }
 

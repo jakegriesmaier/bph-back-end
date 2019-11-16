@@ -129,6 +129,25 @@ namespace Model.Exceptions
 
         #endregion Sets
 
+        #region Comments
+
+        public static readonly string INVALID_CREATE_COMMENT_PARAMS =
+                "Unable to create the comment. The comment ID must be null.  The owner ID and description must not be null.";
+
+        public static readonly string INVALID_GET_COMMENT_PARAMS =
+               "Unable to get the comment. The comment ID must not be null.";
+
+        public static readonly string INVALID_UPDATE_COMMENT_PARAMS =
+               "Unable to update the comment. The comment ID and description must not be null.";
+
+        public static readonly string INVALID_DELETE_COMMENT_PARAMS =
+               "Unable to delete the comment. The comment ID must not be null.";
+
+        public static readonly string INVALID_GET_COMMENTS_PARAMS =
+               "Unable to get the comments. The owner ID must not be null.";
+
+        #endregion Comments
+
         #endregion Coach Model Dev
 
         #region Coach Model User Friendy
@@ -198,6 +217,25 @@ namespace Model.Exceptions
             "There was trouble deleting your set.";
 
         #endregion Sets
+
+        #region Comments
+
+        public static readonly string INVALID_CREATE_COMMENT_PARAMS_USER_FRIENDLY =
+               "There was trouble creating your comment.";
+
+        public static readonly string INVALID_GET_COMMENT_PARAMS_USER_FRIENDLY =
+               "There was trouble getting your comment.";
+
+        public static readonly string INVALID_UPDATE_COMMENT_PARAMS_USER_FRIENDLY =
+               "There was trouble updating your comment.";
+
+        public static readonly string INVALID_DELETE_COMMENT_PARAMS_USER_FRIENDLY =
+               "There was trouble deleting your comment.";
+
+        public static readonly string INVALID_GET_COMMENTS_PARAMS_USER_FRIENDLY =
+               "There was trouble getting your comments.";
+
+        #endregion Comments
 
         #endregion Coach Model User Friendly
 
