@@ -5,7 +5,7 @@ using NUnit.Framework;
 
 namespace Model.UnitTests.Tests.Trainee
 {
-    public class GetPlanTest
+    public class GetCoachTest
     {
         private TraineeModel _traineeModel;
 
@@ -17,23 +17,23 @@ namespace Model.UnitTests.Tests.Trainee
         }
 
         [Test]
-        public void Test_GetPlan_HappyPath()
+        public void GetCoach_HappyPath()
         {
-            string planId = "Non Null Plan Id :)";
-
-            Assert.DoesNotThrowAsync(async () => {
-                await _traineeModel.GetPlan(planId);
-            }, "Marked a good GetPlan call as bad.");
+            string coachId = "Non Null Coach Id :)";
+            Assert.DoesNotThrowAsync(async () =>
+            {
+                await _traineeModel.GetCoach(coachId);
+            }, "Error thrown on good call to get coach");
         }
 
         [Test]
-        public void Test_GetPlan_NoPlanIdSpecified()
+        public void GetCoach_NoCoachIdSpecified()
         {
-            string planId = null;
+            string coachId = null;
 
             Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
-                await _traineeModel.GetPlan(planId);
-            }, "Expected an error to be thrown when trying to get a plan without an id.");
+                await _traineeModel.GetCoach(coachId);
+            }, "Expected an error to be thrown when trying to get a coach without an id.");
         }
     }
 }
