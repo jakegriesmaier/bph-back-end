@@ -18,3 +18,4 @@
 **0.** If not done already, follow instructions 1-4 from "Instructions To Build and Run the bph-back-end API"
 
 **1.** from within the solution run "dotnet test"
+ummm im spaghetti
