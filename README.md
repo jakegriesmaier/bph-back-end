@@ -1,6 +1,6 @@
 **Instructions To Build and Run the bph-back-end API:** 
 
-**1.** pull the branch iteration2-backend
+**1.** pull the branch iteration2-backend test
 
 **2.** download ASP.NET Core/.NET Core: Runtime & Hosting Bundle version 2.1.10
 
