@@ -1,5 +1,5 @@
 # These owners will be the default owners for everything in
 # the repo. Unless a later match takes precedence,
-# @jakegriesmaier will be requested for
+# @jakegriesmaier, @jakespeare, and @gdarin will be requested for
 # review when someone opens a pull request.
 *     @jakegriesmaier  @jakespeare  @gdarin
