@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Model.Exceptions;
 using Newtonsoft.Json;
+using Persistence.DataExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,9 +46,9 @@ namespace Presentation.Services
                     developerMessage = (ex as CustomException).DeveloperMessage
                 });
             }
-            else if (ex is HttpRequestException)
+            else if (ex is ParentDoesNotExistException)
             {
-                statusCode = HttpStatusCode.BadRequest; 
+                statusCode = HttpStatusCode.NotFOu; 
             }
 
             context.Response.ContentType = "application/json";

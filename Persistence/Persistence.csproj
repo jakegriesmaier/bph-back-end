@@ -28,4 +28,12 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="DataAccessors\PlanDataAccessor.cs" />
+    <Compile Remove="DataAccessors\WorkoutDataAccessor.cs" />
+    <Compile Remove="EntityFramework\DatabaseInitializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data Exceptions\" />
+  </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
 using Model.Entities;
+using Model.Exceptions;
+using Persistence.DataExceptions;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
@@ -27,9 +29,9 @@ namespace Persistence.DataAccessors
             try
             {
                 var exercise = await _context.Exercises.FindAsync(exerciseId);
-                if(exercise == null)
+                if (exercise == null)
                 {
-                    throw new HttpRequestException("Exercise Does Not Exist.");
+                    throw new ParentDoesNotExistException(ExceptionMessages.PARENT_EXERCISE_DOES_NOT_EXIST_DEV, ExceptionMessages.PARENT_EXERCISE_DOES_NOT_EXIST_USER_FRIENDLY);
                 }
                 var setDao = Mapper.map(set);
                 setDao.ExerciseId = exerciseId;
@@ -80,7 +82,7 @@ namespace Persistence.DataAccessors
                 var exercise = await _context.Exercises.FindAsync(exerciseId);
                 if (exercise == null)
                 {
-                    throw new HttpRequestException("Exercise Does Not Exist.");
+                    throw new ParentDoesNotExistException(ExceptionMessages.PARENT_EXERCISE_DOES_NOT_EXIST_DEV, ExceptionMessages.PARENT_EXERCISE_DOES_NOT_EXIST_USER_FRIENDLY);
                 }
                 var sets = _context.Sets.Where(s => s.ExerciseId == exerciseId).ToList();
                 sets.ForEach(s => s.Comments = _context.Comments.Where(c => c.OwnerId == s.Id).ToList());

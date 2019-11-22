@@ -8,6 +8,10 @@
     <Compile Remove="Models\Exceptions\**" />
     <EmbeddedResource Remove="Models\Exceptions\**" />
     <None Remove="Models\Exceptions\**" />
+    <Compile Remove="DataAccess\BaseAccessors\PlanDataAccessorBase.cs" />
+    <Compile Remove="DataAccess\BaseAccessors\WorkoutDataAccessorBase.cs" />
+    <Compile Remove="Models\TraineeModel.cs" />
+    <Compile Remove="Models\CoachModel.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,8 +30,5 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\Data Exceptions\" />
   </ItemGroup>
 </Project>
