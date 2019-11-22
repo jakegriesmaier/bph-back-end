@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Model.DataTypes;
 using Model.Entities;
 using Presentation.Controllers.CoachPresenter.InputData;
 using Presentation.Controllers.CoachPresenter.OutputData;
@@ -12,7 +13,7 @@ namespace Presentation.Controllers.CoachPresenter
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Coach")]
     public class CoachController : BaseController
     {
 
