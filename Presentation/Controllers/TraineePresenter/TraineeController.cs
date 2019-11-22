@@ -43,6 +43,18 @@ namespace Presentation.Controllers.TraineePresenter
         }
 
         [HttpGet("[action]")]
+        public async Task<Exercise> GetExercise([FromBody] GetExerciseInputData input)
+        {
+            return await TraineeModel.GetExercise(input.ExerciseId);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Exercise>> GetExercises([FromBody] GetExercisesInputData input)
+        {
+            return await TraineeModel.GetExercises(input.WorkoutId);
+        }
+
+        [HttpGet("[action]")]
         public async Task<Set> GetSet([FromBody] GetSetInputData input)
         {
             return await TraineeModel.GetSet(input.SetId);

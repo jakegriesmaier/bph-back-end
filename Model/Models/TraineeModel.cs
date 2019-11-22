@@ -53,6 +53,26 @@ namespace Model.Models
             return await WorkoutDataAccessor.GetWorkouts(planId);
         }
 
+        public async Task<Exercise> GetExercise(string exerciseId)
+        {
+            if (!ExerciseValidator.ValidateGetExercise(exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISE_PARAMS,
+                   ExceptionMessages.INVALID_GET_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
+            return await ExerciseDataAccessor.GetExercise(exerciseId);
+        }
+
+        public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
+        {
+            if (!WorkoutValidator.ValidateGetExercises(workoutId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_GET_EXERCISES_PARAMS,
+                  ExceptionMessages.INVALID_GET_EXERCISES_PARAMS_USER_FRIENDLY);
+            }
+            return await ExerciseDataAccessor.GetExercises(workoutId);
+        }
+
         public async Task<Set> GetSet(string setId)
         {
             if (!SetValidator.ValidateGetSet(setId))
