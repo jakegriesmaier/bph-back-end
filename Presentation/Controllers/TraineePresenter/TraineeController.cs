@@ -10,7 +10,7 @@ namespace Presentation.Controllers.TraineePresenter
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Trainee")]
     public class TraineeController : BaseController
     {
         // GET api/Trainee/GetPlan

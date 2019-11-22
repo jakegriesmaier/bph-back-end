@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Model.DataTypes;
 using Persistence.DataAccessObjects;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,22 @@ namespace Persistence.EntityFramework
         private static string _coachId;
         private static string _traineeId;
 
-        public async static Task Initialize(BphContext context, UserManager<ApplicationUser> userManager)
+        public async static Task Initialize(BphContext context, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
-            await InitializeUsers(context,userManager);
+            await InitializeRoles(roleManager);
+            await InitializeUsers(context, userManager);
             InitializePlans(context);
+        }
+
+        private async static Task InitializeRoles(RoleManager<IdentityRole> roleManager)
+        {
+            foreach (var ac in Enum.GetValues(typeof(AccountType)))
+            {
+                var role = new IdentityRole(ac.ToString());
+                await roleManager.CreateAsync(role);
+            }
         }
 
         private async static Task InitializeUsers(BphContext context, UserManager<ApplicationUser> userManager)
@@ -39,6 +50,7 @@ namespace Persistence.EntityFramework
                 AccountType = Model.DataTypes.AccountType.Coach
             };
             var result = await userManager.CreateAsync(coach,coachPassword);
+            await userManager.AddToRoleAsync(coach, coach.AccountType.ToString());
             _coachId = coach.Id;
 
             // add a trainee to the database
@@ -54,6 +66,7 @@ namespace Persistence.EntityFramework
                 Weight = 99
             };
             var result2 = await userManager.CreateAsync(trainee, traineePassword);
+            await userManager.AddToRoleAsync(trainee, trainee.AccountType.ToString());
             _traineeId = trainee.Id;
 
         }

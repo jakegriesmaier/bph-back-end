@@ -38,6 +38,7 @@ namespace Persistence.DataAccessors
             var result = await _userManager.CreateAsync(user, password);
             if (result.Succeeded)
             {
+                await _userManager.AddToRoleAsync(user,user.AccountType.ToString());
                 return user.Id;
             }
 
