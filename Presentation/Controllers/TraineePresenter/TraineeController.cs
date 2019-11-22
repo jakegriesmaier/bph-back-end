@@ -43,6 +43,18 @@ namespace Presentation.Controllers.TraineePresenter
         }
 
         [HttpGet("[action]")]
+        public async Task<Set> GetSet([FromBody] GetSetInputData input)
+        {
+            return await TraineeModel.GetSet(input.SetId);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Set>> GetSets([FromBody] GetSetsInputData input)
+        {
+            return await TraineeModel.GetSets(input.ExerciseId);
+        }
+
+        [HttpGet("[action]")]
         public async Task<GetCoachOutputData> GetCoach([FromBody] GetCoachInputData input)
         {
             var result = await TraineeModel.GetCoach(input.CoachId);
