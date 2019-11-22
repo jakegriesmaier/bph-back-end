@@ -27,11 +27,10 @@ namespace Presentation.Controllers.CoachPresenter
 
         // GET api/Coach/GetPlan
         [HttpGet("[action]")]
-        public async Task<Plan> GetPlan([FromBody] GetPlanInputData input)
+        public async Task<Plan> GetPlan(string planId)
         {
-            return await CoachModel.GetPlan(input.PlanId);
+            return await CoachModel.GetPlan(planId);
         }
-
 
         [HttpPut("[action]")]
         public async Task<Plan> UpdatePlan([FromBody] Plan plan)
@@ -49,9 +48,9 @@ namespace Presentation.Controllers.CoachPresenter
 
         // GET api/Coach/GetWorkout
         [HttpGet("[action]")]
-        public async Task<Workout> GetWorkout([FromBody] GetWorkoutInputData input)
+        public async Task<Workout> GetWorkout(string workoutId)
         {
-            return await CoachModel.GetWorkout(input.WorkoutId);
+            return await CoachModel.GetWorkout(workoutId);
         }
 
         [HttpGet("[action]")]
@@ -67,9 +66,9 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<IEnumerable<Workout>> GetWorkouts([FromBody] GetWorkoutsInputData input)
+        public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
         {
-            return await CoachModel.GetWorkouts(input.PlanId);
+            return await CoachModel.GetWorkouts(planId);
         }
 
         [HttpPost("[action]")]
@@ -80,9 +79,9 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<Exercise> GetExercise([FromBody] GetExerciseInputData input)
+        public async Task<Exercise> GetExercise(string exerciseId)
         {
-            return await CoachModel.GetExercise(input.ExerciseId);
+            return await CoachModel.GetExercise(exerciseId);
         }
 
         [HttpPut("[action]")]
@@ -99,9 +98,9 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public  async Task<IEnumerable<Exercise>> GetExercises([FromBody] GetExercisesInputData input)
+        public  async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
         {
-            return await CoachModel.GetExercises(input.WorkoutId);
+            return await CoachModel.GetExercises(workoutId);
         }
 
         [HttpPost("[action]")]
@@ -112,9 +111,9 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<Set> GetSet([FromBody] GetSetInputData input)
+        public async Task<Set> GetSet(string setId)
         {
-            return await CoachModel.GetSet(input.SetId);
+            return await CoachModel.GetSet(setId);
         }
 
         [HttpPut("[action]")]
@@ -131,9 +130,9 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<IEnumerable<Set>> GetSets([FromBody] GetSetsInputData input)
+        public async Task<IEnumerable<Set>> GetSets(string exerciseId)
         {
-            return await CoachModel.GetSets(input.ExerciseId);
+            return await CoachModel.GetSets(exerciseId);
         }
 
         [HttpPost("[action]")]
@@ -144,9 +143,9 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<Comment> GetComment([FromBody] GetCommentInputData input)
+        public async Task<Comment> GetComment(string commentId)
         {
-            return await CoachModel.GetComment(input.CommentId);
+            return await CoachModel.GetComment(commentId);
         }
 
         [HttpPut("[action]")]
@@ -163,15 +162,15 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<IEnumerable<Comment>> GetComments([FromBody] GetCommentsInputData input)
+        public async Task<IEnumerable<Comment>> GetComments(string ownerId)
         {
-            return await CoachModel.GetComments(input.OwnerId);
+            return await CoachModel.GetComments(ownerId);
         }
 
         [HttpGet("[action]")]
-        public async Task<User> GetTrainee([FromBody] GetTraineeInputData input)
+        public async Task<User> GetTrainee(string traineeId)
         {
-            return await CoachModel.GetTrainee(input.TraineeId);
+            return await CoachModel.GetTrainee(traineeId);
         }
     }
 }
