@@ -10,9 +10,9 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockPlanDataAccessor : PlanDataAccessorBase
     {
-        protected override async Task CreatePlanCore(Plan plan)
+        protected override async Task<string> CreatePlanCore(Plan plan)
         {
-            await Task.CompletedTask;
+            return await Task.FromResult(MockPlans.Plan1().PlanId);
         }
 
         protected override async Task<Plan> GetPlanCore(string planId)

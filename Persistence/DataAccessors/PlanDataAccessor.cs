@@ -23,14 +23,14 @@ namespace Persistence.DataAccessors
             _userManager = userManager;
         }
 
-        protected override async Task CreatePlanCore(Plan plan)
+        protected override async Task<string> CreatePlanCore(Plan plan)
         {
             var planDao = Mapper.map(plan);
             try
             {
                 _context.Plans.Add(planDao);
                 var result = await _context.SaveChangesAsync();
-                return;
+                return planDao.PlanId;
             }
             catch
             {
