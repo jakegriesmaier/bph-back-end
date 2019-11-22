@@ -7,9 +7,10 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 {
     public class MockWorkoutDataAccessor : WorkoutDataAccessorBase
     {
-        protected override async Task CreateWorkoutCore(Workout workout, string planId)
+        protected override async Task<string> CreateWorkoutCore(Workout workout, string planId)
         {
-            await Task.CompletedTask;
+            var workoutId = MockWorkouts.Workout1().WorkoutId;
+            return await Task.FromResult(workoutId);
         }
 
         protected override async Task<Workout> GetWorkoutCore(string workoutId)

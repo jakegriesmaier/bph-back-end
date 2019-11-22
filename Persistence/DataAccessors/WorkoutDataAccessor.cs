@@ -22,7 +22,7 @@ namespace Persistence.DataAccessors
             _context = context;
         }
 
-        protected override async Task CreateWorkoutCore(Workout workout, string planId)
+        protected override async Task<string> CreateWorkoutCore(Workout workout, string planId)
         {
             try
             {
@@ -36,7 +36,7 @@ namespace Persistence.DataAccessors
 
                 _context.Workouts.Add(workoutDao);
                 await _context.SaveChangesAsync();
-                return;
+                return workoutDao.Id;
             }
             catch
             {

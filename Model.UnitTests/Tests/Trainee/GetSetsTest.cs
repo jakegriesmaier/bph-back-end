@@ -22,7 +22,7 @@ namespace Model.UnitTests.Tests.Trainee
         {
             string exerciseId = "weee";
             Assert.DoesNotThrowAsync(async () => {
-                await _traineeModel.GetSets(exerciseId);\
+                await _traineeModel.GetSets(exerciseId);
             }, "attempted to update a set but failed.");
         }
 

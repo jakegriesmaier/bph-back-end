@@ -13,7 +13,7 @@ namespace Model.Models
         //Required Constructor in order to implement ModelBase
         public CoachModel(DataAccessLocatorBase dataAccessLocator) : base(dataAccessLocator) { }
 
-        public async Task CreatePlan(Plan plan)
+        public async Task<string> CreatePlan(Plan plan)
         {
             var coach = await UserDataAccessor.GetCurrentUser();
             plan.CoachId = coach.UserId;
@@ -23,7 +23,7 @@ namespace Model.Models
                 throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_PLAN_PARAMS,
                     ExceptionMessages.INVALID_CREATE_PLAN_PARAMS_USER_FRIENDLY);
             }
-            await PlanDataAccessor.CreatePlan(plan);
+            return await PlanDataAccessor.CreatePlan(plan);
         }
 
         public async Task<Plan> GetPlan(string planId)
@@ -46,7 +46,7 @@ namespace Model.Models
             return await PlanDataAccessor.UpdatePlan(plan);
         }
 
-        public async Task CreateWorkout(Workout workout, string planId)
+        public async Task<string> CreateWorkout(Workout workout, string planId)
         {
             workout.Status = DataTypes.Status.Created;
             if (!WorkoutValidator.ValidateCreateWorkout(workout, planId))
@@ -54,7 +54,7 @@ namespace Model.Models
                 throw new InvalidParametersException(ExceptionMessages.INVALID_CREATE_WORKOUT_PARAMS,
                     ExceptionMessages.INVALID_CREATE_WORKOUT_PARAMS_USER_FRIENDLY);
             }
-            await WorkoutDataAccessor.CreateWorkout(workout, planId);
+            return await WorkoutDataAccessor.CreateWorkout(workout, planId);
         }
 
         public async Task<Workout> GetWorkout(string workoutId)

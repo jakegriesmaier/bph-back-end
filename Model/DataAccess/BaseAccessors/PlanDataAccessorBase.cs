@@ -9,9 +9,9 @@ namespace Model.DataAccess.BaseAccessors
 {
     public abstract class PlanDataAccessorBase
     {
-        public async Task CreatePlan(Plan plan)
+        public async Task<string> CreatePlan(Plan plan)
         {
-            await CreatePlanCore(plan);
+            return await CreatePlanCore(plan);
         }
 
         public async Task<Plan> GetPlan(string planId)
@@ -30,7 +30,7 @@ namespace Model.DataAccess.BaseAccessors
         }
 
         #region necessary implementations
-        protected abstract Task CreatePlanCore(Plan plan);
+        protected abstract Task<string> CreatePlanCore(Plan plan);
         protected abstract Task<Plan> GetPlanCore(string planId);
         protected abstract Task<Plan> UpdatePlanCore(Plan plan);
         protected abstract Task<IEnumerable<Plan>> GetPlansCore(User user, AccountType accountType);

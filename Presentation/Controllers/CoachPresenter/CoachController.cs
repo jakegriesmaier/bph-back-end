@@ -18,9 +18,10 @@ namespace Presentation.Controllers.CoachPresenter
 
         // POST api/Coach/CreatePlan
         [HttpPost("[action]")]
-        public async Task CreatePlan([FromBody] Plan plan)
+        public async Task<CreatePlanOutputData> CreatePlan([FromBody] Plan plan)
         {
-            await CoachModel.CreatePlan(plan);
+            var result = await CoachModel.CreatePlan(plan);
+            return new CreatePlanOutputData { PlanId = result };
         }
 
         // GET api/Coach/GetPlan
@@ -39,9 +40,10 @@ namespace Presentation.Controllers.CoachPresenter
 
         // POST api/Coach/CreateWorkout
         [HttpPost("[action]")]
-        public async Task CreateWorkout([FromBody] CreateWorkoutInputData input)
+        public async Task<CreateWorkoutOutputData> CreateWorkout([FromBody] CreateWorkoutInputData input)
         {
-            await CoachModel.CreateWorkout(input.Workout, input.PlanId);
+            var result = await CoachModel.CreateWorkout(input.Workout, input.PlanId);
+            return new CreateWorkoutOutputData { WorkoutId = result };
         }
 
         // GET api/Coach/GetWorkout
