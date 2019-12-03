@@ -82,6 +82,15 @@ namespace Persistence.EntityFramework
             };
             context.Plans.Add(plan);
 
+            // add a plan that the trainee can see
+            var nonDraftPlan = new PlanDAO
+            {
+                CoachId = _coachId,
+                TraineeId = _traineeId,
+                Status = Model.DataTypes.Status.Created
+            };
+            context.Plans.Add(nonDraftPlan);
+
             // add workouts to the plan
             var workouts = new List<WorkoutDAO>();
             var numWorkouts = 4;
