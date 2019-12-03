@@ -73,35 +73,32 @@ namespace Persistence.EntityFramework
 
         private static void InitializePlans(BphContext context)
         {
+            InitializePlan(context, Status.Draft);
+            InitializePlan(context, Status.Created);
+        }
+
+        private static void InitializePlan(BphContext context, Model.DataTypes.Status planStatus)
+        {
             // add a plan
             var plan = new PlanDAO
             {
                 CoachId = _coachId,
                 TraineeId = _traineeId,
-                Status = Model.DataTypes.Status.Draft
+                Status = planStatus
             };
             context.Plans.Add(plan);
-
-            // add a plan that the trainee can see
-            var nonDraftPlan = new PlanDAO
-            {
-                CoachId = _coachId,
-                TraineeId = _traineeId,
-                Status = Model.DataTypes.Status.Created
-            };
-            context.Plans.Add(nonDraftPlan);
 
             // add workouts to the plan
             var workouts = new List<WorkoutDAO>();
             var numWorkouts = 4;
-            for(int i = 0; i < numWorkouts; i++)
+            for (int i = 0; i < numWorkouts; i++)
             {
                 // add a workout to the plan
                 var workout = new WorkoutDAO
                 {
                     Date = DateTime.Now,
                     Title = $"Workout {i}",
-                    Status = Model.DataTypes.Status.Draft,
+                    Status = planStatus,
                     PlanId = plan.PlanId,
                 };
                 workouts.Add(workout);
@@ -111,7 +108,7 @@ namespace Persistence.EntityFramework
             // add exercises to each workout
             var exercises = new List<ExerciseDAO>();
             var numExercisesPerWorkout = 4;
-            for(int i = 0; i < numExercisesPerWorkout; i++)
+            for (int i = 0; i < numExercisesPerWorkout; i++)
             {
                 workouts.ForEach(wo => {
                     // add an exercise to the workout
@@ -120,7 +117,7 @@ namespace Persistence.EntityFramework
                         Name = $"exercise {i} in workout named {wo.Title}",
                         Order = i,
                         WorkoutId = wo.Id,
-                        Status = Model.DataTypes.Status.Draft,
+                        Status = planStatus,
                     };
                     exercises.Add(exercise);
                 });
@@ -130,7 +127,7 @@ namespace Persistence.EntityFramework
             // add sets to each exercise
             var sets = new List<SetDAO>();
             var numSetsPerExercise = 4;
-            for(int i = 0; i < numSetsPerExercise; i++)
+            for (int i = 0; i < numSetsPerExercise; i++)
             {
                 exercises.ForEach(ex => {
                     // add a set to the exercise
