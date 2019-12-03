@@ -85,7 +85,7 @@ namespace Persistence.DataAccessors
         protected override async Task<User> UpdateUserCore(User user)
         {
             try
-            { 
+            {
                 var applicationUser = await _userManager.FindByIdAsync(_currentUserService.UserId);
                 applicationUser.Email = user.Email;
                 applicationUser.FirstName = user.FirstName;
