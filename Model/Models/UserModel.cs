@@ -49,10 +49,16 @@ namespace Model.Models
 
         public async Task<User> UpdateUser(User user)
         {
+
             if (!UserValidator.ValidateUpdateUser(user))
             {
                 throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_USER_PARAMS,
                     ExceptionMessages.INVALID_UPDATE_USER_PARAMS_USER_FRIENDLY);
+            }
+            if (!CredentialsValidator.ValidateEmail(user.Email))
+            {
+                throw new InvalidParameterFormatException(ExceptionMessages.INVALID_UPDATE_USER_EMAIL,
+                    ExceptionMessages.INVALID_UPDATE_USER_EMAIL_USER_FRIENDLY);
             }
             return await UserDataAccessor.UpdateUser(user);
 

@@ -17,6 +17,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateUpdateUser(User user)
         {
+   
             if (user.Email == null || user.UserId == null)
             {
                 return false;
