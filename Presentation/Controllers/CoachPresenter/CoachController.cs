@@ -172,5 +172,11 @@ namespace Presentation.Controllers.CoachPresenter
         {
             return await CoachModel.GetTrainee(traineeId);
         }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<User>> GetTrainees()
+        {
+            return await CoachModel.GetTrainees();
+        }
     }
 }

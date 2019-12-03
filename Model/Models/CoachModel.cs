@@ -252,5 +252,10 @@ namespace Model.Models
             }
             return await UserDataAccessor.GetUser(userId);
         }
+
+        public async Task<IEnumerable<User>> GetTrainees()
+        {
+            return await UserDataAccessor.GetTrainees();
+        }
     }
 }
