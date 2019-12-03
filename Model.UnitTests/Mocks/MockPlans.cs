@@ -28,6 +28,17 @@ namespace Model.UnitTests.Mocks
                 WorkoutIds = new List<string> { MockWorkouts.Workout1().WorkoutId }
             };
         }
+        public static Plan DraftPlan()
+        {
+            return new Plan
+            {
+                PlanId = "plan-draft",
+                Status = DataTypes.Status.Draft,
+                CoachId = MockUsers.Coach().UserId,
+                TraineeId = MockUsers.Trainee().UserId,
+                WorkoutIds = new List<string> { MockWorkouts.Workout1().WorkoutId }
+            };
+        }
         public static Plan creationNullPlanId()
         {
             return new Plan

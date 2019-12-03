@@ -109,5 +109,11 @@ namespace Presentation.Controllers.TraineePresenter
             return await TraineeModel.GetComments(ownerId);
         }
 
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Plan>> GetPlans()
+        {
+            return await TraineeModel.GetPlans();
+        }
+
     }
 }

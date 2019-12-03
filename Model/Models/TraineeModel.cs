@@ -4,6 +4,8 @@ using Model.Entities;
 using Model.Exceptions;
 using System.Collections.Generic;
 using Model.Models.Validators;
+using Model.DataTypes;
+using System.Linq;
 
 namespace Model.Models
 {
@@ -150,6 +152,13 @@ namespace Model.Models
                     ExceptionMessages.INVALID_GET_COMMENTS_PARAMS_USER_FRIENDLY);
             }
             return await CommentDataAccessor.GetComments(ownerId);
+        }
+
+        public async Task<IEnumerable<Plan>> GetPlans()
+        {
+            var user = await UserDataAccessor.GetCurrentUser();
+            var plans = await PlanDataAccessor.GetPlans(user, user.AccountType);
+            return plans.Where(p => p.Status != Status.Draft);
         }
     }
 }

@@ -78,7 +78,7 @@ namespace Persistence.EntityFramework
             {
                 CoachId = _coachId,
                 TraineeId = _traineeId,
-                Status = Model.DataTypes.Status.Draft,
+                Status = Model.DataTypes.Status.Draft
             };
             context.Plans.Add(plan);
 
