@@ -12,14 +12,14 @@ namespace Presentation.Controllers.TraineePresenter
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Trainee")]
     public class TraineeController : BaseController
     {
         // GET api/Trainee/GetPlan
         [HttpGet("[action]")]
-        public async Task<Plan> GetPlan([FromBody] GetPlanInputData input)
+        public async Task<Plan> GetPlan(string planId)
         {
-            return await TraineeModel.GetPlan(input.PlanId);
+            return await TraineeModel.GetPlan(planId);
         }
 
         [HttpPut("[action]")]
@@ -30,34 +30,46 @@ namespace Presentation.Controllers.TraineePresenter
 
         // GET api/Trainee/GetWorkout
         [HttpGet("[action]")]
-        public async Task<Workout> GetWorkout([FromBody] GetWorkoutInputData input)
+        public async Task<Workout> GetWorkout(string workoutId)
         {
-            return await TraineeModel.GetWorkout(input.WorkoutId);
+            return await TraineeModel.GetWorkout(workoutId);
         }
 
         // GET api/Trainee/GetWorkouts
         [HttpGet("[action]")]
-        public async Task<IEnumerable<Workout>> GetWorkouts([FromBody] GetWorkoutsInputData input)
+        public async Task<IEnumerable<Workout>> GetWorkouts(string planId)
         {
-            return await TraineeModel.GetWorkouts(input.PlanId);
+            return await TraineeModel.GetWorkouts(planId);
         }
 
         [HttpGet("[action]")]
-        public async Task<Set> GetSet([FromBody] GetSetInputData input)
+        public async Task<Exercise> GetExercise(string exerciseId)
         {
-            return await TraineeModel.GetSet(input.SetId);
+            return await TraineeModel.GetExercise(exerciseId);
         }
 
         [HttpGet("[action]")]
-        public async Task<IEnumerable<Set>> GetSets([FromBody] GetSetsInputData input)
+        public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
         {
-            return await TraineeModel.GetSets(input.ExerciseId);
+            return await TraineeModel.GetExercises(workoutId);
         }
 
         [HttpGet("[action]")]
-        public async Task<GetCoachOutputData> GetCoach([FromBody] GetCoachInputData input)
+        public async Task<Set> GetSet(string setId)
         {
-            var result = await TraineeModel.GetCoach(input.CoachId);
+            return await TraineeModel.GetSet(setId);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Set>> GetSets(string exerciseId)
+        {
+            return await TraineeModel.GetSets(exerciseId);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<GetCoachOutputData> GetCoach(string coachId)
+        {
+            var result = await TraineeModel.GetCoach(coachId);
             return new GetCoachOutputData {
                 CoachId = result.UserId,
                 FirstName = result.FirstName,
@@ -73,9 +85,9 @@ namespace Presentation.Controllers.TraineePresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<Comment> GetComment([FromBody] GetCommentInputData input)
+        public async Task<Comment> GetComment(string commentId)
         {
-            return await TraineeModel.GetComment(input.CommentId);
+            return await TraineeModel.GetComment(commentId);
         }
 
         [HttpPut("[action]")]
@@ -92,9 +104,9 @@ namespace Presentation.Controllers.TraineePresenter
         }
 
         [HttpGet("[action]")]
-        public async Task<IEnumerable<Comment>> GetComments([FromBody] GetCommentsInputData input)
+        public async Task<IEnumerable<Comment>> GetComments(string ownerId)
         {
-            return await TraineeModel.GetComments(input.OwnerId);
+            return await TraineeModel.GetComments(ownerId);
         }
 
     }

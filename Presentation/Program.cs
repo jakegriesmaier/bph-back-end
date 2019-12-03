@@ -34,8 +34,9 @@ namespace Presentation
                 try
                 {
                     var context = services.GetRequiredService<BphContext>();
+                    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
                     var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-                    DatabaseInitializer.Initialize(context, userManager).Wait();
+                    DatabaseInitializer.Initialize(context, userManager, roleManager).Wait();
                 }
                 catch (Exception ex)
                 {

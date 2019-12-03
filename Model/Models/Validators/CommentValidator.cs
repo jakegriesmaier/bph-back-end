@@ -5,57 +5,85 @@ namespace Model.Models.Validators
 {
     public class CommentValidator
     {
+        #region Validators
         public static bool ValidateCreateComment(Comment comment, string ownerId)
         {
-            if (comment.CommentId != null)
+            if (CommentExists(comment))
             {
                 return false;
             }
-            if (ownerId == null)
+            if (!OwnerExists(ownerId))
             {
                 return false;
             }
-            if (comment.Description == null)
+            if (!CommentHasDescription(comment))
             {
                 return false;
             }
             return true;
         }
+
         public static bool ValidateGetComment(string commentId)
         {
-            if (commentId == null)
+            if (!CommentExists(commentId))
             {
                 return false;
             }
             return true;
         }
+
         public static bool ValidateUpdateComment(Comment comment)
         {
-            if (comment.CommentId == null)
+            if (!CommentExists(comment))
             {
                 return false;
             }
-            if (comment.Description == null)
+            if (!CommentHasDescription(comment))
             {
                 return false;
             }
             return true;
         }
+
         public static bool ValidateDeleteComment(string commentId)
         {
-            if (commentId == null)
+            if (!CommentExists(commentId))
             {
                 return false;
             }
-            return true;
+            return true; 
         }
+
         public static bool ValidateGetComments(string ownerId)
         {
-            if (ownerId == null)
+            if (!OwnerExists(ownerId))
             {
                 return false;
             }
             return true;
         }
+        #endregion
+
+        #region Helper Functions
+        private static bool CommentExists(Comment comment)
+        {
+            return comment.CommentId != null;
+        }
+
+        private static bool CommentExists(string commentId)
+        {
+            return commentId != null;
+        }
+
+        private static bool CommentHasDescription(Comment comment)
+        {
+            return (comment.Description != null) && (comment.Description != "");
+        }
+
+        private static bool OwnerExists(string ownerId)
+        {
+            return (ownerId != null) && (ownerId != "");
+        }
+        #endregion
     }
 }

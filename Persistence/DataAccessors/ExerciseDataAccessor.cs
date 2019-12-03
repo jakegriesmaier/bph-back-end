@@ -26,7 +26,7 @@ namespace Persistence.DataAccessors
         {
             try
             {
-                var workout = _context.Workouts.FindAsync(workoutId);
+                var workout = await _context.Workouts.FindAsync(workoutId);
                 if(workout == null)
                 {
                     throw new HttpRequestException("Workout Does Not Exist.");
