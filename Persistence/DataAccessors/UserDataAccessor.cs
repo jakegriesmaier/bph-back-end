@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Model.DataAccess.BaseAccessors;
+using Model.DataTypes;
 using Model.Entities;
 using Model.Interfaces;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -128,6 +130,19 @@ namespace Persistence.DataAccessors
             {
                 var user = await _userManager.FindByIdAsync(userId);
                 return Mapper.map(user);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected override async Task<IEnumerable<User>> GetTraineesCore()
+        {
+            try
+            {
+                var trainees = await _userManager.GetUsersInRoleAsync(AccountType.Trainee.ToString());
+                return trainees.Select(t => Mapper.map(t)).ToList();
             }
             catch
             {
