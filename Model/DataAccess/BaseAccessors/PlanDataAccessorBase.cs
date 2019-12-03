@@ -26,7 +26,7 @@ namespace Model.DataAccess.BaseAccessors
 
         public async Task<IEnumerable<Plan>> GetPlans(User user, AccountType accountType)
         {
-            return await GetPlansCore(user,accountType);
+            return await GetPlansCore(user, accountType);
         }
 
         #region necessary implementations

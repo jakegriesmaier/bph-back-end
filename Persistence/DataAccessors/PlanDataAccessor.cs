@@ -58,6 +58,14 @@ namespace Persistence.DataAccessors
             try
             {
                 var plans = await _context.Plans.ToListAsync();
+                if (accountType == AccountType.Coach)
+                {
+                    plans = plans.Where(p => p.CoachId == user.UserId).ToList();
+                }
+                else
+                {
+                    plans = plans.Where(p => p.TraineeId == user.UserId).ToList();
+                }
                 plans.ForEach(p => p.Workouts = _context.Workouts.Where(w => w.PlanId == p.PlanId).ToList());
                 return plans.Select(p => Mapper.map(p)).ToList();
             }
