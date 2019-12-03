@@ -51,11 +51,11 @@ namespace Model.Models.Validators
         #region Helper Functions
         private static bool PlanExists(Plan plan)
         {
-            return plan.PlanId != null;
+            return (plan.PlanId != null) && (plan.PlanId != "");
         }
         private static bool PlanExists(string planId)
         {
-            return planId != null;
+            return (planId != null) && (planId != "");
         }
         private static bool CoachExists(Plan plan)
         {

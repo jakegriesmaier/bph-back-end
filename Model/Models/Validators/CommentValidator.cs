@@ -67,12 +67,12 @@ namespace Model.Models.Validators
         #region Helper Functions
         private static bool CommentExists(Comment comment)
         {
-            return comment.CommentId != null;
+            return (comment.CommentId != null) && (comment.CommentId != "");
         }
 
         private static bool CommentExists(string commentId)
         {
-            return commentId != null;
+            return (commentId != null) && (commentId != "");
         }
 
         private static bool CommentHasDescription(Comment comment)
