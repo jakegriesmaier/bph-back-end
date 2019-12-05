@@ -5,9 +5,14 @@ namespace Model.Models.Validators
 {
     public class WorkoutValidator
     {
+        #region Validators
         public static bool ValidateCreateWorkout(Workout workout, String planId)
         {
-            if (workout.WorkoutId != null || planId == null)
+            if (WorkoutExists(workout))
+            {
+                return false;
+            }
+            if (!PlanExists(planId))
             {
                 return false;
             }
@@ -16,7 +21,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateGetWorkout(string workoutId)
         {
-            if (workoutId == null)
+            if (!WorkoutExists(workoutId))
             {
                 return false;
             }
@@ -25,7 +30,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateUpdateWorkout(Workout workout)
         {
-            if (workout.WorkoutId == null)
+            if (!WorkoutExists(workout))
             {
                 return false;
             }
@@ -34,7 +39,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateDeleteWorkout(string workoutId)
         {
-            if (workoutId == null)
+            if (!WorkoutExists(workoutId))
             {
                 return false;
             }
@@ -43,12 +48,28 @@ namespace Model.Models.Validators
 
         public static bool ValidateGetExercises(string workoutId)
         {
-            if (workoutId == null)
+            if (!WorkoutExists(workoutId))
             {
                 return false;
             }
             return true;
         }
+        #endregion
+
+        #region Helper Functions
+        private static bool WorkoutExists(Workout workout)
+        {
+            return (workout.WorkoutId != null) && (workout.WorkoutId != "");
+        }
+        private static bool WorkoutExists(string workoutId)
+        {
+            return (workoutId != null) && (workoutId != "");
+        }
+        private static bool PlanExists(string planId)
+        {
+            return (planId != null) && (planId != "");
+        }
+        #endregion
 
     }
 }
