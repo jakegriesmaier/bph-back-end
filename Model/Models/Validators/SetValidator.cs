@@ -4,9 +4,14 @@ namespace Model.Models.Validators
 {
     public class SetValidator
     {
+        #region Validators
         public static bool ValidateCreateSet(Set set, string exerciseId)
         {
-            if (set.SetId != null || exerciseId == null)
+            if (SetExists(set))
+            {
+                return false;
+            }
+            if (!ExerciseExists(exerciseId))
             {
                 return false;
             }
@@ -15,7 +20,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateGetSet(string setId)
         {
-            if (setId == null)
+            if (!SetExists(setId))
             {
                 return false;
             }
@@ -24,7 +29,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateUpdateSet(Set set)
         {
-            if (set.SetId == null)
+            if (!SetExists(set))
             {
                 return false;
             }
@@ -33,12 +38,28 @@ namespace Model.Models.Validators
 
         public static bool ValidateDeleteSet(string setId)
         {
-            if (setId == null)
+            if (!SetExists(setId))
             {
                 return false;
             }
             return true;
         }
+        #endregion
+
+        #region Helper Functions
+        private static bool SetExists(Set set)
+        {
+            return (set.SetId != null) && (set.SetId != "");
+        }
+        private static bool SetExists(string setId)
+        {
+            return (setId != null) && (setId != "");
+        }
+        private static bool ExerciseExists(string exerciseId)
+        {
+            return (exerciseId != null) && (exerciseId != "");
+        }
+        #endregion
 
     }
 }
