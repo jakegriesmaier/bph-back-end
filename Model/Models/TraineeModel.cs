@@ -176,7 +176,11 @@ namespace Model.Models
 
         public async Task<Exercise> UpdateExerciseStatus(string exerciseId, Status status)
         {
-            // TODO VALIDATE
+            if (!ExerciseValidator.ValidateUpdateExerciseStatus(exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
             return await ExerciseDataAccessor.UpdateExerciseStatus(exerciseId, status);
         }
     }

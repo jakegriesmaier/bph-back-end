@@ -122,6 +122,8 @@ namespace Persistence.DataAccessors
                 _context.Entry(exercise).Property(ex => ex.Status).IsModified = true;
                 await _context.SaveChangesAsync();
                 await CheckWorkoutUpdateStatus(exercise.WorkoutId, status);
+                exercise.Sets = _context.Sets.Where(s => s.ExerciseId == exercise.Id).ToList();
+                exercise.Comments = _context.Comments.Where(c => c.OwnerId == exercise.Id).ToList();
                 return Mapper.map(exercise);
             }
             catch

@@ -37,9 +37,10 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
             return await Task.FromResult(exercise);
         }
 
-        protected override Task<Exercise> UpdateExerciseStatusCore(string exerciseId, Status status)
+        protected override async Task<Exercise> UpdateExerciseStatusCore(string exerciseId, Status status)
         {
-            throw new NotImplementedException();
+            var exercise = MockExercises.Exercise1();
+            return await Task.FromResult(exercise);
         }
     }
 }

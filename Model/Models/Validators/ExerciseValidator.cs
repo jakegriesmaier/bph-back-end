@@ -54,6 +54,15 @@ namespace Model.Models.Validators
             }
             return true;
         }
+
+        public static bool ValidateUpdateExerciseStatus(string exerciseId)
+        {
+            if (!ExerciseExists(exerciseId))
+            {
+                return false;
+            }
+            return true;
+        }
         #endregion
 
         #region Helper Functions
