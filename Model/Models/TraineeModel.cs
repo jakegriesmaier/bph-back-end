@@ -173,5 +173,15 @@ namespace Model.Models
             outDatedSet.ActualRPE = set.ActualRPE;
             return await SetDataAccessor.UpdateSet(outDatedSet); 
         }
+
+        public async Task<Exercise> UpdateExerciseStatus(string exerciseId, Status status)
+        {
+            if (!ExerciseValidator.ValidateUpdateExerciseStatus(exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
+            return await ExerciseDataAccessor.UpdateExerciseStatus(exerciseId, status);
+        }
     }
 }

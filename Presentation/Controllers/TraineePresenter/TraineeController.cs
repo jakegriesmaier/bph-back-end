@@ -121,5 +121,11 @@ namespace Presentation.Controllers.TraineePresenter
             return await TraineeModel.UpdateSet(set);
         }
 
+        [HttpPut("[action]")]
+        public async Task<Exercise> UpdateExerciseStatus([FromBody] UpdateExerciseStatusInputData input)
+        {
+            return await TraineeModel.UpdateExerciseStatus(input.ExerciseId, input.Status);
+        }
+
     }
 }
