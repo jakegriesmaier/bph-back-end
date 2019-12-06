@@ -160,5 +160,18 @@ namespace Model.Models
             var plans = await PlanDataAccessor.GetPlans(user, user.AccountType);
             return plans.Where(p => p.Status != Status.Draft);
         }
+
+        public async Task<Set> UpdateSet(Set set)
+        {
+            if (!SetValidator.ValidateUpdateSet(set))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_SET_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_SET_PARAMS_USER_FRIENDLY);
+            }
+            var outDatedSet = await SetDataAccessor.GetSet(set.SetId);
+            outDatedSet.ActualReps = set.ActualReps;
+            outDatedSet.ActualRPE = set.ActualRPE;
+            return await SetDataAccessor.UpdateSet(outDatedSet); 
+        }
     }
 }
