@@ -33,7 +33,7 @@ namespace Persistence.DataAccessors
                 }
                 var workoutDao = Mapper.map(workout);
                 workoutDao.PlanId = plan.PlanId;
-                if (workout.Date == DateTime.MinValue) workout.Date = DateTime.Now;
+                if (workoutDao.Date == DateTime.MinValue) workoutDao.Date = DateTime.Now;
                 _context.Workouts.Add(workoutDao);
                 await _context.SaveChangesAsync();
                 return workoutDao.Id;

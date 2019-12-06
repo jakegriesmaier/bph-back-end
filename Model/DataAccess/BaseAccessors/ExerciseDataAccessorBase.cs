@@ -1,4 +1,5 @@
-﻿using Model.Entities;
+﻿using Model.DataTypes;
+using Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,12 +35,18 @@ namespace Model.DataAccess.BaseAccessors
             return await GetExercisesCore(workoutId);
         }
 
+        public async Task<Exercise> UpdateExerciseStatus(string exerciseId, Status status)
+        {
+            return await UpdateExerciseStatusCore(exerciseId, status);
+        }
+
         #region necessary implementations
         protected abstract Task<string> CreateExerciseCore(Exercise exercise, string workoutId);
         protected abstract Task<Exercise> GetExerciseCore(string exerciseId);
         protected abstract Task<Exercise> UpdateExerciseCore(Exercise exercise);
         protected abstract Task<bool> DeleteExerciseCore(string exerciseId);
         protected abstract Task<IEnumerable<Exercise>> GetExercisesCore(string workoutId);
+        protected abstract Task<Exercise> UpdateExerciseStatusCore(string exerciseId, Status status);
         #endregion
     }
 }

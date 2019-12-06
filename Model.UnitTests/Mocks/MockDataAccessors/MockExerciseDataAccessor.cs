@@ -1,4 +1,5 @@
 ﻿using Model.DataAccess.BaseAccessors;
+using Model.DataTypes;
 using Model.Entities;
 using System;
 using System.Collections.Generic;
@@ -34,6 +35,11 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
         protected override async Task<Exercise> UpdateExerciseCore(Exercise exercise)
         {
             return await Task.FromResult(exercise);
+        }
+
+        protected override Task<Exercise> UpdateExerciseStatusCore(string exerciseId, Status status)
+        {
+            throw new NotImplementedException();
         }
     }
 }
