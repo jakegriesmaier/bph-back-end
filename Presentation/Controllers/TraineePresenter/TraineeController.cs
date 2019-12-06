@@ -115,5 +115,11 @@ namespace Presentation.Controllers.TraineePresenter
             return await TraineeModel.GetPlans();
         }
 
+        [HttpPut("[action]")]
+        public async Task<Set> UpdateSet(Set set)
+        {
+            return await TraineeModel.UpdateSet(set);
+        }
+
     }
 }
