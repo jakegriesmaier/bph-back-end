@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Model.DataTypes;
 using Persistence.DataAccessObjects;
 using System;
@@ -49,7 +50,12 @@ namespace Persistence.EntityFramework
                 Email = "clemieuxfit@gmail.com",
                 AccountType = Model.DataTypes.AccountType.Coach
             };
+            var coachPrivateNote = new PrivateNoteDAO();
+            coach.PrivateNote = coachPrivateNote;
             var result = await userManager.CreateAsync(coach,coachPassword);
+            coachPrivateNote.UserId = coach.Id;
+            context.Entry(coachPrivateNote).State = EntityState.Modified;
+            await context.SaveChangesAsync();
             await userManager.AddToRoleAsync(coach, coach.AccountType.ToString());
             _coachId = coach.Id;
 
@@ -65,7 +71,12 @@ namespace Persistence.EntityFramework
                 Height = 250,
                 Weight = 99
             };
+            var traineePrivateNote = new PrivateNoteDAO();
+            trainee.PrivateNote = traineePrivateNote;
             var result2 = await userManager.CreateAsync(trainee, traineePassword);
+            traineePrivateNote.UserId = trainee.Id;
+            context.Entry(traineePrivateNote).State = EntityState.Modified;
+            await context.SaveChangesAsync();
             await userManager.AddToRoleAsync(trainee, trainee.AccountType.ToString());
             _traineeId = trainee.Id;
 

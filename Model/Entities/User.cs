@@ -14,5 +14,6 @@ namespace Model.Entities
         public double? Height { get; set; }
         public double? Weight { get; set; }
         public AccountType AccountType { get; set; }
+        public string PrivateNoteId { get; set; }
     }
 }

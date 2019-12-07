@@ -22,6 +22,7 @@ namespace Persistence.EntityFramework
             builder.ApplyConfiguration(new PlanConfiguration());
             builder.ApplyConfiguration(new SetConfiguration());
             builder.ApplyConfiguration(new WorkoutConfiguration());
+            builder.ApplyConfiguration(new PrivateNoteConfiguration());
         }
 
         // custom database tables
@@ -31,5 +32,6 @@ namespace Persistence.EntityFramework
         public DbSet<PlanDAO> Plans { get; set; }
         public DbSet<SetDAO> Sets { get; set; }
         public DbSet<WorkoutDAO> Workouts { get; set; }
+        public DbSet<PrivateNoteDAO> PrivateNotes { get; set; }
     }
 }
