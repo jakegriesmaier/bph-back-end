@@ -183,5 +183,15 @@ namespace Model.Models
             }
             return await ExerciseDataAccessor.UpdateExerciseStatus(exerciseId, status);
         }
+
+        public async Task<Workout> UpdateWorkoutStatus(string workoutId, Status status)
+        {
+            if (!WorkoutValidator.ValidateUpdateWorkoutStatus(workoutId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS_USER_FRIENDLY);
+            }
+            return await WorkoutDataAccessor.UpdateWorkoutStatus(workoutId, status);
+        }
     }
 }

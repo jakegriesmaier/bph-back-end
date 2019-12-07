@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
+using Model.DataTypes;
 using Model.Entities;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
@@ -85,6 +86,50 @@ namespace Persistence.DataAccessors
                 workoutDao.Exercises = _context.Exercises.Where(e => e.WorkoutId == workoutDao.Id).ToList();
                 workoutDao.Comments = _context.Comments.Where(e => e.OwnerId == workoutDao.Id).ToList();
                 return Mapper.map(workoutDao);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected override async Task<Workout> UpdateWorkoutStatusCore(string workoutId, Status status)
+        {
+            try
+            {
+                var workout = await _context.Workouts.FindAsync(workoutId);
+                workout.Status = status;
+                _context.Entry(workout).Property(w => w.Status).IsModified = true;
+                await _context.SaveChangesAsync();
+                await CheckPlanUpdateStatus(workout.PlanId, status);
+                workout.Exercises = _context.Exercises.Where(e => e.WorkoutId == workout.Id).ToList();
+                workout.Comments = _context.Comments.Where(e => e.OwnerId == workout.Id).ToList();
+                return Mapper.map(workout);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        private async Task CheckPlanUpdateStatus(string planId, Status status)
+        {
+            try
+            {
+                var plan = await _context.Plans.FindAsync(planId);
+                if (plan == null)
+                {
+                    throw new HttpRequestException("Plan Does Not Exist.");
+                }
+                var workouts = _context.Workouts.Where(wo => wo.PlanId == planId).ToList();
+                if (!workouts.Any(wo => wo.Status != status))
+                {
+                    // all of the workouts in the plan are the same status
+                    plan.Status = status;
+                    _context.Entry(plan).Property(p => p.Status).IsModified = true;
+                    await _context.SaveChangesAsync();
+                    return;
+                }
             }
             catch
             {
