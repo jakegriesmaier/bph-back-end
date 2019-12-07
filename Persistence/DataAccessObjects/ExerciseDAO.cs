@@ -7,7 +7,6 @@ namespace Persistence.DataAccessObjects
 {
     public class ExerciseDAO : CommentOwner
     {
-        //public string ExerciseId { get; set; }
         public string Name { get; set; }
         public int Order { get; set; }
         public Status Status { get; set; }

@@ -17,6 +17,8 @@ namespace Persistence.EntityFramework
 
         public virtual ICollection<CommentDAO> Comments { get; set; }
 
+        public virtual PrivateNoteDAO PrivateNote { get; set; }
+
         //used for database configuration only
         public virtual ICollection<PlanDAO> CoachPlans { get; set; }
         public virtual ICollection<PlanDAO> TraineePlans { get; set; }

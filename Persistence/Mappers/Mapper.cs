@@ -27,7 +27,8 @@ namespace Persistence.Mappers
                 LastName = dao.LastName,
                 Height = dao.Height,
                 Weight = dao.Weight,
-                AccountType = dao.AccountType
+                AccountType = dao.AccountType,
+                PrivateNoteId = dao.PrivateNote.Id
             };
         }
 
@@ -42,7 +43,7 @@ namespace Persistence.Mappers
                 LastName = entity.LastName,
                 AccountType = entity.AccountType,
                 Height = entity.Height,
-                Weight = entity.Weight,
+                Weight = entity.Weight
             };
         }
 

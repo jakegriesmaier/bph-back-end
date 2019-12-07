@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Persistence.DataAccessObjects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,6 +28,9 @@ namespace Persistence.EntityFramework.Configurations
 
             // for plan access to trainee
             builder.HasMany(e => e.TraineePlans).WithOne(e => e.Trainee).HasForeignKey(e => e.TraineeId);
+
+            // for private note access to user
+            builder.HasOne(e => e.PrivateNote).WithOne(e => e.User).HasForeignKey<PrivateNoteDAO>(e => e.UserId);
         }
     }
 }
