@@ -79,7 +79,8 @@ namespace Persistence.Mappers
                 CoachId = dao.CoachId,
                 Status = dao.Status,
                 TraineeId = dao.TraineeId,
-                WorkoutIds= workoutIds
+                WorkoutIds= workoutIds,
+                Name = dao.Name
             };
         }
 
@@ -90,7 +91,8 @@ namespace Persistence.Mappers
                 PlanId = entity.PlanId,
                 Status = entity.Status,
                 CoachId = entity.CoachId,
-                TraineeId = entity.TraineeId
+                TraineeId = entity.TraineeId,
+                Name = entity.Name
             };
         }
 

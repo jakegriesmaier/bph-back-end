@@ -10,6 +10,7 @@ namespace Persistence.DataAccessObjects
     {
         public string PlanId { get; set; }
         public Status Status { get; set; }
+        public string Name { get; set; }
 
         //foreign key
         public string TraineeId { get; set; }

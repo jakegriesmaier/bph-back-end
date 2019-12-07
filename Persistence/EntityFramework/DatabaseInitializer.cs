@@ -95,7 +95,8 @@ namespace Persistence.EntityFramework
             {
                 CoachId = _coachId,
                 TraineeId = _traineeId,
-                Status = planStatus
+                Status = planStatus,
+                Name = "I am a plan"
             };
             context.Plans.Add(plan);
 
