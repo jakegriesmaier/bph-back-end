@@ -127,5 +127,10 @@ namespace Presentation.Controllers.TraineePresenter
             return await TraineeModel.UpdateExerciseStatus(input.ExerciseId, input.Status);
         }
 
+        [HttpPut("[action]")]
+        public async Task<Workout> UpdateWorkoutStatus([FromBody] UpdateWorkoutStatusInputData input)
+        {
+            return await TraineeModel.UpdateWorkoutStatus(input.WorkoutId, input.Status);
+        }
     }
 }

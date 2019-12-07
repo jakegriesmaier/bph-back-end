@@ -21,7 +21,7 @@ namespace Model.UnitTests.Tests.Trainee
         }
 
         [Test]
-        public void Test_UpdatePlan_HappyPath()
+        public void Test_UpdateExerciseStatus_HappyPath()
         {
             var exerciseId = MockExercises.Exercise1().ExerciseId;
             Assert.DoesNotThrowAsync(async () => {
