@@ -2,6 +2,7 @@
 using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Model.Interfaces;
+using Persistence.DataExceptions;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
@@ -27,26 +28,28 @@ namespace Persistence.DataAccessors
 
         protected override async Task<string> CreateCommentCore(Comment comment, string ownerId)
         {
+           
+            var owner = await _context.CommentOwners.FindAsync(ownerId);
+            if(owner == null)
+            {
+                throw new ParentDoesNotExistException("Comment Owner Does Not Exist.");
+            }
+            var commentDao = Mapper.map(comment);
+            commentDao.OwnerId = ownerId;
+            commentDao.CreatedById = _currentUserService.UserId;
+            commentDao.CreatedDate = DateTime.Now;
+
+            _context.Comments.Add(commentDao);
             try
             {
-                var owner = await _context.CommentOwners.FindAsync(ownerId);
-                if(owner == null)
-                {
-                    throw new HttpRequestException("Comment Owner Does Not Exist.");
-                }
-                var commentDao = Mapper.map(comment);
-                commentDao.OwnerId = ownerId;
-                commentDao.CreatedById = _currentUserService.UserId;
-                commentDao.CreatedDate = DateTime.Now;
-
-                _context.Comments.Add(commentDao);
                 await _context.SaveChangesAsync();
-                return commentDao.CommentId;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                HandleException(e);
             }
+            return commentDao.CommentId;
+
         }
 
         protected override async Task<bool> DeleteCommentCore(string commentId)

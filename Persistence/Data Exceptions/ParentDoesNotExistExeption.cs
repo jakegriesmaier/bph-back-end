@@ -1,34 +1,35 @@
 ﻿using System;
+using System.Net;
+using Model.Exceptions;
+
 namespace Persistence.DataExceptions
 {
-    public class ParentDoesNotExistExeption
+    public class ParentDoesNotExistException : CustomException
     {
 
         /// <summary>
-        /// Exception thrown when the call should not have been called from the 
-        /// current user.
+        /// Exception thrown when the parent of a certain entity does not exit 
         /// </summary>
-        public class DataAccessException : CustomException
+     
+        private const HttpStatusCode code = HttpStatusCode.Unauthorized;
+
+        public ParentDoesNotExistException() : base()
         {
-            private const HttpStatusCode code = HttpStatusCode.Unauthorized;
-
-            public DataAccessException() : base()
-            {
-                this.StatusCode = code;
-                this.DeveloperMessage = "";
-            }
-
-            public DataAccessException(string devMessage, string message) : base(devMessage, message)
-            {
-                this.StatusCode = code;
-                this.DeveloperMessage = devMessage;
-            }
-
-            public DataAccessException(string devMessage, string message, Exception innerException) : base(devMessage, message, innerException)
-            {
-                this.StatusCode = code;
-                this.DeveloperMessage = devMessage;
-            }
+            this.StatusCode = code;
+            this.DeveloperMessage = "";
         }
-    }
+
+        public ParentDoesNotExistException(string devMessage, string message) : base(devMessage, message)
+        {
+            this.StatusCode = code;
+            this.DeveloperMessage = devMessage;
+        }
+
+        public ParentDoesNotExistException(string devMessage, string message, Exception innerException) : base(devMessage, message, innerException)
+        {
+            this.StatusCode = code;
+            this.DeveloperMessage = devMessage;
+        }
+        }
+    
 }
