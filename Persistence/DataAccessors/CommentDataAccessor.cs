@@ -28,11 +28,11 @@ namespace Persistence.DataAccessors
 
         protected override async Task<string> CreateCommentCore(Comment comment, string ownerId)
         {
-           
+
             var owner = await _context.CommentOwners.FindAsync(ownerId);
-            if(owner == null)
+            if (owner == null)
             {
-                throw new ParentDoesNotExistException("Comment Owner Does Not Exist.");
+                throw new ParentDoesNotExistException("Comment Owner Does Not Exist.", "tempUser");
             }
             var commentDao = Mapper.map(comment);
             commentDao.OwnerId = ownerId;
@@ -44,9 +44,9 @@ namespace Persistence.DataAccessors
             {
                 await _context.SaveChangesAsync();
             }
-            catch (Exception e)
+            catch (DbUpdateException e)
             {
-                HandleException(e);
+                throw new DatabaseException("tempDev", "tempUser", e);
             }
             return commentDao.CommentId;
 
@@ -54,17 +54,20 @@ namespace Persistence.DataAccessors
 
         protected override async Task<bool> DeleteCommentCore(string commentId)
         {
+
+            var comment = await _context.Comments.FindAsync(commentId);
+            _context.Comments.Remove(comment);
+
             try
             {
-                var comment = await _context.Comments.FindAsync(commentId);
-                _context.Comments.Remove(comment);
                 await _context.SaveChangesAsync();
-                return true;
             }
-            catch
+            catch (DbUpdateException e)
             {
-                throw;
+                throw new DatabaseException("tempDev", "tempUser", e);
             }
+            return true;
+
         }
 
         protected override async Task<Comment> GetCommentCore(string commentId)
@@ -74,44 +77,51 @@ namespace Persistence.DataAccessors
                 var comment = await _context.Comments.FindAsync(commentId);
                 return Mapper.map(comment);
             }
-            catch
+            catch (InvalidOperationException e)
             {
-                throw;
+                throw new DatabaseException("tempDev", "tempUser", e);
             }
+
+
         }
 
         protected override async Task<IEnumerable<Comment>> GetCommentsCore(string ownerId)
         {
+
             try
             {
                 var owner = await _context.CommentOwners.FindAsync(ownerId);
                 if (owner == null)
                 {
-                    throw new HttpRequestException("Comment Owner Does Not Exist.");
+                    throw new ParentDoesNotExistException("Comment Owner Does Not Exist.", "tempUser");
                 }
-                var comments = _context.Comments.Where(c => c.OwnerId == ownerId).ToList();
-                return comments.Select(c => Mapper.map(c)).ToList();
+
             }
-            catch
+            catch (InvalidOperationException e)
             {
-                throw;
+                throw new DatabaseException("tempDev", "tempUser", e);
             }
+
+            var comments = _context.Comments.Where(c => c.OwnerId == ownerId).ToList();
+            return comments.Select(c => Mapper.map(c)).ToList();
+
         }
 
         protected override async Task<Comment> UpdateCommentCore(Comment comment)
         {
+
+            var commentDao = Mapper.map(comment);
+            _context.Entry(commentDao).State = EntityState.Modified;
+            _context.Entry(commentDao).Property(c => c.OwnerId).IsModified = false;
+            _context.Entry(commentDao).Property(c => c.CreatedById).IsModified = false;
             try
             {
-                var commentDao = Mapper.map(comment);
-                _context.Entry(commentDao).State = EntityState.Modified;
-                _context.Entry(commentDao).Property(c => c.OwnerId).IsModified = false;
-                _context.Entry(commentDao).Property(c => c.CreatedById).IsModified = false;
                 await _context.SaveChangesAsync();
                 return Mapper.map(commentDao);
             }
-            catch
+            catch (DbUpdateException e)
             {
-                throw;
+                throw new DatabaseException("tempDev", "tempUser", e);
             }
         }
     }
