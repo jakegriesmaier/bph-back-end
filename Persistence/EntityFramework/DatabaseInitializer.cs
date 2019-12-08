@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Model.DataTypes;
 using Persistence.DataAccessObjects;
 using System;
@@ -49,7 +50,12 @@ namespace Persistence.EntityFramework
                 Email = "clemieuxfit@gmail.com",
                 AccountType = Model.DataTypes.AccountType.Coach
             };
+            var coachPrivateNote = new PrivateNoteDAO();
+            coach.PrivateNote = coachPrivateNote;
             var result = await userManager.CreateAsync(coach,coachPassword);
+            coachPrivateNote.UserId = coach.Id;
+            context.Entry(coachPrivateNote).State = EntityState.Modified;
+            await context.SaveChangesAsync();
             await userManager.AddToRoleAsync(coach, coach.AccountType.ToString());
             _coachId = coach.Id;
 
@@ -65,7 +71,12 @@ namespace Persistence.EntityFramework
                 Height = 250,
                 Weight = 99
             };
+            var traineePrivateNote = new PrivateNoteDAO();
+            trainee.PrivateNote = traineePrivateNote;
             var result2 = await userManager.CreateAsync(trainee, traineePassword);
+            traineePrivateNote.UserId = trainee.Id;
+            context.Entry(traineePrivateNote).State = EntityState.Modified;
+            await context.SaveChangesAsync();
             await userManager.AddToRoleAsync(trainee, trainee.AccountType.ToString());
             _traineeId = trainee.Id;
 
@@ -73,26 +84,33 @@ namespace Persistence.EntityFramework
 
         private static void InitializePlans(BphContext context)
         {
+            InitializePlan(context, Status.Draft);
+            InitializePlan(context, Status.Created);
+        }
+
+        private static void InitializePlan(BphContext context, Model.DataTypes.Status planStatus)
+        {
             // add a plan
             var plan = new PlanDAO
             {
                 CoachId = _coachId,
                 TraineeId = _traineeId,
-                Status = Model.DataTypes.Status.Draft,
+                Status = planStatus,
+                Name = "I am a plan"
             };
             context.Plans.Add(plan);
 
             // add workouts to the plan
             var workouts = new List<WorkoutDAO>();
             var numWorkouts = 4;
-            for(int i = 0; i < numWorkouts; i++)
+            for (int i = 0; i < numWorkouts; i++)
             {
                 // add a workout to the plan
                 var workout = new WorkoutDAO
                 {
                     Date = DateTime.Now,
                     Title = $"Workout {i}",
-                    Status = Model.DataTypes.Status.Draft,
+                    Status = planStatus,
                     PlanId = plan.PlanId,
                 };
                 workouts.Add(workout);
@@ -102,7 +120,7 @@ namespace Persistence.EntityFramework
             // add exercises to each workout
             var exercises = new List<ExerciseDAO>();
             var numExercisesPerWorkout = 4;
-            for(int i = 0; i < numExercisesPerWorkout; i++)
+            for (int i = 0; i < numExercisesPerWorkout; i++)
             {
                 workouts.ForEach(wo => {
                     // add an exercise to the workout
@@ -111,7 +129,7 @@ namespace Persistence.EntityFramework
                         Name = $"exercise {i} in workout named {wo.Title}",
                         Order = i,
                         WorkoutId = wo.Id,
-                        Status = Model.DataTypes.Status.Draft,
+                        Status = planStatus,
                     };
                     exercises.Add(exercise);
                 });
@@ -121,7 +139,7 @@ namespace Persistence.EntityFramework
             // add sets to each exercise
             var sets = new List<SetDAO>();
             var numSetsPerExercise = 4;
-            for(int i = 0; i < numSetsPerExercise; i++)
+            for (int i = 0; i < numSetsPerExercise; i++)
             {
                 exercises.ForEach(ex => {
                     // add a set to the exercise

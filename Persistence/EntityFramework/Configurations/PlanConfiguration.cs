@@ -17,6 +17,8 @@ namespace Persistence.EntityFramework.Configurations
 
             builder.Property(e => e.Status);
 
+            builder.Property(e => e.Name);
+
             builder.HasMany(e => e.Workouts).WithOne(e => e.Plan).HasForeignKey(e => e.PlanId);
         }
     }

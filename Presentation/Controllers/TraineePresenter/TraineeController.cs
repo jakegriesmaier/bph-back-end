@@ -109,5 +109,28 @@ namespace Presentation.Controllers.TraineePresenter
             return await TraineeModel.GetComments(ownerId);
         }
 
+        [HttpGet("[action]")]
+        public async Task<IEnumerable<Plan>> GetPlans()
+        {
+            return await TraineeModel.GetPlans();
+        }
+
+        [HttpPut("[action]")]
+        public async Task<Set> UpdateSet(Set set)
+        {
+            return await TraineeModel.UpdateSet(set);
+        }
+
+        [HttpPut("[action]")]
+        public async Task<Exercise> UpdateExerciseStatus([FromBody] UpdateExerciseStatusInputData input)
+        {
+            return await TraineeModel.UpdateExerciseStatus(input.ExerciseId, input.Status);
+        }
+
+        [HttpPut("[action]")]
+        public async Task<Workout> UpdateWorkoutStatus([FromBody] UpdateWorkoutStatusInputData input)
+        {
+            return await TraineeModel.UpdateWorkoutStatus(input.WorkoutId, input.Status);
+        }
     }
 }

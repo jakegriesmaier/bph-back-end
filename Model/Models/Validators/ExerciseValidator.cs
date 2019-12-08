@@ -5,9 +5,14 @@ namespace Model.Models.Validators
 {
     public class ExerciseValidator
     {
+        #region Validators
         public static bool ValidateCreateExercise(Exercise exercise, string workoutId)
         {
-            if (exercise.ExerciseId != null || workoutId == null)
+            if (ExerciseExists(exercise))
+            {
+                return false;
+            }
+            if (!WorkoutExists(workoutId))
             {
                 return false;
             }
@@ -16,7 +21,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateGetExercise(string exerciseId)
         {
-            if (exerciseId == null)
+            if (!ExerciseExists(exerciseId))
             {
                 return false;
             }
@@ -25,7 +30,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateUpdateExercise(Exercise exercise)
         {
-            if (exercise.ExerciseId == null)
+            if (!ExerciseExists(exercise.ExerciseId))
             {
                 return false;
             }
@@ -34,7 +39,7 @@ namespace Model.Models.Validators
 
         public static bool ValidateDeleteExercise(string exerciseId)
         {
-            if (exerciseId == null)
+            if (!ExerciseExists(exerciseId))
             {
                 return false;
             }
@@ -43,12 +48,37 @@ namespace Model.Models.Validators
 
         public static bool ValidateGetSets(string exerciseId)
         {
-            if (exerciseId == null)
+            if (!ExerciseExists(exerciseId))
             {
                 return false;
             }
             return true;
         }
+
+        public static bool ValidateUpdateExerciseStatus(string exerciseId)
+        {
+            if (!ExerciseExists(exerciseId))
+            {
+                return false;
+            }
+            return true;
+        }
+        #endregion
+
+        #region Helper Functions
+        private static bool ExerciseExists(Exercise exercise)
+        {
+            return (exercise.ExerciseId != null) && (exercise.ExerciseId != "");
+        }
+        private static bool ExerciseExists(string exerciseId)
+        {
+            return (exerciseId != null) && (exerciseId != "");
+        }
+        private static bool WorkoutExists(string workoutId)
+        {
+            return (workoutId != null) && (workoutId != "");
+        }
+        #endregion
 
     }
 }

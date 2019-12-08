@@ -69,6 +69,17 @@ namespace Model.UnitTests.Tests.Validators
             Assert.AreEqual(false, ExerciseValidator.ValidateDeleteExercise(null), "Validator did not catch Null exercise id while deleting.");
         }
 
+        [Test]
+        public void ValidateUpdateExerciseStatus_HappyPath()
+        {
+            Assert.AreEqual(true, ExerciseValidator.ValidateUpdateExerciseStatus(filledOutExercise.ExerciseId), "Marked a good ValidateUpdateExerciseStatus as bad");
+        }
+
+        [Test]
+        public void ValidateUpdateExerciseStatus_NullExerciseId()
+        {
+            Assert.AreEqual(false, ExerciseValidator.ValidateUpdateExerciseStatus(null), "Validator did not catch Null exercise id while deleting.");
+        }
     }
 }
 

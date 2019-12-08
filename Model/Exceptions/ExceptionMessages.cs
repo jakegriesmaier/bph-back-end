@@ -32,6 +32,9 @@ namespace Model.Exceptions
         public static readonly string INVALID_UPDATE_USER_PARAMS =
             "Unable to update the user. Users email and userId must be specified";
 
+        public static readonly string INVALID_UPDATE_USER_EMAIL =
+            "Unable to update the user. User email not in a valid format.";
+
         public static readonly string INVALID_UPDATE_PASSWORD_PARAMS =
             "Unable to update pasword. The password entered did not match the required format.";
 
@@ -49,6 +52,9 @@ namespace Model.Exceptions
 
         public static readonly string INVALID_UPDATE_USER_PARAMS_USER_FRIENDLY =
             "Unable to update the user.";
+
+        public static readonly string INVALID_UPDATE_USER_EMAIL_USER_FRIENDLY =
+            "Email not valid.";
 
         public static readonly string INVALID_UPDATE_PASSWORD_PARAMS_USER_FRIENDLY =
             "Password must match required format.";

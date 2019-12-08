@@ -5,13 +5,14 @@ namespace Model.Models.Validators
 {
     public class PlanValidator
     {
+        #region Validators
         public static bool ValidateCreatePlan(Plan plan)
         {
-            if (plan.PlanId != null)
+            if (PlanExists(plan))
             {
                 return false;
             }
-            if (plan.CoachId == null)
+            if (!CoachExists(plan))
             {
                 return false;
             }
@@ -19,7 +20,7 @@ namespace Model.Models.Validators
         }
         public static bool ValidateGetPlan(string planId)
         {
-            if (planId == null)
+            if (!PlanExists(planId))
             {
                 return false;
             }
@@ -27,11 +28,11 @@ namespace Model.Models.Validators
         }
         public static bool ValidateUpdatePlan(Plan plan)
         {
-            if (plan.PlanId == null)
+            if (!PlanExists(plan))
             {
                 return false;
             }
-            if (plan.CoachId == null)
+            if (!CoachExists(plan))
             {
                 return false;
             }
@@ -39,11 +40,28 @@ namespace Model.Models.Validators
         }
         public static bool ValidateGetWorkouts(string planId)
         {
-            if (planId == null)
+            if (!PlanExists(planId))
             {
                 return false;
             }
             return true;
         }
+        #endregion
+
+        #region Helper Functions
+        private static bool PlanExists(Plan plan)
+        {
+            return (plan.PlanId != null) && (plan.PlanId != "");
+        }
+        private static bool PlanExists(string planId)
+        {
+            return (planId != null) && (planId != "");
+        }
+        private static bool CoachExists(Plan plan)
+        {
+            return (plan.CoachId != null) && (plan.CoachId != "");
+        }
+        #endregion
     }
 }
+

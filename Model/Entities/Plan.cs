@@ -17,6 +17,7 @@ namespace Model.Entities
         public Status Status { get; set; }
         public string TraineeId { get; set; }
         public string CoachId { get; set; }
+        public string Name { get; set; }
         
         public ICollection<string> WorkoutIds { get; set; }
     }

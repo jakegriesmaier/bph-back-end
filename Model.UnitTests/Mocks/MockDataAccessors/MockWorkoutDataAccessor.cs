@@ -1,4 +1,5 @@
 ﻿using Model.DataAccess.BaseAccessors;
+using Model.DataTypes;
 using Model.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -27,6 +28,12 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
 
         protected override async Task<Workout> UpdateWorkoutCore(Workout workout)
         {
+            return await Task.FromResult(workout);
+        }
+
+        protected override async Task<Workout> UpdateWorkoutStatusCore(string workoutId, Status status)
+        {
+            var workout = MockWorkouts.Workout1();
             return await Task.FromResult(workout);
         }
     }

@@ -44,5 +44,10 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
         {
             return await Task.FromResult(MockUsers.Trainee());
         }
+
+        protected override async Task<IEnumerable<User>> GetTraineesCore()
+        {
+            return await Task.FromResult(new List<User>{ MockUsers.Trainee() });
+        }
     }
 }

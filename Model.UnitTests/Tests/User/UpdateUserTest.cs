@@ -43,10 +43,18 @@ namespace Model.UnitTests.Tests.User
         }
 
         [Test]
-        public void Test_UpdateUser_BadEmail()
+        public void Test_UpdateUser_NullEmail()
         {
             Assert.ThrowsAsync(Is.TypeOf<InsufficientInformationException>(), async () => {
                 await _userModel.UpdateUser(MockUsers.NullEmail());
+            }, "Expected an error to be thrown when trying to make a user with bad email");
+        }
+
+        [Test]
+        public void Test_UpdateUser_BadEmail()
+        {
+            Assert.ThrowsAsync(Is.TypeOf<InvalidParameterFormatException>(), async () => {
+                await _userModel.UpdateUser(MockUsers.BadEmail());
             }, "Expected an error to be thrown when trying to make a user with bad email");
         }
     }

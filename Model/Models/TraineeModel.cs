@@ -4,6 +4,8 @@ using Model.Entities;
 using Model.Exceptions;
 using System.Collections.Generic;
 using Model.Models.Validators;
+using Model.DataTypes;
+using System.Linq;
 
 namespace Model.Models
 {
@@ -150,6 +152,46 @@ namespace Model.Models
                     ExceptionMessages.INVALID_GET_COMMENTS_PARAMS_USER_FRIENDLY);
             }
             return await CommentDataAccessor.GetComments(ownerId);
+        }
+
+        public async Task<IEnumerable<Plan>> GetPlans()
+        {
+            var user = await UserDataAccessor.GetCurrentUser();
+            var plans = await PlanDataAccessor.GetPlans(user, user.AccountType);
+            return plans.Where(p => p.Status != Status.Draft);
+        }
+
+        public async Task<Set> UpdateSet(Set set)
+        {
+            if (!SetValidator.ValidateUpdateSet(set))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_SET_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_SET_PARAMS_USER_FRIENDLY);
+            }
+            var outDatedSet = await SetDataAccessor.GetSet(set.SetId);
+            outDatedSet.ActualReps = set.ActualReps;
+            outDatedSet.ActualRPE = set.ActualRPE;
+            return await SetDataAccessor.UpdateSet(outDatedSet); 
+        }
+
+        public async Task<Exercise> UpdateExerciseStatus(string exerciseId, Status status)
+        {
+            if (!ExerciseValidator.ValidateUpdateExerciseStatus(exerciseId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_EXERCISE_PARAMS_USER_FRIENDLY);
+            }
+            return await ExerciseDataAccessor.UpdateExerciseStatus(exerciseId, status);
+        }
+
+        public async Task<Workout> UpdateWorkoutStatus(string workoutId, Status status)
+        {
+            if (!WorkoutValidator.ValidateUpdateWorkoutStatus(workoutId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS,
+                    ExceptionMessages.INVALID_UPDATE_WORKOUT_PARAMS_USER_FRIENDLY);
+            }
+            return await WorkoutDataAccessor.UpdateWorkoutStatus(workoutId, status);
         }
     }
 }

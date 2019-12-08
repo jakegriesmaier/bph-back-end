@@ -29,7 +29,7 @@ namespace Model.UnitTests.Tests.Coach
             Assert.AreEqual(expected.PlanId,actual.FirstOrDefault(p => p.PlanId == MockPlans.Plan1().PlanId).PlanId,
                 "Expected the plan to be in the list of plans when getting plans but no plan matched the planId.");
 
-            Assert.AreEqual(1,actual.Count(),
+            Assert.AreEqual(2,actual.Count(),
                 "Expected there to be a plan in the list when getting plans but did not contain the correct number of plans.");
         }
     }

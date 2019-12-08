@@ -67,6 +67,8 @@ namespace Persistence.DataAccessors
             {
                 var set = await _context.Sets.FindAsync(setId);
                 set.Comments = _context.Comments.Where(c => c.OwnerId == set.Id).ToList();
+                // set the set as Detached so that it is not tracked by the db context
+                _context.Entry(set).State = EntityState.Detached;
                 return Mapper.map(set);
             }
             catch

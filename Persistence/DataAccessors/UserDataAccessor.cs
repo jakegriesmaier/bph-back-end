@@ -1,11 +1,15 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
+using Model.DataTypes;
 using Model.Entities;
 using Model.Interfaces;
+using Persistence.DataAccessObjects;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,15 +33,22 @@ namespace Persistence.DataAccessors
 
         protected override async Task<string> CreateUserCore(string email, string password)
         {
+
             var user = new ApplicationUser
             {
                 UserName = email,
-                Email = email
+                Email = email,
             };
+
+            var privateNote = new PrivateNoteDAO();
+            user.PrivateNote = privateNote;
 
             var result = await _userManager.CreateAsync(user, password);
             if (result.Succeeded)
             {
+                privateNote.UserId = user.Id;
+                _context.Entry(privateNote).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
                 await _userManager.AddToRoleAsync(user,user.AccountType.ToString());
                 return user.Id;
             }
@@ -72,6 +83,7 @@ namespace Persistence.DataAccessors
             {
                 var userId = _currentUserService.UserId;
                 var applicationUser = await _userManager.FindByIdAsync(userId);
+                applicationUser.PrivateNote = await _context.PrivateNotes.FirstAsync(n => n.UserId == userId);
                 return Mapper.map(applicationUser);
         
             }
@@ -85,8 +97,9 @@ namespace Persistence.DataAccessors
         protected override async Task<User> UpdateUserCore(User user)
         {
             try
-            { 
+            {
                 var applicationUser = await _userManager.FindByIdAsync(_currentUserService.UserId);
+
                 applicationUser.Email = user.Email;
                 applicationUser.FirstName = user.FirstName;
                 applicationUser.LastName = user.LastName;
@@ -94,8 +107,8 @@ namespace Persistence.DataAccessors
                 applicationUser.Height = user.Height;
                 applicationUser.Weight = user.Weight;
                 applicationUser.AccountType = user.AccountType;
-
                 await _userManager.UpdateAsync(applicationUser);
+                applicationUser.PrivateNote = await _context.PrivateNotes.FirstAsync(n => n.UserId == applicationUser.Id);
                 return Mapper.map(applicationUser);
             }
             catch (Exception e)
@@ -112,6 +125,7 @@ namespace Persistence.DataAccessors
                 var result = await _userManager.ChangePasswordAsync(applicationUser, oldPassword, newPassword);
                 if (result.Succeeded)
                 {
+                    applicationUser.PrivateNote = await _context.PrivateNotes.FirstAsync(n => n.UserId == applicationUser.Id);
                     return Mapper.map(applicationUser);
                 }
                 throw new Exception("Failed to Update Password");
@@ -127,7 +141,22 @@ namespace Persistence.DataAccessors
             try
             {
                 var user = await _userManager.FindByIdAsync(userId);
+                user.PrivateNote = await _context.PrivateNotes.FirstAsync(n => n.UserId == userId);
                 return Mapper.map(user);
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected override async Task<IEnumerable<User>> GetTraineesCore()
+        {
+            try
+            {
+                var trainees = await _userManager.GetUsersInRoleAsync(AccountType.Trainee.ToString());
+                trainees.ToList().ForEach(t => t.PrivateNote = _context.PrivateNotes.First(n => n.UserId == t.Id));
+                return trainees.Select(t => Mapper.map(t)).ToList();
             }
             catch
             {
