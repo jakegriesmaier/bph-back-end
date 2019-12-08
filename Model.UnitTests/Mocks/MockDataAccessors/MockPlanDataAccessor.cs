@@ -15,6 +15,11 @@ namespace Model.UnitTests.Mocks.MockDataAccessors
             return await Task.FromResult(MockPlans.Plan1().PlanId);
         }
 
+        protected override async Task<bool> DeletePlanCore(string planId)
+        {
+            return await Task.FromResult(true);
+        }
+
         protected override async Task<Plan> GetPlanCore(string planId)
         {
             var plan = MockPlans.GetPlan(planId);

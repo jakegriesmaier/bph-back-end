@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
 using Model.DataTypes;
 using Model.Entities;
+using Persistence.DataAccessObjects;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System.Collections.Generic;
@@ -31,6 +32,49 @@ namespace Persistence.DataAccessors
                 _context.Plans.Add(planDao);
                 var result = await _context.SaveChangesAsync();
                 return planDao.PlanId;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected override async Task<bool> DeletePlanCore(string planId)
+        {
+            try
+            {
+                var plan = await _context.Plans.FindAsync(planId);
+
+                // get all of the workouts in the plan
+                var workouts = _context.Workouts.Where(w => w.PlanId == planId).ToList();
+
+                // get all of the exercises in the plan
+                var exercises = new List<ExerciseDAO>();
+                workouts.ForEach(w => {
+                    exercises.AddRange(_context.Exercises.Where(ex => ex.WorkoutId == w.Id));
+                });
+
+                // get all of the sets in the plan
+                var sets = new List<SetDAO>();
+                exercises.ForEach(ex => {
+                    sets.AddRange(_context.Sets.Where(s => s.ExerciseId == ex.Id));
+                });
+
+                // get all of the comments in the plan
+                var comments = new List<CommentDAO>();
+                workouts.ForEach(wo => comments.AddRange(_context.Comments.Where(c => c.OwnerId == wo.Id)));
+                exercises.ForEach(ex => comments.AddRange(_context.Comments.Where(c => c.OwnerId == ex.Id)));
+                sets.ForEach(s => comments.AddRange(_context.Comments.Where(c => c.OwnerId == s.Id)));
+
+                //delete all of the objects associated with the plan
+                _context.Comments.RemoveRange(comments);
+                _context.Sets.RemoveRange(sets);
+                _context.Exercises.RemoveRange(exercises);
+                _context.Workouts.RemoveRange(workouts);
+                _context.Plans.Remove(plan);
+                              
+                await _context.SaveChangesAsync();
+                return true;
             }
             catch
             {

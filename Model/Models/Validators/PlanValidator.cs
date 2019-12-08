@@ -18,6 +18,7 @@ namespace Model.Models.Validators
             }
             return true;
         }
+
         public static bool ValidateGetPlan(string planId)
         {
             if (!PlanExists(planId))
@@ -26,6 +27,7 @@ namespace Model.Models.Validators
             }
             return true;
         }
+
         public static bool ValidateUpdatePlan(Plan plan)
         {
             if (!PlanExists(plan))
@@ -38,11 +40,21 @@ namespace Model.Models.Validators
             }
             return true;
         }
+
         public static bool ValidateGetWorkouts(string planId)
         {
             if (!PlanExists(planId))
             {
                 return false;
+            }
+            return true;
+        }
+
+        public static bool ValidateDeletePlan(string planId)
+        {
+            if (!PlanExists(planId))
+            {
+                return false; 
             }
             return true;
         }
