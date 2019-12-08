@@ -29,11 +29,17 @@ namespace Model.DataAccess.BaseAccessors
             return await GetPlansCore(user, accountType);
         }
 
+        public async Task<bool> DeletePlan(string planId)
+        {
+            return await DeletePlanCore(planId);
+        }
+
         #region necessary implementations
         protected abstract Task<string> CreatePlanCore(Plan plan);
         protected abstract Task<Plan> GetPlanCore(string planId);
         protected abstract Task<Plan> UpdatePlanCore(Plan plan);
         protected abstract Task<IEnumerable<Plan>> GetPlansCore(User user, AccountType accountType);
+        protected abstract Task<bool> DeletePlanCore(string planId);
         #endregion
     }
 }

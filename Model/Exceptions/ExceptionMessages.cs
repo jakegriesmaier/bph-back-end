@@ -81,6 +81,8 @@ namespace Model.Exceptions
         public static readonly string INVALID_UPDATE_PLAN_PARAMS =
             "Unable to update the plan. The planId and coach must be specified.";
 
+        public static readonly string INVALID_DELETE_PLAN_PARAMS =
+            "Unable to delete the plan. The planId must be specified.";
         #endregion Plans
 
         #region Workouts
@@ -169,6 +171,8 @@ namespace Model.Exceptions
         public static readonly string INVALID_UPDATE_PLAN_PARAMS_USER_FRIENDLY =
             "There was trouble updating your plan.";
 
+        public static readonly string INVALID_DELETE_PLAN_PARAMS_USER_FRIENDLY =
+            "There was trouble deleting your plan.";
         #endregion Plans
 
         #region Workouts

@@ -178,5 +178,12 @@ namespace Presentation.Controllers.CoachPresenter
         {
             return await CoachModel.GetTrainees();
         }
+
+        [HttpDelete("[action]")]
+        public async Task<DeletePlanOutputData> DeletePlan([FromBody] DeletePlanInputData input)
+        {
+            var result = await CoachModel.DeletePlan(input.PlanId);
+            return new DeletePlanOutputData { Deleted = result };
+        }
     }
 }
