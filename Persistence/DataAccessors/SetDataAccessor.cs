@@ -8,8 +8,6 @@ using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Persistence.DataAccessors
@@ -40,9 +38,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return setDao.Id;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -55,9 +53,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -71,9 +69,9 @@ namespace Persistence.DataAccessors
                 _context.Entry(set).State = EntityState.Detached;
                 return Mapper.map(set);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -90,9 +88,9 @@ namespace Persistence.DataAccessors
                 sets.ForEach(s => s.Comments = _context.Comments.Where(c => c.OwnerId == s.Id).ToList());
                 return sets.Select(s => Mapper.map(s)).ToList();
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -107,9 +105,9 @@ namespace Persistence.DataAccessors
                 setDao.Comments = _context.Comments.Where(c => c.OwnerId == setDao.Id).ToList();
                 return Mapper.map(setDao);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
     }

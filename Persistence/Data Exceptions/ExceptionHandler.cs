@@ -7,7 +7,7 @@ namespace Persistence.DataExceptions
 {
     public class ExceptionHandler
     {
-        public void HandleException(Exception e, string userMessage)
+        public static Exception HandleException(Exception e, string userMessage)
         {
             if (e is DbUpdateException)
             { 
@@ -19,7 +19,7 @@ namespace Persistence.DataExceptions
 
             }
 
-            throw e;
+            return e;
 
         }
     }

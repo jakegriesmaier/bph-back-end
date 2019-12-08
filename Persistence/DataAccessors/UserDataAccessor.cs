@@ -5,12 +5,12 @@ using Model.DataTypes;
 using Model.Entities;
 using Model.Interfaces;
 using Persistence.DataAccessObjects;
+using Persistence.DataExceptions;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Persistence.DataAccessors
@@ -144,9 +144,9 @@ namespace Persistence.DataAccessors
                 user.PrivateNote = await _context.PrivateNotes.FirstAsync(n => n.UserId == userId);
                 return Mapper.map(user);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -158,9 +158,9 @@ namespace Persistence.DataAccessors
                 trainees.ToList().ForEach(t => t.PrivateNote = _context.PrivateNotes.First(n => n.UserId == t.Id));
                 return trainees.Select(t => Mapper.map(t)).ToList();
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
     }

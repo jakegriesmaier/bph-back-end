@@ -8,8 +8,6 @@
     <Compile Remove="Models\Exceptions\**" />
     <EmbeddedResource Remove="Models\Exceptions\**" />
     <None Remove="Models\Exceptions\**" />
-    <Compile Remove="DataAccess\BaseAccessors\PlanDataAccessorBase.cs" />
-    <Compile Remove="DataAccess\BaseAccessors\WorkoutDataAccessorBase.cs" />
     <Compile Remove="Models\TraineeModel.cs" />
     <Compile Remove="Models\CoachModel.cs" />
   </ItemGroup>
