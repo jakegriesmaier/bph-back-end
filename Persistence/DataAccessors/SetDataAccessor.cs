@@ -40,7 +40,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "set", "create");
             }
         }
 
@@ -62,7 +62,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "set", "delete");
             }
         }
 
@@ -78,7 +78,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "set", "get");
             }
         }
 
@@ -97,7 +97,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "sets", "get");
             }
         }
 
@@ -114,7 +114,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "set", "update");
             }
         }
     }

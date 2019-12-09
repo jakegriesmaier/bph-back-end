@@ -37,7 +37,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "plan", "create");
             }
         }
 
@@ -80,7 +80,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "plan", "delete");
             }
         }
 
@@ -95,7 +95,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "plan", "get");
             }
         }
 
@@ -117,7 +117,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "plans", "get");
             }
         }
 
@@ -134,7 +134,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "plan", "update");
             }
         }
     }
