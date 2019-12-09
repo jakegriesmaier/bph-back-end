@@ -36,6 +36,13 @@ namespace Persistence.DataAccessors
         {
             try
             {
+                var isUniqueEmail = (await _userManager.FindByEmailAsync(email) == null);
+                if (!isUniqueEmail)
+                {
+                    var message = "An account with this email already exists.";
+                    throw new DuplicateDataException(message,message);
+                }
+
                 var user = new ApplicationUser
                 {
                     UserName = email,
