@@ -161,7 +161,9 @@ namespace Persistence.Mappers
                 ActualRPE = dao.ActualRPE,
                 TargetReps = dao.TargetReps,
                 TargetRPE = dao.TargetRPE,
-                CommentIds = commentIds
+                CommentIds = commentIds,
+                TargetWeight = dao.TargetWeight,
+                ActualWeight = dao.ActualWeight
             };
         }
 
@@ -175,7 +177,9 @@ namespace Persistence.Mappers
                 ActualRPE = entity.ActualRPE,
                 Order = entity.Order, 
                 TargetReps = entity.TargetReps,
-                TargetRPE = entity.TargetRPE
+                TargetRPE = entity.TargetRPE,
+                TargetWeight = entity.TargetWeight,
+                ActualWeight = entity.ActualWeight
             };
         }
 

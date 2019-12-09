@@ -18,6 +18,8 @@ namespace Model.Entities
         public double? ActualRPE { get; set; }
         public int? TargetReps { get; set; }
         public int? ActualReps { get; set; }
+        public int? TargetWeight { get; set; }
+        public int? ActualWeight { get; set; }
 
         public ICollection<string> CommentIds { get; set; }
     }

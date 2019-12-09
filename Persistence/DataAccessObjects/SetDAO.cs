@@ -11,6 +11,8 @@ namespace Persistence.DataAccessObjects
         public double? ActualRPE { get; set; }
         public int? TargetReps { get; set; }
         public int? ActualReps { get; set; }
+        public int? TargetWeight { get; set; }
+        public int? ActualWeight { get; set; }
 
         //foreign key
         public string ExerciseId { get; set; }

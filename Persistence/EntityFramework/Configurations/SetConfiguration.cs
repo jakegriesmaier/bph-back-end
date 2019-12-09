@@ -20,6 +20,10 @@ namespace Persistence.EntityFramework.Configurations
             builder.Property(e => e.TargetRPE);
 
             builder.Property(e => e.ActualRPE);
+
+            builder.Property(e => e.TargetWeight);
+
+            builder.Property(e => e.ActualWeight);
         }
     }
 }
