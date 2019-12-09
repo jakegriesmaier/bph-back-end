@@ -46,10 +46,6 @@ namespace Presentation.Services
                     developerMessage = (ex as CustomException).DeveloperMessage
                 });
             }
-            else if (ex is ParentDoesNotExistException)
-            {
-                statusCode = HttpStatusCode.NotFOu; 
-            }
 
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = (int)statusCode;
