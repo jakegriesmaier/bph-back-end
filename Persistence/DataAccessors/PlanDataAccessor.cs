@@ -4,8 +4,10 @@ using Model.DataAccess.BaseAccessors;
 using Model.DataTypes;
 using Model.Entities;
 using Persistence.DataAccessObjects;
+using Persistence.DataExceptions;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -33,9 +35,9 @@ namespace Persistence.DataAccessors
                 var result = await _context.SaveChangesAsync();
                 return planDao.PlanId;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -76,9 +78,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -91,9 +93,9 @@ namespace Persistence.DataAccessors
                 plan.Workouts = workouts;
                 return Mapper.map(plan);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -113,9 +115,9 @@ namespace Persistence.DataAccessors
                 plans.ForEach(p => p.Workouts = _context.Workouts.Where(w => w.PlanId == p.PlanId).ToList());
                 return plans.Select(p => Mapper.map(p)).ToList();
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -130,9 +132,9 @@ namespace Persistence.DataAccessors
                 planDao.Workouts = workouts;
                 return Mapper.map(planDao);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
     }

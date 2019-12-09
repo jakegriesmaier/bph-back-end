@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Model.Exceptions;
 using Newtonsoft.Json;
+using Persistence.DataExceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,10 +45,6 @@ namespace Presentation.Services
                     error = ex.Message,
                     developerMessage = (ex as CustomException).DeveloperMessage
                 });
-            }
-            else if (ex is HttpRequestException)
-            {
-                statusCode = HttpStatusCode.BadRequest; 
             }
 
             context.Response.ContentType = "application/json";

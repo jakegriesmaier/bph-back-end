@@ -2,13 +2,12 @@
 using Model.DataAccess.BaseAccessors;
 using Model.Entities;
 using Model.Interfaces;
+using Persistence.DataExceptions;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Persistence.DataAccessors
@@ -30,9 +29,9 @@ namespace Persistence.DataAccessors
             try
             {
                 var owner = await _context.CommentOwners.FindAsync(ownerId);
-                if(owner == null)
+                if (owner == null)
                 {
-                    throw new HttpRequestException("Comment Owner Does Not Exist.");
+                    throw new ParentDoesNotExistException("Comment Owner Does Not Exist.", "tempUser");
                 }
                 var commentDao = Mapper.map(comment);
                 commentDao.OwnerId = ownerId;
@@ -40,12 +39,14 @@ namespace Persistence.DataAccessors
                 commentDao.CreatedDate = DateTime.Now;
 
                 _context.Comments.Add(commentDao);
+
                 await _context.SaveChangesAsync();
+
                 return commentDao.CommentId;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -55,13 +56,15 @@ namespace Persistence.DataAccessors
             {
                 var comment = await _context.Comments.FindAsync(commentId);
                 _context.Comments.Remove(comment);
-                await _context.SaveChangesAsync();
                 return true;
+
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
+
+
         }
 
         protected override async Task<Comment> GetCommentCore(string commentId)
@@ -71,45 +74,53 @@ namespace Persistence.DataAccessors
                 var comment = await _context.Comments.FindAsync(commentId);
                 return Mapper.map(comment);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
+
+
         }
 
         protected override async Task<IEnumerable<Comment>> GetCommentsCore(string ownerId)
         {
+
             try
             {
                 var owner = await _context.CommentOwners.FindAsync(ownerId);
                 if (owner == null)
                 {
-                    throw new HttpRequestException("Comment Owner Does Not Exist.");
+                    throw new ParentDoesNotExistException("Comment Owner Does Not Exist.", "tempUser");
                 }
                 var comments = _context.Comments.Where(c => c.OwnerId == ownerId).ToList();
                 return comments.Select(c => Mapper.map(c)).ToList();
+
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
+
         }
 
         protected override async Task<Comment> UpdateCommentCore(Comment comment)
         {
+
             try
             {
                 var commentDao = Mapper.map(comment);
                 _context.Entry(commentDao).State = EntityState.Modified;
                 _context.Entry(commentDao).Property(c => c.OwnerId).IsModified = false;
                 _context.Entry(commentDao).Property(c => c.CreatedById).IsModified = false;
+
                 await _context.SaveChangesAsync();
                 return Mapper.map(commentDao);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
+
         }
     }
 }

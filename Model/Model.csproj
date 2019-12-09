@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\Exceptions\**" />
-    <EmbeddedResource Remove="Models\Exceptions\**" />
-    <None Remove="Models\Exceptions\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="DataTypes\README.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -20,8 +14,5 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\Data Exceptions\" />
   </ItemGroup>
 </Project>

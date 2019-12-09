@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
 using Model.Entities;
+using Model.Exceptions;
+using Persistence.DataExceptions;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Persistence.DataAccessors
@@ -27,9 +27,9 @@ namespace Persistence.DataAccessors
             try
             {
                 var exercise = await _context.Exercises.FindAsync(exerciseId);
-                if(exercise == null)
+                if (exercise == null)
                 {
-                    throw new HttpRequestException("Exercise Does Not Exist.");
+                    throw new ParentDoesNotExistException("", "");
                 }
                 var setDao = Mapper.map(set);
                 setDao.ExerciseId = exerciseId;
@@ -38,9 +38,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return setDao.Id;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -60,9 +60,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -76,9 +76,9 @@ namespace Persistence.DataAccessors
                 _context.Entry(set).State = EntityState.Detached;
                 return Mapper.map(set);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -89,15 +89,15 @@ namespace Persistence.DataAccessors
                 var exercise = await _context.Exercises.FindAsync(exerciseId);
                 if (exercise == null)
                 {
-                    throw new HttpRequestException("Exercise Does Not Exist.");
+                    throw new ParentDoesNotExistException("","");
                 }
                 var sets = _context.Sets.Where(s => s.ExerciseId == exerciseId).ToList();
                 sets.ForEach(s => s.Comments = _context.Comments.Where(c => c.OwnerId == s.Id).ToList());
                 return sets.Select(s => Mapper.map(s)).ToList();
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -112,9 +112,9 @@ namespace Persistence.DataAccessors
                 setDao.Comments = _context.Comments.Where(c => c.OwnerId == setDao.Id).ToList();
                 return Mapper.map(setDao);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                 throw ExceptionHandler.HandleException(e, "");
             }
         }
     }

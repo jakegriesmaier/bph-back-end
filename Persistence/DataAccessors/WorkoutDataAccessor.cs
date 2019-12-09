@@ -2,14 +2,13 @@
 using Model.DataAccess.BaseAccessors;
 using Model.DataTypes;
 using Model.Entities;
+using Persistence.DataExceptions;
 using Persistence.DataAccessObjects;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Persistence.DataAccessors
@@ -31,7 +30,7 @@ namespace Persistence.DataAccessors
                 var plan = await _context.Plans.FindAsync(planId);
                 if (plan == null)
                 {
-                    throw new HttpRequestException("The plan does not exist");
+                    throw new ParentDoesNotExistException("","");
                 }
                 var workoutDao = Mapper.map(workout);
                 workoutDao.PlanId = plan.PlanId;
@@ -40,9 +39,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return workoutDao.Id;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -76,9 +75,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -91,9 +90,9 @@ namespace Persistence.DataAccessors
                 workout.Comments = _context.Comments.Where(e => e.OwnerId == workout.Id).ToList();
                 return Mapper.map(workout);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -106,9 +105,9 @@ namespace Persistence.DataAccessors
                 workouts.ForEach(w => w.Comments = _context.Comments.Where(e => e.OwnerId == w.Id).ToList());
                 return workouts.Select(w => Mapper.map(w)).ToList();
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -124,9 +123,9 @@ namespace Persistence.DataAccessors
                 workoutDao.Comments = _context.Comments.Where(e => e.OwnerId == workoutDao.Id).ToList();
                 return Mapper.map(workoutDao);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -143,9 +142,9 @@ namespace Persistence.DataAccessors
                 workout.Comments = _context.Comments.Where(e => e.OwnerId == workout.Id).ToList();
                 return Mapper.map(workout);
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -156,7 +155,7 @@ namespace Persistence.DataAccessors
                 var plan = await _context.Plans.FindAsync(planId);
                 if (plan == null)
                 {
-                    throw new HttpRequestException("Plan Does Not Exist.");
+                    throw new ParentDoesNotExistException("","");
                 }
                 var workouts = _context.Workouts.Where(wo => wo.PlanId == planId).ToList();
                 if (!workouts.Any(wo => wo.Status != status))
@@ -168,9 +167,9 @@ namespace Persistence.DataAccessors
                     return;
                 }
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
     }
