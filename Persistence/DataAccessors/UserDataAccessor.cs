@@ -33,48 +33,65 @@ namespace Persistence.DataAccessors
 
         protected override async Task<string> CreateUserCore(string email, string password)
         {
-
-            var user = new ApplicationUser
+            try
             {
-                UserName = email,
-                Email = email,
-            };
+                var user = new ApplicationUser
+                {
+                    UserName = email,
+                    Email = email,
+                };
 
-            var privateNote = new PrivateNoteDAO();
-            user.PrivateNote = privateNote;
+                var privateNote = new PrivateNoteDAO();
+                user.PrivateNote = privateNote;
 
-            var result = await _userManager.CreateAsync(user, password);
-            if (result.Succeeded)
-            {
-                privateNote.UserId = user.Id;
-                _context.Entry(privateNote).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-                await _userManager.AddToRoleAsync(user,user.AccountType.ToString());
-                return user.Id;
+                var result = await _userManager.CreateAsync(user, password);
+                if (result.Succeeded)
+                {
+                    privateNote.UserId = user.Id;
+                    _context.Entry(privateNote).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
+                    await _userManager.AddToRoleAsync(user, user.AccountType.ToString());
+                    return user.Id;
+                }
+                return null;
             }
-
-            //TODO: Jake S make custom
-            throw new Exception("Failed to create user.");
+            catch (Exception e)
+            {
+                throw ExceptionHandler.HandleException(e, "");
+            }
         }
 
         protected override async Task<string> LoginUserCore(string email, string password)
         {
-            var result = await _signInManager.PasswordSignInAsync(email, password, false, false);//change if want cookie to persist
-            if (result.Succeeded)
+            try
             {
-                var user = await _userManager.FindByEmailAsync(email);
-                if(user != null)
+                var result = await _signInManager.PasswordSignInAsync(email, password, false, false);//change if want cookie to persist
+                if (result.Succeeded)
                 {
-                    return user.Id;
+                    var user = await _userManager.FindByEmailAsync(email);
+                    if (user != null)
+                    {
+                        return user.Id;
+                    }
                 }
+                return null;
             }
-
-            throw new Exception("Failed to log in user.");
+            catch (Exception e)
+            {
+                throw ExceptionHandler.HandleException(e, "");
+            }
         }
 
         protected override async Task LogoutUserCore()
         {
-            await _signInManager.SignOutAsync();
+            try
+            {
+                await _signInManager.SignOutAsync();
+            }
+            catch (Exception e)
+            {
+                throw ExceptionHandler.HandleException(e, "");
+            }
         }
 
         protected override async Task<User> GetCurrentUserCore()
@@ -85,13 +102,11 @@ namespace Persistence.DataAccessors
                 var applicationUser = await _userManager.FindByIdAsync(userId);
                 applicationUser.PrivateNote = await _context.PrivateNotes.FirstAsync(n => n.UserId == userId);
                 return Mapper.map(applicationUser);
-        
             }
             catch (Exception e)
             {
-                throw new Exception("Error at getCurrentUserCore", e);
-            }                    
-
+                throw ExceptionHandler.HandleException(e, "");
+            }
         }
 
         protected override async Task<User> UpdateUserCore(User user)
@@ -113,7 +128,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw new Exception("Error at UpdateUserCore", e);
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -128,11 +143,11 @@ namespace Persistence.DataAccessors
                     applicationUser.PrivateNote = await _context.PrivateNotes.FirstAsync(n => n.UserId == applicationUser.Id);
                     return Mapper.map(applicationUser);
                 }
-                throw new Exception("Failed to Update Password");
+                return null;
             }
             catch (Exception e)
             {
-                throw new Exception("Error at UpdatePasswordCore", e);
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 
@@ -146,7 +161,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 

@@ -145,7 +145,7 @@ namespace Persistence.DataAccessors
                     throw new ParentDoesNotExistException("tempDev", "tempUser");
                 }
                 var exercises = _context.Exercises.Where(e => e.WorkoutId == workoutId).ToList();
-                if(!exercises.Any(ex => ex.Status != status))
+                if (!exercises.Any(ex => ex.Status != status))
                 {
                     // all of the exercises in the workout are at the same status
                     workout.Status = status;
@@ -171,7 +171,7 @@ namespace Persistence.DataAccessors
                     throw new ParentDoesNotExistException("tempDev", "tempUser");
                 }
                 var workouts = _context.Workouts.Where(wo => wo.PlanId == planId).ToList();
-                if(!workouts.Any(wo => wo.Status != status))
+                if (!workouts.Any(wo => wo.Status != status))
                 {
                     // all of the workouts in the plan are the same status
                     plan.Status = status;
