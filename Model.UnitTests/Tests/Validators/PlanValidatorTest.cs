@@ -56,12 +56,29 @@ namespace Model.UnitTests.Tests.Validators
         {
             Assert.AreEqual(false, PlanValidator.ValidateUpdatePlan(withoutId), "Marked a bad Plan (Null Id) as good");
         }
+
         [Test]
         public void ValidateUpdatePlan_NullCoach()
         {
             Assert.AreEqual(false, PlanValidator.ValidateUpdatePlan(withoutCoach), "Marked a bad Plan (Null Coach) as good");
         }
 
+        [Test]
+        public void Test_ValidateDeletePlan_HappyPath()
+        {
+            Assert.AreEqual(true, PlanValidator.ValidateDeletePlan(updateHappyPlan.PlanId), "Marked a good plan as bad");
+        }
 
+        [Test]
+        public void Test_ValidateDeletePlan_NoPlanId()
+        {
+            Assert.AreEqual(false, PlanValidator.ValidateDeletePlan(null), "Marked a null planId as good");
+        }
+
+        [Test]
+        public void Test_ValidateDeletePlan_PlanIdEmptyString()
+        {
+            Assert.AreEqual(false, PlanValidator.ValidateDeletePlan(""), "Marked an empty string planId as good");
+        }
     }
 }

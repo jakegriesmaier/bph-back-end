@@ -257,5 +257,15 @@ namespace Model.Models
         {
             return await UserDataAccessor.GetTrainees();
         }
+
+        public async Task<bool> DeletePlan(string planId)
+        {
+            if (!PlanValidator.ValidateDeletePlan(planId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_PLAN_PARAMS,
+                    ExceptionMessages.INVALID_DELETE_PLAN_PARAMS_USER_FRIENDLY);
+            }
+            return await PlanDataAccessor.DeletePlan(planId);
+        }
     }
 }
