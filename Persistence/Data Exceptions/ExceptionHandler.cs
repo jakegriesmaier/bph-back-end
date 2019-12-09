@@ -24,6 +24,11 @@ namespace Persistence.DataExceptions
                 userMessage = GenerateExceptionMessage(type, action, "There was an error while trying to action a type");
                 throw new UserAuthenticationException(((UserAuthenticationException)e).DeveloperMessage, userMessage);
             }
+            if (e is DuplicateDataException)
+            {
+                string message = ((DuplicateDataException)e).DeveloperMessage;
+                throw new DuplicateDataException(message, message);
+            }
             
             return e;
 
