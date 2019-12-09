@@ -32,22 +32,19 @@ namespace Persistence.DataExceptions
         public static Exception HandleException(Exception e, string somethingtemp)
         {
             string userMessage = "";
-           /* if (e is DbUpdateException)
+           if (e is DbUpdateException)
             {
-                userMessage = GenerateExceptionMessage(type, action, "There was an error while trying to action a type");
                 throw new DatabaseException(e.Message, userMessage, e as DbUpdateException);
             }
             if (e is InvalidOperationException)
             {
-                userMessage = GenerateExceptionMessage(type, action, "There was an error while trying to action a type");
                 throw new DatabaseException(e.Message, userMessage, e as InvalidOperationException);
             }
             if (e is UserAuthenticationException)
             {
-                userMessage = GenerateExceptionMessage(type, action, "There was an error while trying to action a type");
                 throw new UserAuthenticationException(((UserAuthenticationException)e).DeveloperMessage, userMessage);
             }
-            */
+           
             return e;
 
         }
