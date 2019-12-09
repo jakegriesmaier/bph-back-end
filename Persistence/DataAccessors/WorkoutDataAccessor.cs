@@ -75,9 +75,9 @@ namespace Persistence.DataAccessors
                 await _context.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                throw ExceptionHandler.HandleException(e, "");
             }
         }
 

@@ -3,6 +3,7 @@ using Model.DataAccess.BaseAccessors;
 using Model.DataTypes;
 using Model.Entities;
 using Persistence.DataExceptions;
+using Persistence.DataAccessObjects;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
@@ -52,8 +53,19 @@ namespace Persistence.DataAccessors
             try
             {
                 var exercise = await _context.Exercises.FindAsync(exerciseId);
+
+                // get all of the sets associated with the exercise
+                var sets = _context.Sets.Where(s => s.ExerciseId == exercise.Id).ToList();
+
+                // get all of the comments associated with the exercise
+                var comments = new List<CommentDAO>();
+                comments.AddRange(_context.Comments.Where(c => c.OwnerId == exercise.Id));
+                sets.ForEach(s => comments.AddRange(_context.Comments.Where(c => c.OwnerId == s.Id)));
+                
+                // delete all of the objects associated with the plan
+                _context.Comments.RemoveRange(comments);
+                _context.Sets.RemoveRange(sets);
                 _context.Exercises.Remove(exercise);
-                var exerciseDao = Mapper.map(exercise);
                 await _context.SaveChangesAsync();
                 return true;    
             }

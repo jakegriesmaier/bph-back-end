@@ -49,7 +49,14 @@ namespace Persistence.DataAccessors
             try
             {
                 var set = await _context.Sets.FindAsync(setId);
+
+                // get all of the comments associated with the set
+                var comments = _context.Comments.Where(c => c.OwnerId == set.Id).ToList();
+
+                // delete everything associated with the set
+                _context.Comments.RemoveRange(comments);
                 _context.Sets.Remove(set);
+
                 await _context.SaveChangesAsync();
                 return true;
             }
