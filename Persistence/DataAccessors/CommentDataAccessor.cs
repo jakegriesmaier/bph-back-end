@@ -47,7 +47,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "There was a problem creating your comment");
+                throw ExceptionHandler.HandleException(e, "comment", "create");
             }
         }
 
@@ -62,7 +62,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "comment", "delete");
             }
 
 
@@ -77,7 +77,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "comment", "get");
             }
 
 
@@ -99,7 +99,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "comments", "get");
             }
 
         }
@@ -119,7 +119,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "comment", "update");
             }
 
         }

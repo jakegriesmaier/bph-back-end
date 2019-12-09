@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Model.Exceptions;
 
 namespace Persistence.DataAccessors
 {
@@ -31,7 +32,7 @@ namespace Persistence.DataAccessors
                 var workout = await _context.Workouts.FindAsync(workoutId);
                 if (workout == null)
                 {
-                    throw new ParentDoesNotExistException("tempDev", "tempUser");
+                    throw new ParentDoesNotExistException("Parent Workout Does Not Exist. (create)", "There was a problem creating your exercise");
                 }
                 var exerciseDao = Mapper.map(exercise);
                 exerciseDao.WorkoutId = workoutId;
@@ -44,7 +45,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "exercise", "create");
             }
         }
 
@@ -71,7 +72,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "exercise", "delete");
             }
         }
 
@@ -86,7 +87,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "exercise", "get");
             }
         }
 
@@ -97,7 +98,7 @@ namespace Persistence.DataAccessors
                 var workout = await _context.Workouts.FindAsync(workoutId);
                 if (workout == null)
                 {
-                    throw new ParentDoesNotExistException("tempDev", "tempUser");
+                    throw new ParentDoesNotExistException("Parent Workout Does Not Exist. (get)", "There was a problem getting your exercise");
                 }
                 var exercises = _context.Exercises.Where(e => e.WorkoutId == workoutId).ToList();
                 exercises.ForEach(e => e.Sets = _context.Sets.Where(s => s.ExerciseId == e.Id).ToList());
@@ -106,7 +107,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "exercises", "get");
             }
         }
 
@@ -124,7 +125,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "exercise", "update");
             }
         }
 
@@ -143,7 +144,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "exercise status", "update");
             }
         }
 
@@ -154,7 +155,7 @@ namespace Persistence.DataAccessors
                 var workout = await _context.Workouts.FindAsync(workoutId);
                 if (workout == null)
                 {
-                    throw new ParentDoesNotExistException("tempDev", "tempUser");
+                    throw new ParentDoesNotExistException("Parent Workout Does Not Exist. (check update status)", "There was a problem checking status");
                 }
                 var exercises = _context.Exercises.Where(e => e.WorkoutId == workoutId).ToList();
                 if (!exercises.Any(ex => ex.Status != status))
@@ -169,7 +170,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "workout from exercise", "check update status");
             }
         }
 
@@ -180,7 +181,7 @@ namespace Persistence.DataAccessors
                 var plan = await _context.Plans.FindAsync(planId);
                 if (plan == null)
                 {
-                    throw new ParentDoesNotExistException("tempDev", "tempUser");
+                    throw new ParentDoesNotExistException("Parent Plan Does Not Exist. (check update status in exercise)", "There was a problem checking status");
                 }
                 var workouts = _context.Workouts.Where(wo => wo.PlanId == planId).ToList();
                 if (!workouts.Any(wo => wo.Status != status))
@@ -194,7 +195,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                 throw ExceptionHandler.HandleException(e, "plan from exercise", "check update status");
             }
         }
     }

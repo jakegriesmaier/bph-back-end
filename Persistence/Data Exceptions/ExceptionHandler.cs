@@ -32,28 +32,9 @@ namespace Persistence.DataExceptions
             
             return e;
 
-        }
-
-        public static Exception HandleException(Exception e, string somethingtemp)
-        {
-            string userMessage = "";
-           if (e is DbUpdateException)
-            {
-                throw new DatabaseException(e.Message, userMessage, e as DbUpdateException);
-            }
-            if (e is InvalidOperationException)
-            {
-                throw new DatabaseException(e.Message, userMessage, e as InvalidOperationException);
-            }
-            if (e is UserAuthenticationException)
-            {
-                throw new UserAuthenticationException(((UserAuthenticationException)e).DeveloperMessage, userMessage);
-            }
-           
-            return e;
+        
 
         }
-
 
         private static string GenerateExceptionMessage(string type, string action, string messageTemplate)
         {
