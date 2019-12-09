@@ -267,5 +267,15 @@ namespace Model.Models
             }
             return await PlanDataAccessor.DeletePlan(planId);
         }
+
+        public async Task<bool> DeleteWorkout(string workoutId)
+        {
+            if (!WorkoutValidator.ValidateDeleteWorkout(workoutId))
+            {
+                throw new InsufficientInformationException(ExceptionMessages.INVALID_DELETE_WORKOUT_PARAMS,
+                    ExceptionMessages.INVALID_DELETE_WORKOUT_PARAMS_USER_FRIENDLY);
+            }
+            return await WorkoutDataAccessor.DeleteWorkout(workoutId);
+        } 
     }
 }
