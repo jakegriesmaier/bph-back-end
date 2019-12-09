@@ -171,6 +171,7 @@ namespace Model.Models
             var outDatedSet = await SetDataAccessor.GetSet(set.SetId);
             outDatedSet.ActualReps = set.ActualReps;
             outDatedSet.ActualRPE = set.ActualRPE;
+            outDatedSet.ActualWeight = set.ActualWeight;
             return await SetDataAccessor.UpdateSet(outDatedSet); 
         }
 
