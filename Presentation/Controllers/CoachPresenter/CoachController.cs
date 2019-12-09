@@ -74,7 +74,7 @@ namespace Presentation.Controllers.CoachPresenter
         [HttpPost("[action]")]
         public async Task<CreateExerciseOutputData> CreateExercise([FromBody] CreateExerciseInputData input)
         {
-            var result = await CoachModel.CreateExercise(input.Exercise,input.WorkoutId);
+            var result = await CoachModel.CreateExercise(input.Exercise, input.WorkoutId);
             return new CreateExerciseOutputData { ExerciseId = result };
         }
 
@@ -98,7 +98,7 @@ namespace Presentation.Controllers.CoachPresenter
         }
 
         [HttpGet("[action]")]
-        public  async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
+        public async Task<IEnumerable<Exercise>> GetExercises(string workoutId)
         {
             return await CoachModel.GetExercises(workoutId);
         }
@@ -106,7 +106,7 @@ namespace Presentation.Controllers.CoachPresenter
         [HttpPost("[action]")]
         public async Task<CreateSetOutputData> CreateSet([FromBody] CreateSetInputData input)
         {
-            var result = await CoachModel.CreateSet(input.Set,input.ExerciseId);
+            var result = await CoachModel.CreateSet(input.Set, input.ExerciseId);
             return new CreateSetOutputData { SetId = result };
         }
 
@@ -184,6 +184,13 @@ namespace Presentation.Controllers.CoachPresenter
         {
             var result = await CoachModel.DeletePlan(input.PlanId);
             return new DeletePlanOutputData { Deleted = result };
+        }
+
+        [HttpDelete("[action]")]
+        public async Task<DeleteWorkoutOutputData> DeleteWorkout([FromBody] DeleteWorkoutInputData input)
+        {
+            var result = await CoachModel.DeleteWorkout(input.WorkoutId);
+            return new DeleteWorkoutOutputData { Deleted = result };
         }
     }
 }
