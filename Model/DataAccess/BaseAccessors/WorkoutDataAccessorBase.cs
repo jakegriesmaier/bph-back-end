@@ -34,6 +34,11 @@ namespace Model.DataAccess.BaseAccessors
             return await UpdateWorkoutStatusCore(workoutId, status);
         }
 
+        public async Task<bool> DeleteWorkout(string workoutId)
+        {
+            return await DeleteWorkoutCore(workoutId);
+        }
+
 
         #region necessary implementations
         protected abstract Task<string> CreateWorkoutCore(Workout workout, string planId);
@@ -41,6 +46,7 @@ namespace Model.DataAccess.BaseAccessors
         protected abstract Task<Workout> UpdateWorkoutCore(Workout workout);
         protected abstract Task<IEnumerable<Workout>> GetWorkoutsCore(string planId);
         protected abstract Task<Workout> UpdateWorkoutStatusCore(string workoutId, Status status);
+        protected abstract Task<bool> DeleteWorkoutCore(string workoutId);
         #endregion
     }
 }

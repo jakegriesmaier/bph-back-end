@@ -97,6 +97,9 @@ namespace Model.Exceptions
 
         public static readonly string INVALID_UPDATE_WORKOUT_PARAMS =
             "Unable to update the workout. The workoutId must be specified.";
+
+        public static readonly string INVALID_DELETE_WORKOUT_PARAMS =
+            "Unable to delete the workout. The workoutId must be specidied";
         #endregion Workouts
 
         #region Exercises
@@ -189,6 +192,8 @@ namespace Model.Exceptions
         public static readonly string INVALID_UPDATE_WORKOUT_PARAMS_USER_FRIENDLY =
             "There was trouble updating your workout.";
 
+        public static readonly string INVALID_DELETE_WORKOUT_PARAMS_USER_FRIENDLY =
+            "There was trouble deleting your workout.";
         #endregion Workouts
 
         #region Exercises

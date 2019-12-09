@@ -2,6 +2,7 @@
 using Model.DataAccess.BaseAccessors;
 using Model.DataTypes;
 using Model.Entities;
+using Persistence.DataAccessObjects;
 using Persistence.EntityFramework;
 using Persistence.Mappers;
 using System;
@@ -38,6 +39,42 @@ namespace Persistence.DataAccessors
                 _context.Workouts.Add(workoutDao);
                 await _context.SaveChangesAsync();
                 return workoutDao.Id;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+
+        protected override async Task<bool> DeleteWorkoutCore(string workoutId)
+        {
+            try
+            {
+                var workout = await _context.Workouts.FindAsync(workoutId);
+
+                // get all of the exercises in the plan
+                var exercises = _context.Exercises.Where(ex => ex.WorkoutId == workout.Id).ToList();
+
+                // get all of the sets in the plan
+                var sets = new List<SetDAO>();
+                exercises.ForEach(ex => {
+                    sets.AddRange(_context.Sets.Where(s => s.ExerciseId == ex.Id));
+                });
+
+                // get all of the comments in the plan
+                var comments = new List<CommentDAO>();
+                comments.AddRange(_context.Comments.Where(c => c.OwnerId == workout.Id));
+                exercises.ForEach(ex => comments.AddRange(_context.Comments.Where(c => c.OwnerId == ex.Id)));
+                sets.ForEach(s => comments.AddRange(_context.Comments.Where(c => c.OwnerId == s.Id)));
+
+                //delete all of the objects associated with the plan
+                _context.Comments.RemoveRange(comments);
+                _context.Sets.RemoveRange(sets);
+                _context.Exercises.RemoveRange(exercises);
+                _context.Workouts.Remove(workout);
+
+                await _context.SaveChangesAsync();
+                return true;
             }
             catch
             {
