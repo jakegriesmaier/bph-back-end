@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
 using Model.Entities;
+using Model.Exceptions;
 using Model.Interfaces;
 using Persistence.DataExceptions;
 using Persistence.EntityFramework;
@@ -46,7 +47,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "There was a problem creating your comment");
             }
         }
 

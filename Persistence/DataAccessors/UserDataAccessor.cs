@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Model.DataAccess.BaseAccessors;
 using Model.DataTypes;
 using Model.Entities;
+using Model.Exceptions;
 using Model.Interfaces;
 using Persistence.DataAccessObjects;
 using Persistence.DataExceptions;
@@ -22,7 +23,7 @@ namespace Persistence.DataAccessors
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
         private BphContext _context;
-    
+
         public UserDataAccessor(ICurrentUserService currentUserService, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, BphContext context)
         {
             _currentUserService = currentUserService;
@@ -53,34 +54,45 @@ namespace Persistence.DataAccessors
                     await _userManager.AddToRoleAsync(user, user.AccountType.ToString());
                     return user.Id;
                 }
-                return null;
+
+                var exceptionText = result.Errors.Aggregate("User Creation Failed - Identity Exception. Errors were: \n\r\n\r", (current, error) => current + (" - " + error + "\n\r"));
+                throw new UserAuthenticationException(exceptionText, "");
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "user", "create");
             }
         }
 
         protected override async Task<string> LoginUserCore(string email, string password)
         {
-            try
+
+
+            var result = await _signInManager.PasswordSignInAsync(email, password, false, false);//change if want cookie to persist
+
+            if (result.Succeeded)
             {
-                var result = await _signInManager.PasswordSignInAsync(email, password, false, false);//change if want cookie to persist
-                if (result.Succeeded)
+                var user = await _userManager.FindByEmailAsync(email);
+                if (user != null)
                 {
-                    var user = await _userManager.FindByEmailAsync(email);
-                    if (user != null)
-                    {
-                        return user.Id;
-                    }
+                    return user.Id;
                 }
-                return null;
             }
-            catch (Exception e)
+            if (result.IsLockedOut)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw new UserAuthenticationException("User is locked out of account", "You seem to be locked out of your account... We cannot sign you in right now");
             }
+            if (result.IsNotAllowed)
+            {
+                throw new UserAuthenticationException("Not implemented yet, but if it was, the user needs to confirm their email", "You must confirm your email first!");
+            }
+            if (result.RequiresTwoFactor)
+            {
+                throw new UserAuthenticationException("For some reason it's saying we need 2 factor auth", "Uh I guess you need 2fa which isn't supposed to be a thing right now");
+            }
+            throw new UserAuthenticationException("Invalid username or password", "Invalid Username or Password");
         }
+
 
         protected override async Task LogoutUserCore()
         {
@@ -90,7 +102,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "user", "log out");
             }
         }
 
@@ -105,7 +117,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "current user", "get");
             }
         }
 
@@ -128,7 +140,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "user", "update");
             }
         }
 
@@ -147,7 +159,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "password", "update");
             }
         }
 
@@ -161,7 +173,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "user", "get");
             }
         }
 
@@ -175,7 +187,7 @@ namespace Persistence.DataAccessors
             }
             catch (Exception e)
             {
-                 throw ExceptionHandler.HandleException(e, "");
+                throw ExceptionHandler.HandleException(e, "trainees", "get");
             }
         }
     }
