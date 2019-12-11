@@ -20,3 +20,10 @@
 **0.** If not done already, follow instructions 1-4 from "Instructions To Build and Run the bph-back-end API"
 
 **1.** from within the solution run `dotnet test`
+
+
+<br/>
+
+**Link to the front-end:**
+
+https://github.com/hbrooks3/bph-front-end
