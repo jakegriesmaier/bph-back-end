@@ -1,5 +1,8 @@
 **Instructions To Build and Run the bph-back-end API:** 
 
+**NOTE: The back-end cannot be run on mac unless using a windows virtual machine**
+
+
 **1.** pull the branch `master`
 
 **2.** download ASP.NET Core/.NET Core: Runtime & Hosting Bundle version 2.1.10
